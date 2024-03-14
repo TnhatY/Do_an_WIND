@@ -1,0 +1,123 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="image\add.png" />
+    <None Remove="image\add2.png" />
+    <None Remove="image\banhang.png" />
+    <None Remove="image\buy.png" />
+    <None Remove="image\buy2.png" />
+    <None Remove="image\buy3.png" />
+    <None Remove="image\buy4.png" />
+    <None Remove="image\buy5.png" />
+    <None Remove="image\caidat.png" />
+    <None Remove="image\caidat2.png" />
+    <None Remove="image\caidat3.png" />
+    <None Remove="image\cart.png" />
+    <None Remove="image\cart1.png" />
+    <None Remove="image\damua.png" />
+    <None Remove="image\damua2.png" />
+    <None Remove="image\damua3.png" />
+    <None Remove="image\edit.png" />
+    <None Remove="image\eye.png" />
+    <None Remove="image\fire.png" />
+    <None Remove="image\giohang.png" />
+    <None Remove="image\giohang1.png" />
+    <None Remove="image\hinhnen.png" />
+    <None Remove="image\hinhnen2.png" />
+    <None Remove="image\home-2.png" />
+    <None Remove="image\home.png" />
+    <None Remove="image\Home1.png" />
+    <None Remove="image\h_thongke.png" />
+    <None Remove="image\ket.png" />
+    <None Remove="image\logoUser.png" />
+    <None Remove="image\logout.png" />
+    <None Remove="image\logout1.png" />
+    <None Remove="image\market1.png" />
+    <None Remove="image\market2.png" />
+    <None Remove="image\member.png" />
+    <None Remove="image\menu.png" />
+    <None Remove="image\menu2.png" />
+    <None Remove="image\nenDangNhap.jpg" />
+    <None Remove="image\Online.png" />
+    <None Remove="image\order.png" />
+    <None Remove="image\save.png" />
+    <None Remove="image\search.png" />
+    <None Remove="image\search2.png" />
+    <None Remove="image\setting.png" />
+    <None Remove="image\shoping.png" />
+    <None Remove="image\shopping.png" />
+    <None Remove="image\shutdown.png" />
+    <None Remove="image\shutdown2.png" />
+    <None Remove="image\spdamua.png" />
+    <None Remove="image\themgiohang.png" />
+    <None Remove="image\thongke.png" />
+    <None Remove="image\title.png" />
+    <None Remove="image\trangchu.png" />
+    <None Remove="image\trangchu1.png" />
+    <None Remove="image\trash.png" />
+    <None Remove="image\uneye.png" />
+    <None Remove="image\user.png" />
+    <None Remove="image\xuatfile.png" />
+    <None Remove="image\xuatfile2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="image\add.png" />
+    <Resource Include="image\add2.png" />
+    <Resource Include="image\banhang.png" />
+    <Resource Include="image\buy2.png" />
+    <Resource Include="image\caidat.png" />
+    <Resource Include="image\caidat2.png" />
+    <Resource Include="image\caidat3.png" />
+    <Resource Include="image\cart.png" />
+    <Resource Include="image\damua.png" />
+    <Resource Include="image\damua2.png" />
+    <Resource Include="image\damua3.png" />
+    <Resource Include="image\edit.png" />
+    <Resource Include="image\eye.png" />
+    <Resource Include="image\fire.png" />
+    <Resource Include="image\giohang.png" />
+    <Resource Include="image\giohang1.png" />
+    <Resource Include="image\h_thongke.png" />
+    <Resource Include="image\logoUser.png" />
+    <Resource Include="image\logout.png" />
+    <Resource Include="image\market2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="image\home.png" />
+    <Resource Include="image\menu.png" />
+    <Resource Include="image\menu2.png" />
+    <Resource Include="image\nenDangNhap.jpg" />
+    <Resource Include="image\order.png" />
+    <Resource Include="image\save.png" />
+    <Resource Include="image\search.png" />
+    <Resource Include="image\search2.png" />
+    <Resource Include="image\setting.png" />
+    <Resource Include="image\shutdown2.png" />
+    <Resource Include="image\spdamua.png" />
+    <Resource Include="image\themgiohang.png" />
+    <Resource Include="image\thongke.png" />
+    <Resource Include="image\trangchu.png" />
+    <Resource Include="image\trash.png" />
+    <Resource Include="image\uneye.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="image\trangchu1.png" />
+    <Resource Include="image\xuatfile.png" />
+    <Resource Include="image\xuatfile2.png" />
+  </ItemGroup>
+
+</Project>
