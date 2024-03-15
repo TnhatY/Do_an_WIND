@@ -16,6 +16,9 @@
     <Compile Update="ThemSP_Window.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ThongTin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="TopBan_Window.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +58,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ThemSP_Window.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ThongTin.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="TopBan_Window.xaml">

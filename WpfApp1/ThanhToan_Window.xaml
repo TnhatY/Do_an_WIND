@@ -175,10 +175,10 @@
     </Window.Resources>
     <Border BorderBrush="#FFA77ADD" BorderThickness="1,1,1,1">
     <Grid>
-        <TextBlock Text="Thanh Toán" HorizontalAlignment="Center"  Margin="0 20 0 500" FontSize="19" FontWeight="Bold" FontFamily="Wide Latin"></TextBlock>
+        <TextBlock Text="Thanh Toán " HorizontalAlignment="Center"  Margin="0 20 0 500" FontSize="19" FontWeight="Bold" FontFamily="Wide Latin"></TextBlock>
             <Border Width="150" Height="2" VerticalAlignment="Top" Margin="0,50,0,0" Background="#FFA77ADD"></Border>
         <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="70 80 0 0">
-            <TextBlock Text="Mã sản phẩm :" FontSize="14"></TextBlock>
+                <TextBlock Text="Mã sản phẩm :" FontSize="14"></TextBlock>
         </Grid>
         <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="70, 150,0,0">
             <TextBlock Text="Tê sản phẩm :" FontSize="14"></TextBlock>

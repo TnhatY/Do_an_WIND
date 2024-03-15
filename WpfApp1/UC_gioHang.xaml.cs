@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static MaterialDesignThemes.Wpf.Theme;
 
 namespace WpfApp1
 {
@@ -24,12 +25,30 @@ namespace WpfApp1
         public UC_gioHang()
         {
             InitializeComponent();
+            listview.Items.Add(new Class1 { Id = 1, name = "anh", shop = "dsgf", gia = 1243 });
         }
 
         private void btnMua_Click(object sender, RoutedEventArgs e)
         {
             ThanhToan_Window thanhToan_Window = new ThanhToan_Window();
             thanhToan_Window.Show();
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            object selectedItem = listview.SelectedItem;
+            if (selectedItem != null)
+            {
+                ThongTin t = new ThongTin();
+                if (selectedItem is Class1 selectedC)
+                {
+                    t.MaSP.Text = selectedC.Id.ToString();
+                    t.Ten.Text = selectedC.name.ToString();
+                    t.shop.Text = selectedC.shop.ToString();
+                    t.gia.Text = selectedC.gia.ToString();
+                }
+                t.ShowDialog();
+            }
         }
     }
 }

@@ -48,3 +48,5 @@ D:\Deadline\LTWINDOWS\Do_an_cuoi_ky\WpfApp1\obj\Debug\net6.0-windows\UC_ThongKe.
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky\WpfApp1\obj\Debug\net6.0-windows\UC_ThongKe.baml
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky\WpfApp1\obj\Debug\net6.0-windows\TopBan_Window.g.cs
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky\WpfApp1\obj\Debug\net6.0-windows\TopBan_Window.baml
+D:\Deadline\LTWINDOWS\Do_an_cuoi_ky\WpfApp1\obj\Debug\net6.0-windows\ThongTin.g.cs
+D:\Deadline\LTWINDOWS\Do_an_cuoi_ky\WpfApp1\obj\Debug\net6.0-windows\ThongTin.baml

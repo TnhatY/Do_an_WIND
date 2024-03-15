@@ -177,37 +177,25 @@
     <Grid>
         <Border >
             <Grid>
-                <Border Height="150" CornerRadius="20,20,0,0" VerticalAlignment="Top" Background="White">
+                <Border Height="100" CornerRadius="20,20,0,0" VerticalAlignment="Top" Background="White">
                     <Grid>
-                        <Grid Width="600" HorizontalAlignment="Left" Margin="10,10,0,0">
-                            <TextBlock Text="Mã sản phẩm" Margin="10,20,0,0"/>
-                            <TextBox Width="120" HorizontalAlignment="Left" Height="25" Margin="10,0,0,35" BorderThickness="0,0,0,1" FontSize="13"/>
-                            <TextBlock Text="Tên sản phẩm" Margin="150,20,0,0"/>
-                            <TextBox Width="120" HorizontalAlignment="Left" Height="25" Margin="290,0,0,35" BorderThickness="0,0,0,1" FontSize="13"/>
-                            <TextBlock Text="Tên Shop" Height="30" VerticalAlignment="Top" Margin="290,20,0,0"/>
-                            <TextBox Width="120" HorizontalAlignment="Left" Height="25" Margin="430,0,0,35" BorderThickness="0,0,0,1" FontSize="13"/>
-                            <TextBlock Text="Giá bán" Height="30" Margin="430,20,0,0" VerticalAlignment="Top"/>
-                            <TextBox Width="120" HorizontalAlignment="Left" Height="25" Margin="150,0,0,35" BorderThickness="0,0,0,1" FontSize="13"/>
-                            <TextBlock Text="Mô tả sản phẩm" Height="30" Margin="10,0,0,30" VerticalAlignment="Bottom"/>
-                            <TextBox Width="540" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="25" Margin="10,0,0,20" BorderThickness="0,0,0,1" FontSize="13"/>
-                        </Grid>
                         <Grid >
-                            <Button Style="{DynamicResource ButtonStyle2}" Width="110" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                                    Margin="0,0,240,20" BorderBrush="#FF0E0808" Background="{x:Null}">
+                            <Button Style="{DynamicResource ButtonStyle2}" Width="110" Height="30" HorizontalAlignment="Right" VerticalAlignment="Center"
+                                    Margin="0,0,240,0" BorderBrush="#FF0E0808" Background="{x:Null}">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="/image/edit.png"/>
                                     <TextBlock Text=" Chỉnh sửa" Padding="0,0,0,0" VerticalAlignment="Center" FontSize="13" FontWeight="Bold"/>
                                 </StackPanel>
                             </Button>
-                            <Button Style="{DynamicResource ButtonStyle3}" Width="70" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                                    Margin="0,0,160,20" BorderBrush="#FF0C0A0A" Background="{x:Null}">
+                            <Button Style="{DynamicResource ButtonStyle3}" Width="70" Height="30" HorizontalAlignment="Right" VerticalAlignment="Center"
+                                    Margin="0,0,160,0" BorderBrush="#FF0C0A0A" Background="{x:Null}">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="/image/trash.png"/>
                                     <TextBlock Text="Xoá" Padding="5,0,0,0" VerticalAlignment="Center" FontSize="13" FontWeight="Bold"/>
                                 </StackPanel>
                             </Button>
-                            <Button Style="{DynamicResource ButtonStyle1}" Width="160" Height="35" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                                    Margin="0,0,160,90" BorderBrush="#FF0E0808" Background="#FF0B8A40" Click="ThemSanPham_Click">
+                            <Button Style="{DynamicResource ButtonStyle1}" Width="160" Height="35" HorizontalAlignment="Right" VerticalAlignment="Center"
+                                    Margin="0,0,460,0" BorderBrush="#FF0E0808" Background="#FF0B8A40" Click="ThemSanPham_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="/image/add2.png" Width="28"/>
                                     <TextBlock Text="Thêm sản phẩm" Padding="5 ,0,0,0" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White"/>
@@ -217,7 +205,7 @@
                     </Grid>
 
                 </Border>
-                <Border Background="white" Margin="0,150,0,0" BorderBrush="#FF80297F" BorderThickness="0,2,2,0">
+                <Border Background="white" Margin="0,100,0,0" BorderBrush="#FF80297F" BorderThickness="0,2,2,0">
                     <Do_an:UC_ThemSanPham x:Name="themSanPham" Margin="998,598,-2,-5" RenderTransformOrigin="0.5,0.5">
                         <Do_an:UC_ThemSanPham.RenderTransform>
                             <TransformGroup>

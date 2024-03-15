@@ -13,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
+using static MaterialDesignThemes.Wpf.Theme;
+using static MaterialDesignThemes.Wpf.Theme.ToolBar;
 
 namespace WpfApp1
 {
@@ -24,13 +27,43 @@ namespace WpfApp1
         public UC_MuaSam()
         {
             InitializeComponent();
+            List<Class1> items = new List<Class1>();
+            items.Add(new Class1 { Id = 1, name = "anh", shop = "dsgf", gia = 1243, tinhTrang = "mới", ImagePath = "/image/add.png" });
+            items.Add(new Class1 { Id = 1, name = "anh", shop = "dsgf", gia = 1243, tinhTrang = "mới", ImagePath = "/image/add.png" });
+            items.Add(new Class1 { Id = 1, name = "anh", shop = "dsgf", gia = 1243, tinhTrang = "mới", ImagePath = "/image/add.png" });
+            listView.ItemsSource= items;
         }
+        
 
-     
+
         private void btnMua_Click(object sender, RoutedEventArgs e)
         {
             ThanhToan_Window thanhToan_Window = new ThanhToan_Window();
             thanhToan_Window.Show();
+        }
+        private void myListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            object selectedItem = listView.SelectedItem;
+            if (selectedItem != null)
+            {
+                ThongTin t=new ThongTin();
+                if (selectedItem is Class1 selectedC)
+                {
+                    t.MaSP.Text = selectedC.Id.ToString();
+                    t.Ten.Text = selectedC.name.ToString();
+                    t.shop.Text = selectedC.shop.ToString();
+                    t.gia.Text = selectedC.gia.ToString();
+                    t.tinhTrang.Text = selectedC.tinhTrang.ToString();
+                   // t.SetImage(selectedC.ImagePath.ToString());
+                    //MessageBox.Show(selectedC.ImagePath);
+                }
+
+                t.ShowDialog();
+            }
+        }
+        private void listView_Selected(object sender, RoutedEventArgs e)
+        {
+            object selectedItem = listView.SelectedItem;
         }
     }
 }
