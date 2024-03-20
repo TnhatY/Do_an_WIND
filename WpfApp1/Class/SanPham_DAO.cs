@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Data.SqlClient;
 using System.Windows.Media.Imaging;
+using System.Windows;
 
 namespace Do_an.Class
 {
@@ -30,33 +31,41 @@ namespace Do_an.Class
                 string tinhTrang = row["TinhTrang"].ToString();
                 string moTa = row["MoTa"].ToString();
                 string hinhAnh = row["HinhAnh"].ToString();
-                sanPhams.Add(new SanPham(maSP,tenSP,tenShop,giaGoc,giaHTai,ngayMua,tinhTrang,moTa,hinhAnh));
+                string danhMucSP = row["DanhMucSP"].ToString();
+                sanPhams.Add(new SanPham(maSP,tenSP,tenShop,giaGoc,giaHTai,ngayMua,tinhTrang,moTa,hinhAnh,danhMucSP));
             }
             return sanPhams; 
         }
         public void them(SanPham sp)
         {
-            Database database = new Database();
-            SqlCommand cmd;
-            SqlConnection sqlConnection = database.getConnection();
-            string query = "insert into SanPham values (@MaSP,@TenSP,@TenShop,@GiaGoc,@GiaHTai,@NgayMua,@TinhTrang,@MoTa,@HinhAnh)";
-            using (SqlConnection connection = new SqlConnection(database.conStr))
-            {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand(query, connection))
+            try {
+                Database database = new Database();
+                SqlCommand cmd;
+                SqlConnection sqlConnection = database.getConnection();
+                string query = "insert into SanPham values (@MaSP,@TenSP,@TenShop,@GiaGoc,@GiaHTai,@NgayMua,@TinhTrang,@MoTa,@HinhAnh,@DanhMucSP)";
+                using (SqlConnection connection = new SqlConnection(database.conStr))
                 {
-                    command.Parameters.AddWithValue("@MaSP", sp.MaSP);
-                    command.Parameters.AddWithValue("@TenSP", sp.TenSP);
-                    command.Parameters.AddWithValue("@TenShop", sp.TenShop);
-                    command.Parameters.AddWithValue("@GiaGoc", sp.GiaGoc);
-                    command.Parameters.AddWithValue("@GiaHTai", sp.GiaHTai);
-                    command.Parameters.AddWithValue("@NgayMua", sp.NgayMua);
-                    command.Parameters.AddWithValue("@TinhTrang", sp.TinhTrang);
-                    command.Parameters.AddWithValue("@MoTa", sp.MoTa);
-                    command.Parameters.AddWithValue("@HinhAnh", sp.HinhAnh);
-                    command.ExecuteNonQuery();
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaSP", sp.MaSP);
+                        command.Parameters.AddWithValue("@TenSP", sp.TenSP);
+                        command.Parameters.AddWithValue("@TenShop", sp.TenShop);
+                        command.Parameters.AddWithValue("@GiaGoc", sp.GiaGoc);
+                        command.Parameters.AddWithValue("@GiaHTai", sp.GiaHTai);
+                        command.Parameters.AddWithValue("@NgayMua", sp.NgayMua);
+                        command.Parameters.AddWithValue("@TinhTrang", sp.TinhTrang);
+                        command.Parameters.AddWithValue("@MoTa", sp.MoTa);
+                        command.Parameters.AddWithValue("@HinhAnh", sp.HinhAnh);
+                        command.Parameters.AddWithValue("@DanhMucSP", sp.DanhMucSP);
+                        command.ExecuteNonQuery();
+                    }
                 }
+            } 
+            catch(Exception Fail){
+                MessageBox.Show(Fail.Message);
             }
+            
             //Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
             //openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
             //if (openFileDialog.ShowDialog() == true)

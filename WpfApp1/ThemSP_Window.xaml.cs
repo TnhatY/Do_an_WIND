@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using Do_an.Class;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace Do_an
     /// </summary>
     public partial class ThemSP_Window : Window
     {
-
+        SanPham_DAO SanPham = new SanPham_DAO();
         public ThemSP_Window()
         {
             InitializeComponent();
@@ -57,7 +58,7 @@ namespace Do_an
                 string shortenedPath = "/" + System.IO.Path.Combine(System.IO.Path.GetFileName(directoryName), fileName);
                 // Hiển thị ảnh lên giao diện
                 //MessageBox.Show(shortenedPath);
-                imgDynamic.Source = new BitmapImage(new Uri(filePath));
+                imgHinhAnh.Source = new BitmapImage(new Uri(filePath));
 
 
                 // Lưu trữ ảnh dưới dạng mảng byte
@@ -66,11 +67,16 @@ namespace Do_an
         
         }
 
-        void cbDanhMuc_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
             cbDanhMuc.ItemsSource = DanhMuc;
             cbDanhMuc.SelectionChanged += cbDanhMuc_SelectionChanged;
+        }
+
+
+        void cbDanhMuc_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
 
         private void txtMoTa_TextChanged(object sender, TextChangedEventArgs e)
@@ -80,7 +86,25 @@ namespace Do_an
 
         private void btnThem_Click(object sender, RoutedEventArgs e)
         {
+            
+        }
 
+        private void btnThem_Click_1(object sender, RoutedEventArgs e)
+        {
+            SanPham sanPhamMoi = new SanPham();
+            sanPhamMoi.DanhMucSP = cbDanhMuc.Text;
+            sanPhamMoi.MaSP = txtMaSP.Text;
+            sanPhamMoi.TenSP = txtTenSP.Text;
+            sanPhamMoi.TenShop = txtTenShop.Text;
+            sanPhamMoi.TinhTrang = txtTinhTrang.Text;
+            sanPhamMoi.GiaGoc = float.Parse(txtGiaGoc.Text);
+            sanPhamMoi.GiaHTai = float.Parse(txtGiaBan.Text);
+            sanPhamMoi.NgayMua = dtpNgayMua.Text;
+            sanPhamMoi.MoTa = txtMoTa.Text;
+            sanPhamMoi.HinhAnh = imgHinhAnh.Source.ToString();
+            SanPham.them(sanPhamMoi);
+            MessageBox.Show("Thêm thành công");
+            
         }
     }
 }

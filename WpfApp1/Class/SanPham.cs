@@ -9,6 +9,7 @@ namespace Do_an.Class
 {
     class SanPham
     {
+        public string DanhMucSP { get; set; }
         public string MaSP { get; set; }
         public string TenSP { get; set; }
         public string TenShop { get; set; }
@@ -19,8 +20,9 @@ namespace Do_an.Class
         public string MoTa { get; set; }
         public string HinhAnh { get; set; }
         public SanPham() { }
-        public SanPham(string maSP, string tenSP, string tenShop, float giaGoc, float giaHTai, string ngayMua, string tinhTrang, string moTa, string hinhAnh)
+        public SanPham(string maSP, string tenSP, string tenShop, float giaGoc, float giaHTai, string ngayMua, string tinhTrang, string moTa, string hinhAnh, string danhMucSP)
         {
+            DanhMucSP = danhMucSP;
             MaSP = maSP;
             TenSP = tenSP;
             TenShop = tenShop;
