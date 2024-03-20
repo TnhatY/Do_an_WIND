@@ -1,6 +1,10 @@
 ﻿using Do_an;
+using Do_an.Class;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,46 +28,29 @@ namespace WpfApp1
     /// </summary>
     public partial class UC_MuaSam : UserControl
     {
+        
+        Database data = new Database();
         public UC_MuaSam()
         {
             InitializeComponent();
-            List<Class1> items = new List<Class1>();
-            items.Add(new Class1 { Id = 1, name = "anh", shop = "dsgf", gia = 1243, tinhTrang = "mới", ImagePath = "/image/add.png" });
-            items.Add(new Class1 { Id = 1, name = "anh", shop = "dsgf", gia = 1243, tinhTrang = "mới", ImagePath = "/image/add.png" });
-            items.Add(new Class1 { Id = 1, name = "anh", shop = "dsgf", gia = 1243, tinhTrang = "mới", ImagePath = "/image/add.png" });
-            listView.ItemsSource= items;
+            DataContext = this;
+            SanPham_DAO sanPham_DAO = new SanPham_DAO();
+            thongtin.ItemsSource = sanPham_DAO.Getlist();
         }
-        
 
-
+       
         private void btnMua_Click(object sender, RoutedEventArgs e)
         {
-            ThanhToan_Window thanhToan_Window = new ThanhToan_Window();
-            thanhToan_Window.Show();
+
         }
         private void myListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            object selectedItem = listView.SelectedItem;
-            if (selectedItem != null)
-            {
-                ThongTin t=new ThongTin();
-                if (selectedItem is Class1 selectedC)
-                {
-                    t.MaSP.Text = selectedC.Id.ToString();
-                    t.Ten.Text = selectedC.name.ToString();
-                    t.shop.Text = selectedC.shop.ToString();
-                    t.gia.Text = selectedC.gia.ToString();
-                    t.tinhTrang.Text = selectedC.tinhTrang.ToString();
-                   // t.SetImage(selectedC.ImagePath.ToString());
-                    //MessageBox.Show(selectedC.ImagePath);
-                }
 
-                t.ShowDialog();
-            }
         }
         private void listView_Selected(object sender, RoutedEventArgs e)
         {
-            object selectedItem = listView.SelectedItem;
+            // object selectedItem = listView.SelectedItem;
         }
+
     }
 }

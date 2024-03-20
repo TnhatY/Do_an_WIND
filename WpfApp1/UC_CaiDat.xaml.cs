@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Do_an.Class;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,33 @@ namespace Do_an
         public UC_CaiDat()
         {
             InitializeComponent();
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            string sql = "select * from NguoiDung where TaiKhoan='theanh' ";
+            Database database = new Database();
+            DataTable dt = database.getAllData(sql);
+            List<NguoiDung> list = new List<NguoiDung>();
+            foreach (DataRow row in dt.Rows)
+            {
+                string hoten = row["HoTen"].ToString();
+                string ngaysinh = row["NgaySinh"].ToString();
+                string gioitinh = row["GioiTinh"].ToString();
+                string sodt = row["SoDT"].ToString();
+                string email = row["Email"].ToString();
+                string taikhoan = row["TaiKhoan"].ToString();
+                string matkhau = row["MatKhau"].ToString();
+                string diachi = row["DiaChi"].ToString();
+                list.Add(new NguoiDung(hoten, ngaysinh, gioitinh, sodt, email, taikhoan, matkhau, diachi));
+            }
+            hoten.Text= list[0].hoten;
+            ngaysinh.Text= list[0].ngaysinh;
+            gioitinh.Text  = list[0].gioitinh;
+            sodt.Text= list[0].sodt;
+            email.Text= list[0].email;
+            diachi.Text= list[0].diachi;
+
         }
     }
 }

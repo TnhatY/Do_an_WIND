@@ -1,7 +1,9 @@
 ﻿using Do_an;
+using Do_an.Class;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +14,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace WpfApp1
 {
@@ -21,12 +22,14 @@ namespace WpfApp1
     /// </summary>
     public partial class F_Main : Window
     {
+       
         public F_Main()
         {
             InitializeComponent();
-            UC_BanHang uC_BanHang = new UC_BanHang();
+            DataContext = this;
+           
         }
-
+      
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -46,11 +49,11 @@ namespace WpfApp1
             btnBanHang.Background = null;
             BitmapImage bitmap = new BitmapImage();
             bitmap.BeginInit();
-            bitmap.UriSource = new Uri("/image/trangchu1.png", UriKind.RelativeOrAbsolute); // Thay đổi path_to_your_image.jpg thành đường dẫn của ảnh của bạn
+            bitmap.UriSource = new Uri("/image/trangchu1.png", UriKind.RelativeOrAbsolute);
             bitmap.EndInit();
             imageTittle.Source = bitmap;
             UC_MuaSam uC_MuaSam = new UC_MuaSam();
-            Usercontrol.Content = uC_MuaSam;
+            user.Content = uC_MuaSam;
             btnCaiDat.Background = null;
             btnCaiDat.BorderThickness = new Thickness(0);
             btnThongKe.Background = null;
@@ -66,19 +69,19 @@ namespace WpfApp1
        
         private void btnDangXuat_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+           
         }
 
         private void btnDaMua_Click(object sender, RoutedEventArgs e)
         {
             UC_DaMua uC_DaMua= new UC_DaMua();
-            Usercontrol.Content = uC_DaMua;
+            //Usercontrol.Content = uC_DaMua;
             btnDaMua.BorderThickness = new Thickness(2,0,0,2);
             btnTrangChu.BorderThickness = new Thickness(0);
             btnGioHang.BorderThickness = new Thickness(0);
             btnBanHang.BorderThickness = new Thickness(0);
             btnThongKe.BorderThickness = new Thickness(0);
-
+            
             btnBanHang.Background = null;
             btnTrangChu.Background = null;
             btnGioHang.Background = null;
@@ -97,7 +100,7 @@ namespace WpfApp1
         private void btnGioHang_Click(object sender, RoutedEventArgs e)
         {
             UC_gioHang uC_GioHang = new UC_gioHang();
-            Usercontrol.Content = uC_GioHang;
+            user.Content = uC_GioHang;
             btnDaMua.BorderThickness = new Thickness(0);
             btnTrangChu.BorderThickness = new Thickness(0);
             btnGioHang.BorderThickness = new Thickness(2, 0, 0, 2);
@@ -139,7 +142,7 @@ namespace WpfApp1
             btnGioHang.Background= null;
             btnCaiDat.Background = null;
            UC_BanHang uC_BanHang = new UC_BanHang();
-            Usercontrol.Content = uC_BanHang;
+           // Usercontrol.Content = uC_BanHang;
             btnCaiDat.BorderThickness = new Thickness(0);
             btnThongKe.Background = null;
 
@@ -152,7 +155,7 @@ namespace WpfApp1
         private void btnCaiDat_Click(object sender, RoutedEventArgs e)
         {
             UC_CaiDat uC_CaiDat = new UC_CaiDat();
-            Usercontrol.Content = uC_CaiDat;
+            user.Content = uC_CaiDat;
 
             btnBanHang.BorderThickness = new Thickness(0);
             btnDaMua.BorderThickness = new Thickness(0);
@@ -178,7 +181,7 @@ namespace WpfApp1
         private void btnThongKe_Click(object sender, RoutedEventArgs e)
         {
             UC_ThongKe uC_ThongKe = new UC_ThongKe();
-            Usercontrol.Content=uC_ThongKe;
+           // Usercontrol.Content=uC_ThongKe;
             btnBanHang.BorderThickness = new Thickness(0);
             btnDaMua.BorderThickness = new Thickness(0);
             btnTrangChu.BorderThickness = new Thickness(0);

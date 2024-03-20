@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="F_Main" Height="750" Width="1200" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded">
+        Title="F_Main" Height="750" Width="1230" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -396,9 +396,10 @@
 
             </Grid>
             <!--Nội dung chính-->
-            <Grid Background="#FFE0CDED" Margin="150 100 0 0">
-                <ContentControl x:Name="Usercontrol" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <Grid Background="#FFE0CDED" Margin="180 100 0 0">
                 
+                <ContentControl x:Name="user"></ContentControl>
+
             </Grid>
 
         </Grid>

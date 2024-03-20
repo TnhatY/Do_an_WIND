@@ -16,7 +16,7 @@
     <Compile Update="ThemSP_Window.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ThongTin.xaml.cs">
+    <Compile Update="ThongTin_Window.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="TopBan_Window.xaml.cs">
@@ -40,6 +40,12 @@
     <Compile Update="UC_SanPham.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UC_SanPham2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC_SpGioHang.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UC_ThemSanPham.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -60,7 +66,7 @@
     <Page Update="ThemSP_Window.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ThongTin.xaml">
+    <Page Update="ThongTin_Window.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="TopBan_Window.xaml">
@@ -82,6 +88,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_SanPham.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_SanPham2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_SpGioHang.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_ThemSanPham.xaml">

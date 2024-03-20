@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="HinhAnhSP\iphone11.png" />
+    <None Remove="HinhAnhSP\iphone5.jpg" />
     <None Remove="image\add.png" />
     <None Remove="image\add2.png" />
     <None Remove="image\banhang.png" />
@@ -56,6 +58,8 @@
     <None Remove="image\shutdown.png" />
     <None Remove="image\shutdown2.png" />
     <None Remove="image\spdamua.png" />
+    <None Remove="image\t.png" />
+    <None Remove="image\th.jpg" />
     <None Remove="image\themgiohang.png" />
     <None Remove="image\thongke.png" />
     <None Remove="image\title.png" />
@@ -64,15 +68,20 @@
     <None Remove="image\trash.png" />
     <None Remove="image\uneye.png" />
     <None Remove="image\user.png" />
+    <None Remove="image\x.png" />
     <None Remove="image\xuatfile.png" />
     <None Remove="image\xuatfile2.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="HinhAnhSP\iphone11.png" />
+    <Resource Include="HinhAnhSP\iphone5.jpg" />
     <Resource Include="image\add.png" />
     <Resource Include="image\add2.png" />
     <Resource Include="image\banhang.png" />
@@ -107,6 +116,8 @@
     <Resource Include="image\setting.png" />
     <Resource Include="image\shutdown2.png" />
     <Resource Include="image\spdamua.png" />
+    <Resource Include="image\t.png" />
+    <Resource Include="image\th.jpg" />
     <Resource Include="image\themgiohang.png" />
     <Resource Include="image\thongke.png" />
     <Resource Include="image\trangchu.png" />
@@ -116,8 +127,24 @@
 
   <ItemGroup>
     <Resource Include="image\trangchu1.png" />
+    <Resource Include="image\x.png" />
     <Resource Include="image\xuatfile.png" />
     <Resource Include="image\xuatfile2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>
