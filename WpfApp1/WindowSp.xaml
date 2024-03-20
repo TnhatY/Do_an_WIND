@@ -1,0 +1,16 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Do_an"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    x:Class="Do_an.WindowSp"
+    mc:Ignorable="d"
+    Title="Chi tiết sản phẩm"
+    Width="450" Height="700">
+
+    <Grid>
+        <UserControl x:Name="UC_chiTietSP"/>
+    </Grid>
+</Window>
