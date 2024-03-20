@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Do_an.UC_ChiTietSP"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Do_an"
+             mc:Ignorable="d" Height="800" Width="500">
+    <Grid Background="White">
+        <Label Content="Tên SP:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Height="40" Width="74" Margin="7,20,0,0"/>
+        <Label Content="Mã SP:"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Height="40" Width="69" Margin="8,341,0,0"/>
+        <Label Content="Giá gốc:"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Height="34" Width="78" Margin="11,307,0,0"/>
+        <Label Content="Giá bán:"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Height="34" Width="78" Margin="245,307,0,0"/>
+        <Label Content="Tình trạng:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Height="30" Width="100" Margin="10,415,0,0"/>
+        <Label Content="Còn:"   HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Height="34" Width="48" Margin="10,482,0,0"/>
+        <Label Content="Ngày mua:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Height="32" Width="98" Margin="9,450,0,0"/>
+        <Label Content="Tên Shop:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Height="32" Width="93" Margin="9,377,0,0"/>
+        <Label Content="Mô tả sản phẩm:"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Height="33" Width="144" Margin="10,516,0,0"/>
+        <Label x:Name="lblInFoTenSp" Content="Demo" HorizontalAlignment="Left" Margin="86,20,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman"/>
+        <Label x:Name="lblInFoGiaGoc" Content="Demo" HorizontalAlignment="Left" Margin="87,308,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman"/>
+        <Label x:Name="lblInFoGiaHTai" Content="Demo" HorizontalAlignment="Left" Margin="323,308,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman"/>
+        <Label x:Name="lblInFoTenShop" Content="Demo" HorizontalAlignment="Left" Margin="107,377,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman"/>
+        <Label x:Name="lblInFoMaSp" Content="Demo" HorizontalAlignment="Left" Margin="82,341,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman"/>
+        <Label x:Name="lblInFoCon" Content="Demo" HorizontalAlignment="Left" Margin="60,483,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman"/>
+        <Label x:Name="lblInFoTinhTrang" Content="Demo" HorizontalAlignment="Left" Margin="115,415,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman"/>
+        <Label x:Name="lblInFoNgayMua" Content="Demo" HorizontalAlignment="Left" Margin="107,450,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman"/>
+        <Label x:Name="lblInFoMoTa" Content="Demo" HorizontalAlignment="Left" Margin="10,549,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman"/>
+
+
+        <ScrollViewer Foreground="{x:Null}" Margin="60,65,56,507">
+            <ItemsControl x:Name="imageList">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding}" Stretch="UniformToFill" Margin="5"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+
+
+    </Grid>
+</UserControl>
