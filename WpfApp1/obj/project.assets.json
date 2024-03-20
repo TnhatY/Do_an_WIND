@@ -146,19 +146,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ACER\\.nuget\\packages\\": {}
+    "C:\\Users\\huanc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Deadline\\LTWINDOWS\\Do_an_cuoi_ky\\WpfApp1\\Do_an.csproj",
+      "projectUniqueName": "C:\\Winform\\Do_An_Winform\\Do_an_WIND\\WpfApp1\\Do_an.csproj",
       "projectName": "Do_an",
-      "projectPath": "D:\\Deadline\\LTWINDOWS\\Do_an_cuoi_ky\\WpfApp1\\Do_an.csproj",
-      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "D:\\Deadline\\LTWINDOWS\\Do_an_cuoi_ky\\WpfApp1\\obj\\",
+      "projectPath": "C:\\Winform\\Do_An_Winform\\Do_an_WIND\\WpfApp1\\Do_an.csproj",
+      "packagesPath": "C:\\Users\\huanc\\.nuget\\packages\\",
+      "outputPath": "C:\\Winform\\Do_An_Winform\\Do_an_WIND\\WpfApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\huanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -208,7 +208,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

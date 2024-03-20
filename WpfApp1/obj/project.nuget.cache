@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "+w8pwO8TTdWwd2XPkmB7pSz0xsgcKtKLUBIbz/ASt8Awytf7XWeGcuw99Wid6DVGwjSVu8397Y6lqIV6b1RAPQ==",
+  "dgSpecHash": "D/oi1NFjPsLAG5yVV+2WuHHs7svLYMwCH3BYsiDL+HiA7Qf0rMdQA3RVaUzg77luZCZjeXTEbGRbaz3LWoPl0g==",
   "success": true,
-  "projectFilePath": "D:\\Deadline\\LTWINDOWS\\Do_an_cuoi_ky\\WpfApp1\\Do_an.csproj",
+  "projectFilePath": "C:\\Winform\\Do_An_Winform\\Do_an_WIND\\WpfApp1\\Do_an.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ACER\\.nuget\\packages\\materialdesigncolors\\3.0.0\\materialdesigncolors.3.0.0.nupkg.sha512",
-    "C:\\Users\\ACER\\.nuget\\packages\\materialdesignthemes\\5.0.0\\materialdesignthemes.5.0.0.nupkg.sha512",
-    "C:\\Users\\ACER\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+    "C:\\Users\\huanc\\.nuget\\packages\\materialdesigncolors\\3.0.0\\materialdesigncolors.3.0.0.nupkg.sha512",
+    "C:\\Users\\huanc\\.nuget\\packages\\materialdesignthemes\\5.0.0\\materialdesignthemes.5.0.0.nupkg.sha512",
+    "C:\\Users\\huanc\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
   ],
   "logs": []
 }
