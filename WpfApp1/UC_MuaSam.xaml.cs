@@ -1,5 +1,6 @@
 ﻿using Do_an;
 using Do_an.Class;
+using MaterialDesignThemes.Wpf;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -52,5 +53,10 @@ namespace WpfApp1
             // object selectedItem = listView.SelectedItem;
         }
 
+        private void btnThemSP_Click(object sender, RoutedEventArgs e)
+        {
+            ThemSP_Window themSP_Window = new ThemSP_Window();
+            themSP_Window.Show();
+        }
     }
 }

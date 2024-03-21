@@ -33,13 +33,37 @@ namespace Do_an
 
         private void Image_Button(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image files|*.jpg;*.png";
-            openFileDialog.FilterIndex = 2;
+            //OpenFileDialog openFileDialog = new OpenFileDialog();
+            //openFileDialog.Filter = "Image files|*.jpg;*.png";
+            //openFileDialog.FilterIndex = 2;
+            //if (openFileDialog.ShowDialog() == true)
+            //{
+            //    imgDynamic.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+            //}
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
             if (openFileDialog.ShowDialog() == true)
             {
-                imgDynamic.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+                // Lấy đường dẫn file ảnh
+                string filePath = openFileDialog.FileName;
+
+                // Lấy tên file và phần mở rộng
+                string fileName = System.IO.Path.GetFileName(filePath);
+
+                // Lấy thư mục chứa ảnh
+                string directoryName = System.IO.Path.GetDirectoryName(filePath);
+
+                // Tạo đường dẫn ngắn gồm thư mục gần nhất, tên file và phần mở rộng
+                string shortenedPath = "/" + System.IO.Path.Combine(System.IO.Path.GetFileName(directoryName), fileName);
+                // Hiển thị ảnh lên giao diện
+                //MessageBox.Show(shortenedPath);
+                imgDynamic.Source = new BitmapImage(new Uri(filePath));
+
+
+                // Lưu trữ ảnh dưới dạng mảng byte
+                //byte[] hinhThe = (byte[])anh.Source;
             }
+        
         }
 
         void cbDanhMuc_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Do_an"
         mc:Ignorable="d"
-        Title="ThemSP_Window" Height="700" Width="1100" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="ThemSP_Window" Height="700" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
     <Window.Resources>
         <Style x:Key="FocusVisual">
@@ -117,62 +117,57 @@
     </Window.Resources>
     <Border BorderThickness="2" BorderBrush="#FFBD8AE6" >
         <Grid Background="White">
-            <ScrollViewer Margin="0,0,0,-2">
-                <Grid Width="1033" Height="863">
+            <Grid >
 
-                    <Grid Margin="280,80,0,0" HorizontalAlignment="Left" Width="194" Height="136" VerticalAlignment="Top">
+                    <Grid Margin="120,80,0,0" HorizontalAlignment="Left" Width="220" Height="220" VerticalAlignment="Top">
                         <Button Click="Image_Button">
                         </Button>
                         <Image x:Name="imgDynamic"/>
-                        <TextBlock Text="Hình ảnh sản phẩm" FontSize="19" FontWeight="Bold" FontFamily="Tahoma" HorizontalAlignment="Center" Width="194" Height="74" VerticalAlignment="Top" Margin="0,-36,0,0"/>
+                        <TextBlock Text="Hình ảnh sản phẩm" FontSize="19" FontWeight="Bold" FontFamily="Tahoma" HorizontalAlignment="Center" Width="202" Height="74" VerticalAlignment="Top" Margin="0,-36,0,0"/>
                     </Grid>
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 60 0 0">
+                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 50 0 0">
                         <TextBlock Text="Danh mục sản phẩm" FontSize="14" Grid.ColumnSpan="3"></TextBlock>
                         <ListBox Height="30" VerticalAlignment="Bottom" BorderThickness="0,0,0,2" BorderBrush="#FFA77ADD" Grid.ColumnSpan="3"></ListBox>
                         <ComboBox x:Name="cbDanhMuc" Height="30" VerticalAlignment="Bottom" BorderThickness="0,0,0,2" SelectionChanged="cbDanhMuc_SelectionChanged" Grid.ColumnSpan="3">
 
                         </ComboBox>
                     </Grid>
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 130,0,0">
-                        <TextBlock Text="Tên sản phẩm" FontSize="14" Margin="5,-7,0,7" HorizontalAlignment="Left" Width="300"></TextBlock>
+                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 120,0,0">
+                        <TextBlock Text="Tên sản phẩm" FontSize="14" Margin="0,-7,0,7" HorizontalAlignment="Left" Width="300"></TextBlock>
                         <TextBox x:Name="txtTenSP" BorderThickness="0,0,0,2" BorderBrush="#FFA77ADD" Margin="0,20,0,0"/>
                     </Grid>
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 200,0,0">
-                        <TextBlock Text="Hãng" FontSize="14"></TextBlock>
+                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 190,0,0">
+                        <TextBlock Text="Tên Shop" FontSize="14"></TextBlock>
                         <TextBox x:Name="txtHang" Height="30" VerticalAlignment="Bottom" BorderThickness="0,0,0,2" BorderBrush="#FFA77ADD"></TextBox>
                     </Grid>
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 270 0 0">
+                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 260 0 0">
                         <TextBlock Text="Tình trạng" FontSize="14"></TextBlock>
                         <TextBox x:Name="txtTinhTrang" Height="30" VerticalAlignment="Bottom" BorderThickness="0,0,0,2" BorderBrush="#FFA77ADD"></TextBox>
                     </Grid>
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 340 0 0">
+                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 330 0 0">
                         <TextBlock Text="Giá gốc" FontSize="14"></TextBlock>
                         <TextBox x:Name="txtGiaGoc" Height="30" VerticalAlignment="Bottom" BorderThickness="0,0,0,2" BorderBrush="#FFA77ADD"></TextBox>
                     </Grid>
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 410 0 0">
+                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 400 0 0">
                         <TextBlock Text="Giá bán" FontSize="14"></TextBlock>
                         <TextBox x:Name="txtGiaBan" Height="30" VerticalAlignment="Bottom" BorderThickness="0,0,0,2" BorderBrush="#FFA77ADD"></TextBox>
                     </Grid>
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 480 0 0">
+                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 470 0 0">
                         <TextBlock Text="Ngày mua" FontSize="14"></TextBlock>
                         <DatePicker x:Name="dtpNgayMua" Height="30" VerticalAlignment="Bottom" BorderThickness="0,0,0,2" BorderBrush="#FFA77ADD"></DatePicker>
                     </Grid>
+
                     <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 550 0 0">
-                        <TextBlock Text="Tiêu đề đăng bán" FontSize="14"></TextBlock>
-                        <TextBox x:Name="txtTieuDe" Height="30" VerticalAlignment="Bottom" BorderThickness="0,0,0,2" BorderBrush="#FFA77ADD"></TextBox>
-                    </Grid>
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 620 0 0">
                         <TextBlock Text="Mô tả chi tiết tình trạng sản phẩm" FontSize="14" Margin="0,0,0,-53"></TextBlock>
-                        <TextBox x:Name="txtMoTa" BorderThickness="0,0,0,2" BorderBrush="#FFA77ADD" Margin="0,20,0,-50" TextChanged="txtMoTa_TextChanged"/>
+                        <TextBox x:Name="txtMoTa" BorderThickness="0,0,0,2" BorderBrush="#FFA77ADD" Margin="0,020,0,-10" TextChanged="txtMoTa_TextChanged"/>
                     </Grid>
-                    <Button x:Name="btnThem" Style="{DynamicResource ButtonStyle2}" Margin="520,770,0,0" Background="#FFFCFCFC" HorizontalAlignment="Left" Width="100" Height="40" VerticalAlignment="Top">
+                    <Button x:Name="btnThem" Style="{DynamicResource ButtonStyle2}" Margin="420,640,0,0" Background="#FFFCFCFC" HorizontalAlignment="Left" Width="250" Height="40" VerticalAlignment="Top">
                         <TextBlock Text="Thêm" FontWeight="Bold" FontSize="14" Foreground="#FF030101"></TextBlock>
                     </Button>
-                    <Button x:Name="btnThoat" Style="{DynamicResource ButtonStyle1}" Margin="725,770,0,0" Click="btnThoat_Click" Background="White" HorizontalAlignment="Left" Width="100" Height="40" VerticalAlignment="Top" >
+                    <Button x:Name="btnThoat" Style="{DynamicResource ButtonStyle1}" Margin="0,10,10,0" Click="btnThoat_Click" Background="White" HorizontalAlignment="Right" Width="20" Height="20" VerticalAlignment="Top" >
                         <TextBlock Text="Thoát" FontSize="14" FontWeight="Bold"></TextBlock>
                     </Button>
                 </Grid>
-            </ScrollViewer>
         </Grid>
     </Border>
 </Window>
