@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Do_an.Class;
 
 namespace Do_an
 {
@@ -57,6 +58,26 @@ namespace Do_an
             thanhToan_Window.hinhanh.Source = HinhAnh.Source;
             thanhToan_Window.Show();
             this.Hide();
+        }
+
+        private void btnThemGioHang_Click(object sender, RoutedEventArgs e)
+        {
+            string query = "insert into GioHang values (@MaSP,@TenSP,@TenShop,@GiaGoc,@GiaHTai,@NgayMua,@TinhTrang,@MoTa,@HinhAnh,@DanhMucSP)";
+
+            SanPham_DAO sanPham_DAO = new SanPham_DAO();
+            SanPham sanPham = new SanPham();
+            sanPham.MaSP=MaSP.Text;
+            sanPham.TenSP=TenSP.Text;
+            sanPham.TenShop=TenShop.Text;
+            sanPham.GiaGoc=float.Parse(GiaGoc.Text);
+            sanPham.GiaHTai=float.Parse(GiaBan.Text);
+            sanPham.NgayMua = NgayMua.Text;
+            sanPham.MoTa = MoTa.Text;
+            sanPham.TinhTrang=TinhTrang.Text;
+            sanPham.HinhAnh = HinhAnh.Source.ToString();
+            sanPham.DanhMucSP = "null";
+            sanPham_DAO.them(sanPham, query);
+            MessageBox.Show("Sản phẩm đã được thêm vào giỏ hàng");
         }
     }
 }

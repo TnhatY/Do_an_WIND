@@ -497,11 +497,11 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background5}"/>
+                                <Setter Property="Background" TargetName="border" Value="#40DE65"/>
                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border5}"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background5}"/>
+                                <Setter Property="Background" TargetName="border" Value="#30B04E"/>
                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border5}"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
@@ -522,12 +522,27 @@
                 Background="#FFE0CDED"
                 Height="100"
                 VerticalAlignment="Top" >
+                <Grid>
                 <Button x:Name="btnThemSP" Style="{DynamicResource ButtonStyle2}" Background="#FF29C417" Width="170" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,50,0" Click="btnThemSP_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/image/add2.png" Width="29" Margin="0,0,10,0"></Image>
                         <TextBlock Text="Thêm sản phẩm" VerticalAlignment="Center" FontSize="14" FontWeight="Bold"></TextBlock>
                     </StackPanel>
                 </Button>
+                <Grid Width="320" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="100 0 0 0">
+                       
+                    <TextBlock Text="Tìm kiếm theo danh mục" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" ></TextBlock>
+                    <ComboBox x:Name="cbDanhMuc" HorizontalAlignment="Right" Height="25" Width="150" VerticalAlignment="Center" BorderThickness="0,0,0,2"  Grid.ColumnSpan="3" ItemsSource="{Binding MyDataSource}" SelectionChanged="cbDanhMuc_SelectionChanged">
+                            <ComboBox.Background>
+                                <LinearGradientBrush EndPoint="0,1">
+                                    <GradientStop Color="#FFF0F0F0"/>
+                                    <GradientStop Color="#FFFCFAFA" Offset="1"/>
+                                </LinearGradientBrush>
+                            </ComboBox.Background>
+
+                        </ComboBox>
+                </Grid>
+                </Grid>
             </Border>
 
             <Border Background="#FFE0CDED"

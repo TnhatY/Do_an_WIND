@@ -40,9 +40,6 @@
     <Compile Update="UC_SanPham.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UC_SanPham2.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="UC_SpGioHang.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -88,9 +85,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_SanPham.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="UC_SanPham2.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_SpGioHang.xaml">

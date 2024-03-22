@@ -36,14 +36,15 @@ namespace Do_an
             foreach (DataRow row in dt.Rows)
             {
                 string hoten = row["HoTen"].ToString();
-                string ngaysinh = row["NgaySinh"].ToString();
+                DateTime ngaySinh = (DateTime)row["NgaySinh"];
+                string ngayThangNam = ngaySinh.ToShortDateString();
                 string gioitinh = row["GioiTinh"].ToString();
                 string sodt = row["SoDT"].ToString();
                 string email = row["Email"].ToString();
                 string taikhoan = row["TaiKhoan"].ToString();
                 string matkhau = row["MatKhau"].ToString();
                 string diachi = row["DiaChi"].ToString();
-                list.Add(new NguoiDung(hoten, ngaysinh, gioitinh, sodt, email, taikhoan, matkhau, diachi));
+                list.Add(new NguoiDung(hoten, ngayThangNam, gioitinh, sodt, email, taikhoan, matkhau, diachi));
             }
             hoten.Text= list[0].hoten;
             ngaysinh.Text= list[0].ngaysinh;

@@ -209,7 +209,7 @@
     </UserControl.Resources>
     <Border>
         <Grid>
-            <Border Background="White"
+            <Border Background="#FFE0CDED"
 
  Margin="0,10,0,0"
  CornerRadius="20,20,20,20" BorderThickness="0,2,0,0">
@@ -220,7 +220,7 @@
 
                                 <GridViewColumn Header="Sản phẩm" Width="340" DisplayMemberBinding="{Binding TenSP}"/>
                                 <GridViewColumn Header="Shop" Width="230" DisplayMemberBinding="{Binding Gia}"/>
-                                <GridViewColumn Header="Đơn giá" Width="250" DisplayMemberBinding="{Binding MaSP}"/>
+                                <GridViewColumn Header="Tình trạng" Width="250" DisplayMemberBinding="{Binding MaSP}"/>
                                 <GridViewColumn Header="Số tiền" Width="200" DisplayMemberBinding="{Binding MaSP}"/>
                             </GridView>
                         </ListView.View>

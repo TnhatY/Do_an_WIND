@@ -53,18 +53,19 @@ namespace WpfApp1
             {
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand("SELECT * FROM SanPham", conn))
+                using (SqlCommand command = new SqlCommand("SELECT * FROM GioHang", conn))
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         UC_SpGioHang sp = new UC_SpGioHang();
 
-                        sp.lblTenSP.Content = reader["TenSP"].ToString();
-                        sp.lblTenShop.Content = reader["TenShop"].ToString();
-                        sp.lblGiaGoc.Content = reader["GiaGoc"].ToString();
-                        sp.lblGiaHTai.Content = reader["GiaHTai"].ToString();
-                        sp.lblTienThanhToan.Content = reader["GiaHTai"].ToString();
+                        sp.lblTenSP.Text = reader["TenSP"].ToString();
+                        sp.lblTenShop.Text = reader["TenShop"].ToString();
+                        sp.lblGiaGoc.Text = reader["GiaGoc"].ToString();
+                        sp.lblGiaHTai.Text = reader["GiaHTai"].ToString();
+                        sp.tinhtrang.Text = reader["TinhTrang"].ToString();
+                        sp.mota.Text = reader["MoTa"].ToString();
                         BitmapImage bitmap = new BitmapImage();
                         bitmap.BeginInit();
                         bitmap.UriSource = new Uri(reader["HinhAnh"].ToString(), UriKind.RelativeOrAbsolute); // Thay đổi path_to_your_image.jpg thành đường dẫn của ảnh của bạn

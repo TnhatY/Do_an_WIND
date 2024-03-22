@@ -117,7 +117,6 @@ D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windo
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_gioHang.g.cs
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_MuaSam.g.cs
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_SanPham.g.cs
-D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_SanPham2.g.cs
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_SpGioHang.g.cs
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_ThemSanPham.g.cs
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_ThongKe.g.cs
@@ -200,7 +199,6 @@ D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windo
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_gioHang.baml
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_MuaSam.baml
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_SanPham.baml
-D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_SanPham2.baml
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_SpGioHang.baml
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_ThemSanPham.baml
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_ThongKe.baml

@@ -36,11 +36,11 @@ namespace WpfApp1
             thongTin.TenShop.Text =tenshop.Text;
             thongTin.GiaGoc.Text = giagoc.Text;
             thongTin.GiaBan.Text = giaBan.Text;
-            //thongTin.NgayMua.Text = ngaymua.Text;
+            thongTin.NgayMua.Text = ngaymua.Text;
             thongTin.TinhTrang.Text = tinhtrang.Text;
             thongTin.MoTa.Text = mota.Text;
             thongTin.HinhAnh.Source = hinhanh.Source;
-            //thongTin.btnThemGioHang.Visibility = Visibility.Hidden;
+            //MessageBox.Show(ngaymua.Text);
             thongTin.ShowDialog(); 
         }
     }

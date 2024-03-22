@@ -37,7 +37,7 @@ namespace WpfApp1
 
         private void btnTrangChu_Click(object sender, RoutedEventArgs e)
         {
-            btnBanHang.BorderThickness = new Thickness(0);
+            //btnBanHang.BorderThickness = new Thickness(0);
             btnDaMua.BorderThickness = new Thickness(0);
             btnTrangChu.BorderThickness = new Thickness(2,0,0,2);
             btnGioHang.BorderThickness = new Thickness(0); 
@@ -46,7 +46,7 @@ namespace WpfApp1
 
             btnGioHang.Background = null;
             btnDaMua.Background = null;
-            btnBanHang.Background = null;
+            //btnBanHang.Background = null;
             BitmapImage bitmap = new BitmapImage();
             bitmap.BeginInit();
             bitmap.UriSource = new Uri("/image/trangchu1.png", UriKind.RelativeOrAbsolute);
@@ -79,10 +79,10 @@ namespace WpfApp1
             btnDaMua.BorderThickness = new Thickness(2,0,0,2);
             btnTrangChu.BorderThickness = new Thickness(0);
             btnGioHang.BorderThickness = new Thickness(0);
-            btnBanHang.BorderThickness = new Thickness(0);
+            //btnBanHang.BorderThickness = new Thickness(0);
             btnThongKe.BorderThickness = new Thickness(0);
             
-            btnBanHang.Background = null;
+            //btnBanHang.Background = null;
             btnTrangChu.Background = null;
             btnGioHang.Background = null;
             btnDaMua.Background = new SolidColorBrush(Color.FromRgb(136, 0, 204));
@@ -104,7 +104,7 @@ namespace WpfApp1
             btnDaMua.BorderThickness = new Thickness(0);
             btnTrangChu.BorderThickness = new Thickness(0);
             btnGioHang.BorderThickness = new Thickness(2, 0, 0, 2);
-            btnBanHang.BorderThickness = new Thickness(0);
+           // btnBanHang.BorderThickness = new Thickness(0);
             btnThongKe.BorderThickness = new Thickness(0);
 
 
@@ -116,7 +116,7 @@ namespace WpfApp1
             btnGioHang.Background = new SolidColorBrush(Color.FromRgb(136, 0, 204));
             btnDaMua.Background = null;
             btnTrangChu.Background = null;
-            btnBanHang.Background= null;
+           // btnBanHang.Background= null;
             btnCaiDat.Background = null;
             btnCaiDat.BorderThickness = new Thickness(0);
             btnThongKe.Background = null;
@@ -125,7 +125,7 @@ namespace WpfApp1
 
         private void btnBanHang_Click(object sender, RoutedEventArgs e)
         {
-            btnBanHang.BorderThickness= new Thickness(2,0,0,2);
+           // btnBanHang.BorderThickness= new Thickness(2,0,0,2);
             btnDaMua.BorderThickness = new Thickness(0);
             btnTrangChu.BorderThickness = new Thickness(0);
             btnGioHang.BorderThickness = new Thickness(0);
@@ -136,7 +136,7 @@ namespace WpfApp1
             bitmap.UriSource = new Uri("/image/banhang.png", UriKind.RelativeOrAbsolute); // Thay đổi path_to_your_image.jpg thành đường dẫn của ảnh của bạn
             bitmap.EndInit();
             imageTittle.Source = bitmap;
-            btnBanHang.Background = new SolidColorBrush(Color.FromRgb(136, 0, 204));
+           // btnBanHang.Background = new SolidColorBrush(Color.FromRgb(136, 0, 204));
             btnDaMua.Background = null;
             btnTrangChu.Background = null;
             btnGioHang.Background= null;
@@ -157,7 +157,7 @@ namespace WpfApp1
             UC_CaiDat uC_CaiDat = new UC_CaiDat();
             user.Content = uC_CaiDat;
 
-            btnBanHang.BorderThickness = new Thickness(0);
+           // btnBanHang.BorderThickness = new Thickness(0);
             btnDaMua.BorderThickness = new Thickness(0);
             btnTrangChu.BorderThickness = new Thickness(0);
             btnGioHang.BorderThickness = new Thickness(0);
@@ -168,7 +168,7 @@ namespace WpfApp1
             bitmap.UriSource = new Uri("/image/caidat3.png", UriKind.RelativeOrAbsolute); // Thay đổi path_to_your_image.jpg thành đường dẫn của ảnh của bạn
             bitmap.EndInit();
             imageTittle.Source = bitmap;
-            btnBanHang.Background = null;
+            //btnBanHang.Background = null;
             btnDaMua.Background = null;
             btnTrangChu.Background = null;
             btnGioHang.Background = null;
@@ -182,7 +182,7 @@ namespace WpfApp1
         {
             UC_ThongKe uC_ThongKe = new UC_ThongKe();
            // Usercontrol.Content=uC_ThongKe;
-            btnBanHang.BorderThickness = new Thickness(0);
+           // btnBanHang.BorderThickness = new Thickness(0);
             btnDaMua.BorderThickness = new Thickness(0);
             btnTrangChu.BorderThickness = new Thickness(0);
             btnGioHang.BorderThickness = new Thickness(0);
@@ -193,7 +193,7 @@ namespace WpfApp1
             bitmap.UriSource = new Uri("/image/h_thongke.png", UriKind.RelativeOrAbsolute); // Thay đổi path_to_your_image.jpg thành đường dẫn của ảnh của bạn
             bitmap.EndInit();
             imageTittle.Source = bitmap;
-            btnBanHang.Background = null;
+           // btnBanHang.Background = null;
             btnDaMua.Background = null;
             btnTrangChu.Background = null;
             btnGioHang.Background = null;

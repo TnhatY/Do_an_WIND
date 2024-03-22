@@ -31,15 +31,20 @@ namespace WpfApp1
     {
         
         Database data = new Database();
+        SanPham_DAO sanPham_DAO = new SanPham_DAO();
+
         public UC_MuaSam()
         {
             InitializeComponent();
             DataContext = this;
-            SanPham_DAO sanPham_DAO = new SanPham_DAO();
-            thongtin.ItemsSource = sanPham_DAO.Getlist();
+            string sql = "Select * from SanPham";
+            thongtin.ItemsSource = sanPham_DAO.Getlist(sql);
+            List<string> DanhMuc = new List<string> { "Điện thoại", "Đồ gia dụng", "Xe cộ", "Đồ điện tử", "Đồ dùng", "Thời trang" ,"Không"};
+            cbDanhMuc.ItemsSource = DanhMuc;
+            //cbDanhMuc.SelectionChanged += cbDanhMuc_SelectionChanged;
         }
 
-       
+
         private void btnMua_Click(object sender, RoutedEventArgs e)
         {
 
@@ -57,6 +62,25 @@ namespace WpfApp1
         {
             ThemSP_Window themSP_Window = new ThemSP_Window();
             themSP_Window.Show();
+        }
+
+        private void cbDanhMuc_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Database database = new Database
+            string query = "";
+
+            string danhmuc = cbDanhMuc.SelectedItem.ToString();
+            if (danhmuc == "Không")
+            {
+                query = "select * from SanPham";
+            }
+            else
+            {
+                query = "select * from SanPham where DanhMucSP like N'%" + danhmuc + "%'";
+
+            }
+            // database.getAllData(query);
+            thongtin.ItemsSource = sanPham_DAO.Getlist(query);
         }
     }
 }

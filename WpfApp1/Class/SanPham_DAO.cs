@@ -13,11 +13,10 @@ namespace Do_an.Class
 {
     internal class SanPham_DAO
     {
-        public List<SanPham> Getlist() 
+        public List<SanPham> Getlist(string sql) 
         {
             List<SanPham> sanPhams = new List<SanPham>();
             Database database = new Database();
-            string sql = "Select * from SanPham";
 
             DataTable dt = database.getAllData(sql);
             foreach (DataRow row in dt.Rows)
@@ -36,13 +35,12 @@ namespace Do_an.Class
             }
             return sanPhams; 
         }
-        public void them(SanPham sp)
+        public void them(SanPham sp,string query)
         {
             try {
                 Database database = new Database();
                 SqlCommand cmd;
                 SqlConnection sqlConnection = database.getConnection();
-                string query = "insert into SanPham values (@MaSP,@TenSP,@TenShop,@GiaGoc,@GiaHTai,@NgayMua,@TinhTrang,@MoTa,@HinhAnh,@DanhMucSP)";
                 using (SqlConnection connection = new SqlConnection(database.conStr))
                 {
                     connection.Open();

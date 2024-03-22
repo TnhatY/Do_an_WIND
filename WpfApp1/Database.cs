@@ -14,7 +14,7 @@ namespace Do_an
     {
         public static SqlDataAdapter adapter;
         public static SqlCommand cmd;
-        public string conStr = @"Data Source=DESKTOP-6QRUFE5\MSSQLSERVER01;Initial Catalog=QLMUABAN;Integrated Security=True";
+        public string conStr = @"Data Source=SOAZ\SQLEXPRESS;Initial Catalog=QLMUABAN;Integrated Security=True";
         public SqlConnection getConnection()
         {
             return new SqlConnection(conStr);

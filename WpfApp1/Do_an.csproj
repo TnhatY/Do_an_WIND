@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="HinhAnhSP\ghevanphong.jpg" />
     <None Remove="HinhAnhSP\iphone11.png" />
     <None Remove="HinhAnhSP\iphone5.jpg" />
     <None Remove="image\add.png" />
@@ -80,6 +81,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="HinhAnhSP\ghevanphong.jpg" />
     <Resource Include="HinhAnhSP\iphone11.png" />
     <Resource Include="HinhAnhSP\iphone5.jpg" />
     <Resource Include="image\add.png" />

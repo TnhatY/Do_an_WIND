@@ -25,9 +25,20 @@ namespace Do_an
             InitializeComponent();
         }
 
-        private void btnHienThiChiTietSp_Click(object sender, RoutedEventArgs e)
+       
+        private void btnHienThiThonTin_Click(object sender, RoutedEventArgs e)
         {
+            ThongTin_Window thongTin_Window = new ThongTin_Window();
+            thongTin_Window.TenSP.Text = lblTenSP.Text;
+            thongTin_Window.TenShop.Text = lblTenShop.Text;
+            thongTin_Window.GiaBan.Text = lblGiaHTai.Text;
+            thongTin_Window.GiaGoc.Text = lblGiaGoc.Text;
+            thongTin_Window.MoTa.Text = mota.Text;
+            thongTin_Window.TinhTrang.Text = tinhtrang.Text;
+            thongTin_Window.HinhAnh.Source = hinhanh.Source;
+            thongTin_Window.btnThemGioHang.Visibility = Visibility.Hidden;
 
+            thongTin_Window.ShowDialog();
         }
     }
 }
