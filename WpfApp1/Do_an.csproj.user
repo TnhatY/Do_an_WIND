@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="DanhGiaSp_Window.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="F_Main.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +34,12 @@
     <Compile Update="UC_DaMua.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UC_DanhGia.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC_DanhGiaSP.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UC_gioHang.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -51,6 +60,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="DanhGiaSp_Window.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="F_Main.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -76,6 +88,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_DaMua.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_DanhGia.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_DanhGiaSP.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_gioHang.xaml">

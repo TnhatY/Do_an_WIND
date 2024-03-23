@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace Do_an
 {
     /// <summary>
     /// Interaction logic for UC_SanPham.xaml

@@ -16,7 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 
-namespace WpfApp1
+namespace Do_an
 {
     public partial class UC_gioHang : UserControl
     {

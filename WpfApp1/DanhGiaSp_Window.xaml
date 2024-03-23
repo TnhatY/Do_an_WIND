@@ -1,0 +1,50 @@
+﻿<Window x:Class="Do_an.DanhGiaSp_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Do_an"
+        mc:Ignorable="d"
+        Title="DanhGiaSp_Window" Height="350" Width="400">
+    <Window.Resources>
+        <Style x:Key="StarToggleButtonStyle" TargetType="ToggleButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <TextBlock Text="{TemplateBinding Content}" FontSize="20"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Foreground" Value="Gold"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Foreground" Value="Gray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Button Width="40" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,5,0,0"></Button>
+        <Button Width="40" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,20,0">
+            <TextBlock Text="Gửi"></TextBlock>
+        </Button>
+        <TextBlock Text="Đánh giá sản phẩm" HorizontalAlignment="Center" Margin="10" Height="20" VerticalAlignment="Top"></TextBlock>
+        <StackPanel Orientation="Horizontal" Margin="10,40,10,10" Background="#FFF9F9F9">
+            <TextBlock Text="Chất lượng sản phẩm" Margin="10,5,10,0"></TextBlock>
+            <ToggleButton x:Name="star1" Content="☆"  Style="{StaticResource StarToggleButtonStyle}" Click="Star_Click"/>
+            <ToggleButton x:Name="star2" Content="☆" Style="{StaticResource StarToggleButtonStyle}" Click="Star_Click"/>
+            <ToggleButton x:Name="star3" Content="☆" Style="{StaticResource StarToggleButtonStyle}" Click="Star_Click"/>
+            <ToggleButton x:Name="star4" Content="☆" Style="{StaticResource StarToggleButtonStyle}" Click="Star_Click"/>
+            <ToggleButton x:Name="star5" Content="☆" Style="{StaticResource StarToggleButtonStyle}" Click="Star_Click"/>
+        </StackPanel>
+        <TextBlock Text="Nhận xét: " Height="20" VerticalAlignment="Top" Margin="20,80,0,0"></TextBlock>
+        <TextBox x:Name="nhanxet" Height="50" Margin="20,-80,20,0"></TextBox>
+        <TextBlock x:Name="ratingText" Text="Rating: " Margin="200"/>
+        <Button x:Name="nx1" Width="100" Height="20" Content="Sản phẩm tốt" Click="nhanXet_Click"></Button>
+        <Button x:Name="nx2" Width="100" Height="20" Content="Sản phẩm chất lượng" Margin="0,0,260,0" Click="nhanXet_Click"></Button>
+        <Button x:Name="nx3" Width="100" Height="20" Content="Shop uy tín" Margin="260,0,0,0" Click="nhanXet_Click"></Button>
+
+    </Grid>
+</Window>

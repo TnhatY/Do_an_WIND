@@ -55,7 +55,9 @@ namespace Do_an
         private void btnMua_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Đơn hàng đã được đặt");
-            Close();
+            DanhGiaSp_Window danhGiaSp_Window =new DanhGiaSp_Window();
+            danhGiaSp_Window.ShowDialog();
+            this.Hide();
         }
     }
 }

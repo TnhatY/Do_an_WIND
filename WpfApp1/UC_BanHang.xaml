@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WpfApp1"
-             xmlns:Do_an="clr-namespace:Do_an" x:Class="WpfApp1.UC_BanHang"
+             xmlns:local="clr-namespace:Do_an"
+             xmlns:Do_an="clr-namespace:Do_an" x:Class="Do_an.UC_BanHang"
              mc:Ignorable="d" 
              d:DesignHeight="750" d:DesignWidth="1000">
     <UserControl.Resources>

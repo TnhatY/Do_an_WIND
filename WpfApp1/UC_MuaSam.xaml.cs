@@ -3,6 +3,7 @@ using Do_an.Class;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Data.SqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
@@ -22,7 +23,7 @@ using System.Xml.Linq;
 using static MaterialDesignThemes.Wpf.Theme;
 using static MaterialDesignThemes.Wpf.Theme.ToolBar;
 
-namespace WpfApp1
+namespace Do_an
 {
     /// <summary>
     /// Interaction logic for UC_MuaSam.xaml
@@ -40,7 +41,7 @@ namespace WpfApp1
             string sql = "Select * from SanPham";
             thongtin.ItemsSource = sanPham_DAO.Getlist(sql);
             List<string> DanhMuc = new List<string> { "Điện thoại", "Đồ gia dụng", "Xe cộ", "Đồ điện tử", "Đồ dùng", "Thời trang" ,"Không"};
-            cbDanhMuc.ItemsSource = DanhMuc;
+            //cbDanhMuc.ItemsSource = DanhMuc;
             //cbDanhMuc.SelectionChanged += cbDanhMuc_SelectionChanged;
         }
 
@@ -67,18 +68,20 @@ namespace WpfApp1
         private void cbDanhMuc_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // Database database = new Database
-            string query = "";
+           
+        }
 
-            string danhmuc = cbDanhMuc.SelectedItem.ToString();
-            if (danhmuc == "Không")
-            {
-                query = "select * from SanPham";
-            }
-            else
-            {
-                query = "select * from SanPham where DanhMucSP like N'%" + danhmuc + "%'";
+        private void SpDienThoai_Click(object sender, RoutedEventArgs e)
+        {
+            //string danhmuc = cbDanhMuc.SelectedItem.ToString();
+                string query = "select * from SanPham where DanhMucSP like N'%"+ "Điện thoại" + "%'";
+            // database.getAllData(query);
+            thongtin.ItemsSource = sanPham_DAO.Getlist(query);
+        }
 
-            }
+        private void SpDoDung_Click(object sender, RoutedEventArgs e)
+        {
+            string query = "select * from SanPham where DanhMucSP like N'%" + "Đồ dùng" + "%'";
             // database.getAllData(query);
             thongtin.ItemsSource = sanPham_DAO.Getlist(query);
         }

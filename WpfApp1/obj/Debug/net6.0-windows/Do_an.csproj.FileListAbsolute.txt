@@ -318,3 +318,9 @@ C:\Winform\Do_an_WIND-anh\WpfApp1\obj\Debug\net6.0-windows\refint\Do_an.dll
 C:\Winform\Do_an_WIND-anh\WpfApp1\obj\Debug\net6.0-windows\Do_an.pdb
 C:\Winform\Do_an_WIND-anh\WpfApp1\obj\Debug\net6.0-windows\Do_an.genruntimeconfig.cache
 C:\Winform\Do_an_WIND-anh\WpfApp1\obj\Debug\net6.0-windows\ref\Do_an.dll
+D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_DanhGia.g.cs
+D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_DanhGia.baml
+D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_DanhGiaSP.g.cs
+D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_DanhGiaSP.baml
+D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\DanhGiaSp_Window.g.cs
+D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\DanhGiaSp_Window.baml
