@@ -697,7 +697,7 @@
                 HorizontalAlignment="Left"
                 Margin="25,45,0,3" Foreground="#FFA54AD3">
             </TextBlock>
-            <TextBox Style="{DynamicResource TextBoxStyle2}" x:Name="txtDangNhap" Width="200" BorderBrush="#FFDBBCFF" FontSize="14" BorderThickness="0,0,0,2"  Background="{x:Null}">
+            <TextBox Style="{DynamicResource TextBoxStyle2}" TabIndex="1" x:Name="txtDangNhap" Width="200" BorderBrush="#FFDBBCFF" FontSize="14" BorderThickness="0,0,0,2"  Background="{x:Null}">
             </TextBox>
             <Grid Height="60" Margin="25,0,25,0">
                 <TextBlock Text="Mật khẩu"
@@ -708,7 +708,7 @@
                 </TextBlock>
                 <!--Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked"-->
                 <TextBox Style="{DynamicResource TextBoxStyle3}" x:Name="passwordTextBox" Width="200" Height="22" BorderThickness="0,0,0,2" BorderBrush="#FFDBBCFF" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="14"></TextBox>
-                <PasswordBox Style="{DynamicResource PasswordBoxStyle2}" x:Name="passwordBox" Width="200" Height="22" BorderThickness="0,0,0,2" BorderBrush="#FFDBBCFF" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="14"></PasswordBox>
+                <PasswordBox Style="{DynamicResource PasswordBoxStyle2}" TabIndex="2" x:Name="passwordBox" Width="200" Height="22" BorderThickness="0,0,0,2" BorderBrush="#FFDBBCFF" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="14"></PasswordBox>
                 <ToggleButton Style="{DynamicResource ToggleButtonStyle2}" x:Name="showPassword" 
                               BorderBrush="#FFDBBCFF" Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" 
                               Background="White" BorderThickness="0" VerticalAlignment="Bottom" Width="20" Height="20" HorizontalAlignment="Right"
@@ -717,7 +717,7 @@
                 </ToggleButton>
             </Grid>
 
-            <Button x:Name="btnDangNhap" Style="{DynamicResource btnDangnhap}" Width="180"
+            <Button x:Name="DangNhap" Style="{DynamicResource btnDangnhap}" Width="180"
                     Height="30"
                     Margin="0,25,0,0" Background="#FF8C68EE" Click="Button_Click_1">
                 <TextBlock Text="Đăng nhập" FontWeight="DemiBold" Foreground="#FFEDE3E3"></TextBlock>

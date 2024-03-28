@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -39,6 +40,38 @@ namespace Do_an
             thongTin_Window.btnThemGioHang.Visibility = Visibility.Hidden;
 
             thongTin_Window.ShowDialog();
+        }
+
+        private void Thoat_Click(object sender, RoutedEventArgs e)
+        {
+            //btnHienThiThonTin.Visibility = Visibility.Hidden;
+        }
+        public static bool check = false;
+        public static List<string> listmasp= new List<string>();
+           
+        private void Thoat_Checked(object sender, RoutedEventArgs e)
+        {
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri("/image/check.png", UriKind.Relative);
+            bitmap.EndInit();
+            imagecheck.Source = bitmap;
+            listmasp.Add(masp.Text);
+            check = true;
+        }
+
+        private void Thoat_Unchecked(object sender, RoutedEventArgs e)
+        {
+            imagecheck.Source = null;
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            var fadeInStoryboard = FindResource("FadeInStoryboard") as Storyboard;
+            if (fadeInStoryboard != null)
+            {
+                BeginStoryboard(fadeInStoryboard);
+            }
         }
     }
 }

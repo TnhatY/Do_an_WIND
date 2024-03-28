@@ -1,20 +1,8 @@
-﻿using System.Data.SqlClient;
+﻿using Do_an.Class;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Do_an.Class;
-using System.Security.Cryptography.Pkcs;
 
 namespace Do_an
 {
@@ -57,19 +45,30 @@ namespace Do_an
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            UC_DanhGia uC_DanhGia = new UC_DanhGia();
-            //uC_DanhGia.danhgia.Text = "Giao hàng nhanh, đóng gói cẩn thận. Nhận hàng thấy ưng ý, Chất liệu mềm mại. Sẽ tiếp tục ủng hộ shop";
-            danhgia dg = new danhgia("Đình Bảo", "21/3/2023", "Giao hàng nhanh, đóng gói cẩn thận",4);
-            danhgia dg2 = new danhgia("Đình Bảo", "21/3/2023", "Giao hàng nhanh, đóng gói cẩn thận",3);
-            danhgia dg3 = new danhgia("Đình Bảo", "21/3/2023", "Giao hàng nhanh, đóng gói cẩn thận",5);
-            danhgia dg4 = new danhgia("Đình Bảo", "21/3/2023", "Giao hàng nhanh, đóng gói cẩn thận", 4);
-            danhgia dg5 = new danhgia("Đình Bảo", "21/3/2023", "Giao hàng nhanh, đóng gói cẩn thận", 4);
-            listdg.Add(dg);
-            listdg.Add(dg2);
-            listdg.Add(dg3);
-            listdg.Add(dg4);
-            listdg.Add(dg5);
-            thongtin.ItemsSource= listdg;
+            string sql = $"select * from DanhGia_SP where MaSP='{MaSP.Text}'";
+            //MessageBox.Show(MaSP.Text);
+            Database database = new Database();
+            DataTable dt = database.getAllData(sql);
+            if (dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    string ten = row["TenNgDG"].ToString();
+                    int soSao =int.Parse(row["SoSao"].ToString());
+                    DateTime ngay = (DateTime)row["NgayDG"];
+                    string ngaydg = ngay.ToShortDateString();
+                    string danhgias = row["DanhGia"].ToString();
+                  
+                    listdg.Add(new danhgia(ten, ngaydg, danhgias, soSao));
+                }
+                thongtin.ItemsSource = listdg;
+            }
+            else
+            {
+                chuDG.Text = "Chưa có đánh giá nào!";
+               // thongtin.ItemsSource = null; 
+            }
+
         }
 
         private void btnThoat_Click_1(object sender, RoutedEventArgs e)
@@ -91,22 +90,9 @@ namespace Do_an
 
         private void btnThemGioHang_Click(object sender, RoutedEventArgs e)
         {
-            string query = "insert into GioHang values (@MaSP,@TenSP,@TenShop,@GiaGoc,@GiaHTai,@NgayMua,@TinhTrang,@MoTa,@HinhAnh,@DanhMucSP)";
-
             SanPham_DAO sanPham_DAO = new SanPham_DAO();
-            SanPham sanPham = new SanPham();
-            sanPham.MaSP=MaSP.Text;
-            sanPham.TenSP=TenSP.Text;
-            sanPham.TenShop=TenShop.Text;
-            sanPham.GiaGoc=float.Parse(GiaGoc.Text);
-            sanPham.GiaHTai=float.Parse(GiaBan.Text);
-            sanPham.NgayMua = NgayMua.Text;
-            sanPham.MoTa = MoTa.Text;
-            sanPham.TinhTrang=TinhTrang.Text;
-            sanPham.HinhAnh = HinhAnh.Source.ToString();
-            sanPham.DanhMucSP = "null";
-            sanPham_DAO.them(sanPham, query);
-            MessageBox.Show("Sản phẩm đã được thêm vào giỏ hàng");
+            sanPham_DAO.themGioHang(MaSP.Text,PhanQuyen.taikhoan);
+            Close();
         }
     }
 }

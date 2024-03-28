@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="F_Main" Height="750" Width="1230" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded">
     <Window.Resources>
+        <Storyboard x:Key="FadeInStoryboard">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:1"/>
+        </Storyboard>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
@@ -282,6 +285,61 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="FocusVisual5">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background5" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border5" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background5" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border5" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background5" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border5" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background5" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border5" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground5" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle6" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual5}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background5}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border5}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="20" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background5}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border5}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background5}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border5}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background5}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border5}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground5}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Border Background="#FFE0CDED" >
         <Grid >
@@ -303,7 +361,7 @@
                         <Button Style="{DynamicResource ButtonStyle3}" x:Name="btnDaMua" Margin="0,10,0,0" Height="40" Width="130" Background="Transparent" Click="btnDaMua_Click" BorderBrush="#FFFCFBFB" BorderThickness="0,0,0,0" >
                             <Grid Width="150">
                                 <Image Source="/image/order.png" Margin="10,0,0,0" HorizontalAlignment="Left" Width="22"></Image>
-                                <TextBlock Text="Đã Mua" Padding="0,0,55,0" VerticalAlignment="Center" HorizontalAlignment="Right"  FontSize="14" FontWeight="Bold" Foreground="#FFDDDDDD" ></TextBlock>
+                                <TextBlock Text="Đơn Hàng" Padding="0,0,40,0" VerticalAlignment="Center" HorizontalAlignment="Right"  FontSize="14" FontWeight="Bold" Foreground="#FFDDDDDD" ></TextBlock>
                             </Grid>
                         </Button>
                         <Button Style="{DynamicResource ButtonStyle3}" x:Name="btnGioHang"  Height="40" Width="130" Margin="0,10,0,0" Background="Transparent" BorderThickness="0,0,0,0" Click="btnGioHang_Click" BorderBrush="#FFFCF8F8">
@@ -312,10 +370,10 @@
                                 <TextBlock Text="Giỏ Hàng" Padding="0,0,45,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold" Foreground="#FFDDDDDD" ></TextBlock>
                             </Grid>
                         </Button>
-                        <Button x:Name="btnThongKe"  Style="{DynamicResource ButtonStyle3}"  Height="40" Width="130" Margin="0,10,0,0" Background="Transparent" BorderThickness="0,0,0,0" BorderBrush="#FFFCF8F8" Click="btnThongKe_Click" >
+                        <Button x:Name="btnBanHang"  Style="{DynamicResource ButtonStyle3}"  Height="40" Width="130" Margin="0,10,0,0" Background="Transparent" BorderThickness="0,0,0,0" BorderBrush="#FFFCF8F8" Click="btnBanHang_Click" >
                             <Grid Width="150">
-                                <Image Source="/image/thongke.png" Margin="10,0,0,0" HorizontalAlignment="Left" Width="22"></Image>
-                                <TextBlock Text="Thống Kê" Padding="0,0,45,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold" Foreground="#FFDDDDDD" ></TextBlock>
+                                <Image Source="/image/market2.png" Margin="10,0,0,0" HorizontalAlignment="Left" Width="22"></Image>
+                                <TextBlock Text="Bán Hàng" Padding="0,0,45,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold" Foreground="#FFDDDDDD" ></TextBlock>
                             </Grid>
                         </Button>
                         <Button x:Name="btnCaiDat"  Style="{DynamicResource ButtonStyle3}"  Height="40" Width="130" Margin="0,10,0,0" Background="Transparent" BorderThickness="0,0,0,0" BorderBrush="#FFFCF8F8" Click="btnCaiDat_Click" >
@@ -376,7 +434,10 @@
                                    Margin="10,0,0,0" BorderThickness="0,0,0,0" BorderBrush="Black" FontSize="16" FontWeight="Bold" Background="{x:Null}">
 
                                 </TextBox>
-                                <Image Source="/image/search.png" Width="25" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                                <Button Style="{DynamicResource ButtonStyle6}" x:Name="timkiem" Width="38" Height="38" HorizontalAlignment="Right" Margin="0,0,0,0" Background="Transparent" BorderBrush="{x:Null}">
+                                    <Image Source="/image/search.png" Width="25" />
+
+                                </Button>
 
                             </Grid>
                         </Border>
@@ -391,9 +452,7 @@
             </Grid>
             <!--Nội dung chính-->
             <Grid Background="#FFE0CDED" Margin="180 100 0 0">
-                
                 <ContentControl x:Name="user"></ContentControl>
-
             </Grid>
 
         </Grid>

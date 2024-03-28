@@ -29,7 +29,8 @@ namespace Do_an
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            string sql = "select * from NguoiDung where TaiKhoan='theanh' ";
+            string tk = PhanQuyen.taikhoan;
+            string sql = $"select * from NguoiDung where TaiKhoan='{tk}' ";
             Database database = new Database();
             DataTable dt = database.getAllData(sql);
             List<NguoiDung> list = new List<NguoiDung>();

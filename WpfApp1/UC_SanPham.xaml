@@ -6,7 +6,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Do_an"
-             mc:Ignorable="d">
+              Opacity="0.7"
+             mc:Ignorable="d" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -122,23 +123,23 @@
     <Border Background="white" CornerRadius="10">
         <Button Style="{DynamicResource ButtonStyle2}" Background="Transparent" BorderThickness="0,0,0,0" Click="Button_Click_1" >
             <Grid Height="200">
-                <Image x:Name="hinhanh" Source="{Binding HinhAnh}"  Width="130" Height=" 110" VerticalAlignment="Top" Margin="5" Stretch="Fill" ></Image>
+                <Image x:Name="hinhanh" Source="{Binding HinhAnh}"  Width="130" Height=" 120" VerticalAlignment="Top" Margin="5" Stretch="Fill" ></Image>
                 <TextBlock x:Name="masp" Text="{Binding MaSP}" Width="100" Height="20" Margin="200,40,0,0" Foreground="#FFF"
                HorizontalAlignment="Center"
                FontSize="16" ></TextBlock>
-                <TextBlock x:Name="ten" Text="{Binding TenSP}" Width="130" Height="20" Foreground="#FF0B0101"
+                <TextBlock x:Name="ten" Text="{Binding TenSP}" TextWrapping="Wrap" Width="130" Height="20" Foreground="#FF0B0101"
                 HorizontalAlignment="Center" TextAlignment="Center"
-                FontSize="14" Margin="0,70,0,0" FontWeight="Bold">
+                FontSize="14" Margin="0,75,0,0" FontWeight="Bold">
                 </TextBlock>
-                <TextBlock Width="140" Height="20" TextDecorations="Strikethrough" Foreground="#FF090101"
+                <TextBlock Width="150" Height="20" TextDecorations="Strikethrough" TextWrapping="Wrap" Foreground="#FF090101"
                   HorizontalAlignment="Center"
-                  FontSize="11" Margin="0,150,0,30" TextAlignment="Center" Text="Giá mua mới: ₫">
+                  FontSize="10.5" Margin="0,155,0,30" TextAlignment="Center" Text="Giá mua mới: ₫">
               
                 <Run x:Name="giagoc" Text="{Binding GiaGoc}"/>
                 </TextBlock>
                 <TextBlock  Width="140" Height="20" Foreground="#FFF41919"
                   HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center"
-                  FontSize="13" Margin="0,170,0,0" FontWeight="Bold" Text="Giá bán: ₫">
+                  FontSize="13" Margin="0,175,0,0" FontWeight="Bold" Text="Giá bán: ₫">
                
                 <Run x:Name="giaBan" Text="{Binding GiaHTai}"/>
                 </TextBlock>

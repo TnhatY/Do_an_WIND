@@ -8,11 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="HinhAnhSP\edifice.jpg" />
     <None Remove="HinhAnhSP\ghevanphong.jpg" />
+    <None Remove="HinhAnhSP\ip11.jpg" />
+    <None Remove="HinhAnhSP\ip14.jpg" />
     <None Remove="HinhAnhSP\iphone11.png" />
     <None Remove="HinhAnhSP\iphone5.jpg" />
+    <None Remove="HinhAnhSP\loa marshall.jpg" />
+    <None Remove="HinhAnhSP\mec.jpg" />
+    <None Remove="HinhAnhSP\mecc.jpg" />
+    <None Remove="HinhAnhSP\PC_ADC.jpg" />
+    <None Remove="HinhAnhSP\RTX4090.png" />
+    <None Remove="HinhAnhSP\vot.jpg" />
     <None Remove="image\add.png" />
     <None Remove="image\add2.png" />
+    <None Remove="image\back.png" />
     <None Remove="image\banhang.png" />
     <None Remove="image\buy.png" />
     <None Remove="image\buy2.png" />
@@ -24,6 +34,7 @@
     <None Remove="image\caidat3.png" />
     <None Remove="image\cart.png" />
     <None Remove="image\cart1.png" />
+    <None Remove="image\check.png" />
     <None Remove="image\damua.png" />
     <None Remove="image\damua2.png" />
     <None Remove="image\damua3.png" />
@@ -68,8 +79,12 @@
     <None Remove="image\trangchu1.png" />
     <None Remove="image\trash.png" />
     <None Remove="image\uneye.png" />
+    <None Remove="image\uploadImage.png" />
     <None Remove="image\user.png" />
+    <None Remove="image\user2.png" />
+    <None Remove="image\user3.png" />
     <None Remove="image\x.png" />
+    <None Remove="image\xanh.PNG" />
     <None Remove="image\xuatfile.png" />
     <None Remove="image\xuatfile2.png" />
   </ItemGroup>
@@ -81,17 +96,27 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="HinhAnhSP\edifice.jpg" />
     <Resource Include="HinhAnhSP\ghevanphong.jpg" />
+    <Resource Include="HinhAnhSP\ip11.jpg" />
+    <Resource Include="HinhAnhSP\ip14.jpg" />
     <Resource Include="HinhAnhSP\iphone11.png" />
     <Resource Include="HinhAnhSP\iphone5.jpg" />
+    <Resource Include="HinhAnhSP\loa marshall.jpg" />
+    <Resource Include="HinhAnhSP\mecc.jpg" />
+    <Resource Include="HinhAnhSP\PC_ADC.jpg" />
+    <Resource Include="HinhAnhSP\RTX4090.png" />
+    <Resource Include="HinhAnhSP\vot.jpg" />
     <Resource Include="image\add.png" />
     <Resource Include="image\add2.png" />
+    <Resource Include="image\back.png" />
     <Resource Include="image\banhang.png" />
     <Resource Include="image\buy2.png" />
     <Resource Include="image\caidat.png" />
     <Resource Include="image\caidat2.png" />
     <Resource Include="image\caidat3.png" />
     <Resource Include="image\cart.png" />
+    <Resource Include="image\check.png" />
     <Resource Include="image\damua.png" />
     <Resource Include="image\damua2.png" />
     <Resource Include="image\damua3.png" />
@@ -129,7 +154,11 @@
 
   <ItemGroup>
     <Resource Include="image\trangchu1.png" />
+    <Resource Include="image\uploadImage.png" />
+    <Resource Include="image\user2.png" />
+    <Resource Include="image\user3.png" />
     <Resource Include="image\x.png" />
+    <Resource Include="image\xanh.PNG" />
     <Resource Include="image\xuatfile.png" />
     <Resource Include="image\xuatfile2.png" />
   </ItemGroup>
@@ -147,6 +176,10 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
   </ItemGroup>
 
 </Project>

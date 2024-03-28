@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\App.xaml
-181786291844
+171535095002
 
-25-847788613
+27-2098065487
 225138244540
-DanhGiaSp_Window.xaml;F_Main.xaml;MainWindow.xaml;ThanhToan_Window.xaml;ThemSP_Window.xaml;ThongTin_Window.xaml;TopBan_Window.xaml;UC_BanHang.xaml;UC_CaiDat.xaml;UC_DaMua.xaml;UC_DanhGia.xaml;UC_DanhGiaSP.xaml;UC_gioHang.xaml;UC_MuaSam.xaml;UC_SanPham.xaml;UC_SpGioHang.xaml;UC_ThemSanPham.xaml;UC_ThongKe.xaml;
+DanhGiaSp_Window.xaml;F_Main.xaml;MainWindow.xaml;ThanhToan_Window.xaml;ThemSP_Window.xaml;ThongTin_Window.xaml;TopBan_Window.xaml;UC_CaiDat.xaml;UC_DaMua.xaml;UC_DanhGia.xaml;UC_gioHang.xaml;UC_MuaSam.xaml;UC_SanPham.xaml;UC_SpBan.xaml;UC_SpGioHang.xaml;UC_SP_DaMua.xaml;UC_ThongKe.xaml;
 
 False
 

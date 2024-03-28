@@ -15,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
+using System.Collections;
+using Do_an.Class;
 
 namespace Do_an
 {
@@ -43,46 +45,53 @@ namespace Do_an
 
         private void UC_gioHang_Loaded(object sender, RoutedEventArgs e)
         {
-            LoadDataFromDatabase();
-        }
-
-        private void LoadDataFromDatabase()
-        {
-            Database database = new Database();
-            SqlConnection conn = database.getConnection();
-            {
-                conn.Open();
-
-                using (SqlCommand command = new SqlCommand("SELECT * FROM GioHang", conn))
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        UC_SpGioHang sp = new UC_SpGioHang();
-
-                        sp.lblTenSP.Text = reader["TenSP"].ToString();
-                        sp.lblTenShop.Text = reader["TenShop"].ToString();
-                        sp.lblGiaGoc.Text = reader["GiaGoc"].ToString();
-                        sp.lblGiaHTai.Text = reader["GiaHTai"].ToString();
-                        sp.tinhtrang.Text = reader["TinhTrang"].ToString();
-                        sp.mota.Text = reader["MoTa"].ToString();
-                        BitmapImage bitmap = new BitmapImage();
-                        bitmap.BeginInit();
-                        bitmap.UriSource = new Uri(reader["HinhAnh"].ToString(), UriKind.RelativeOrAbsolute); // Thay đổi path_to_your_image.jpg thành đường dẫn của ảnh của bạn
-                        bitmap.EndInit();
-                        sp.hinhanh.Source = bitmap;
-
-
-
-                        SanPhamList.Add(sp);
-                    }
-                }
-            }
+            SanPham_DAO sanPham_DAO =new SanPham_DAO();
+            SP_GioHang.ItemsSource= sanPham_DAO.listGioHang();
         }
         public void ReloadData()
         {
             SanPhamList.Clear();
-            LoadDataFromDatabase();
+            SanPham_DAO sp = new SanPham_DAO();
+            sp.listGioHang();
+            SP_GioHang.ItemsSource= sp.listGioHang();
+        }
+
+        private void xoa_Click(object sender, RoutedEventArgs e)
+        {
+            // Database database = new Database();
+            if (UC_SpGioHang.check)
+            {
+                foreach (var sp in UC_SpGioHang.listmasp)
+                {
+                
+                    string sql = "delete from GioHang Where MaSP=@MaSP";
+                    try
+                    {
+                        Database database = new Database();
+                        SqlConnection sqlConnection = database.getConnection();
+                        using (SqlConnection connection = new SqlConnection(database.conStr))
+                        {
+                            connection.Open();
+                            using (SqlCommand command = new SqlCommand(sql, connection))
+                            {
+                                command.Parameters.AddWithValue("@MaSP", sp);
+                                command.ExecuteNonQuery();
+                            }
+                        }
+                        
+                    }
+                    catch (Exception Fail)
+                    {
+                        MessageBox.Show(Fail.Message);
+                    }
+                }
+                ReloadData();
+            }
+            else
+            {
+                MessageBox.Show("Không có sản phẩm nào được chọn!");
+            }
+           
         }
     }
 }

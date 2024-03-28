@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Do_an.Class;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,11 +9,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+
 
 namespace Do_an
 {
@@ -32,8 +35,49 @@ namespace Do_an
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            F_Main f=new F_Main();
-            f.ShowDialog();
+            Database database = new Database();
+            DataTable dt =new DataTable();
+            passwordTextBox.Text = passwordBox.Password;
+            try
+            {
+                string query = "select * from NguoiDung ";
+                dt = database.getAllData(query);
+
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
+            if (string.IsNullOrWhiteSpace(txtDangNhap.Text) || string.IsNullOrWhiteSpace(passwordTextBox.Text))
+            {
+                System.Windows.MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Cảnh báo");
+                txtDangNhap.Focus();
+                return;
+            }
+            else
+            {
+                bool check = false;
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (txtDangNhap.Text == row["TaiKhoan"].ToString() && passwordTextBox.Text == row["MatKhau"].ToString())
+                    {
+                        check = true;
+                        PhanQuyen.loaiTk = row["LoaiTK"].ToString();
+                        PhanQuyen.taikhoan = row["TaiKhoan"].ToString();
+                    }
+                }
+                if (check)
+                {
+                    F_Main f = new F_Main();
+                    f.ShowDialog();
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Cảnh báo");
+                }
+            }
+            
+
         }
 
        
