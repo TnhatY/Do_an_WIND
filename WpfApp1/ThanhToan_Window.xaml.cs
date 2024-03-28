@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using Do_an.Class;
 
 namespace Do_an
 {
@@ -29,8 +31,8 @@ namespace Do_an
         {
             Close();
         }
-       
-        
+
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             giaban1.Text = giaban.Text;
@@ -49,15 +51,47 @@ namespace Do_an
 
         private void btnDatHang_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void btnMua_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Đơn hàng đã được đặt");
-            DanhGiaSp_Window danhGiaSp_Window =new DanhGiaSp_Window();
-            danhGiaSp_Window.ShowDialog();
-            this.Hide();
+            try
+            {
+                string taikhoan = PhanQuyen.taikhoan;
+                DateTime now = DateTime.Now;
+                Database database = new Database();
+                string xacNhan = "no";
+                SqlConnection sqlConnection = database.getConnection();
+                string sql = "insert into SP_DaMua values (@MaSP,@TaiKhoan,@XacNhan)";
+                using (SqlConnection connection = new SqlConnection(database.conStr))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaSP", masp.Text);
+                        command.Parameters.AddWithValue("@TaiKhoan", PhanQuyen.taikhoan);
+                        command.Parameters.AddWithValue("@XacNhan", xacNhan);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception Fail)
+            {
+                MessageBox.Show(Fail.Message);
+            }
+
+            MessageBox.Show("Đơn hàng đã được đặt! Vui lòng kiểm tra trạng thái giao hàng!");
+            //DanhGiaSp_Window danhGiaSp_Window = new DanhGiaSp_Window();
+            //danhGiaSp_Window.masp.Text = masp.Text;
+            //danhGiaSp_Window.ShowDialog();
+            //this.Hide();
+            Close();
+        }
+
+        private void thoat_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

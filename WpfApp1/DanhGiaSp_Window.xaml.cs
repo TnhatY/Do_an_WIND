@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using Do_an.Class;
 
 namespace Do_an
 {
@@ -24,6 +27,8 @@ namespace Do_an
         public DanhGiaSp_Window()
         {
             InitializeComponent();
+            DateTime ngays = DateTime.Now;
+            ngayDg.Text = ngays.ToString();
         }
         private void Star_Click(object sender, RoutedEventArgs e)
         {
@@ -53,7 +58,7 @@ namespace Do_an
                         star.IsChecked = false;
                     }
                 }
-                ratingText.Text=dem.ToString();
+                sosao.Text=dem.ToString();
             }
         }
         
@@ -73,23 +78,29 @@ namespace Do_an
             {
                 nhanxet.Text += nx3.Content.ToString() + Environment.NewLine;
             }
-            //StringBuilder nhanXetBuilder = new StringBuilder();
+          
+        }
 
-            //if (sender == nx1)
-            //{
-            //    nhanXetBuilder.Append(nx1.Content.ToString());
-            //}
-            //else if (sender == nx2)
-            //{
-            //    nhanXetBuilder.Append(nx2.Content.ToString());
-            //}
-            //else if (sender == nx3)
-            //{
-            //    nhanXetBuilder.Append(nx3.Content.ToString());
-            //}
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+        
 
-            //nhanxet.Text = nhanXetBuilder.ToString();
-
+        private void GuiNhanXet_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DanhGia_DAO danhGia_DAO = new DanhGia_DAO();
+                DanhGiaSP danhGiaSP = new DanhGiaSP(masp.Text,PhanQuyen.ten,ngayDg.Text,nhanxet.Text,sosao.Text);  
+                danhGia_DAO.themDG(danhGiaSP);
+                MessageBox.Show("Cảm ơn bạn đã đánh giá!");
+                Close();
+            }
+            catch (Exception Fail)
+            {
+                MessageBox.Show(Fail.Message);
+            }
         }
     }
 }

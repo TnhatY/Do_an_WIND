@@ -29,7 +29,6 @@ namespace Do_an.Class
             this.matkhau = matkhau;
             this.diachi = diachi;
         }
-
         public NguoiDung() { }
     }
 }

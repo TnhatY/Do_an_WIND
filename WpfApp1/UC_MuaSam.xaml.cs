@@ -16,6 +16,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -33,6 +34,7 @@ namespace Do_an
         
         Database data = new Database();
         SanPham_DAO sanPham_DAO = new SanPham_DAO();
+        
 
         public UC_MuaSam()
         {
@@ -40,50 +42,67 @@ namespace Do_an
             DataContext = this;
             string sql = "Select * from SanPham";
             thongtin.ItemsSource = sanPham_DAO.Getlist(sql);
-            List<string> DanhMuc = new List<string> { "Điện thoại", "Đồ gia dụng", "Xe cộ", "Đồ điện tử", "Đồ dùng", "Thời trang" ,"Không"};
-            //cbDanhMuc.ItemsSource = DanhMuc;
-            //cbDanhMuc.SelectionChanged += cbDanhMuc_SelectionChanged;
-        }
-
-
-        private void btnMua_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void myListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-        private void listView_Selected(object sender, RoutedEventArgs e)
-        {
-            // object selectedItem = listView.SelectedItem;
+            if (PhanQuyen.loaiTk == "nguoimua")
+            {
+                btnThemSP.Visibility = Visibility.Hidden;
+            }
+                
         }
 
         private void btnThemSP_Click(object sender, RoutedEventArgs e)
         {
             ThemSP_Window themSP_Window = new ThemSP_Window();
+            themSP_Window.chinhsua.Visibility = Visibility.Collapsed;
             themSP_Window.Show();
         }
 
-        private void cbDanhMuc_SelectionChanged(object sender, SelectionChangedEventArgs e)
+       
+
+     
+        private void DanhMuc_Click(object sender, RoutedEventArgs e)
         {
-            // Database database = new Database
+            try
+            {
+                if (sender == SpDienThoai)
+                {
+                    string query = "select * from SanPham where DanhMucSP like N'%" + dienthoai.Text + "%'";
+                    thongtin.ItemsSource = sanPham_DAO.Getlist(query);
+                }
+                else if (sender == SpDoDienTu)
+                {
+                    string query = "select * from SanPham where DanhMucSP like N'%" + dodien.Text + "%'";
+                    thongtin.ItemsSource = sanPham_DAO.Getlist(query);
+                }
+                else if (sender == SpDoDung)
+                {
+                    string query = "select * from SanPham where DanhMucSP like N'%" + giadung.Text + "%'";
+                    thongtin.ItemsSource = sanPham_DAO.Getlist(query);
+                }
+                else if (sender == Spthethao)
+                {
+                    string query = "select * from SanPham where DanhMucSP like N'%" + thethao.Text + "%'";
+                    thongtin.ItemsSource = sanPham_DAO.Getlist(query);
+                }
+                else if (sender == Spthoitrang)
+                {
+                    string query = "select * from SanPham where DanhMucSP like N'%" + thoitrang.Text + "%'";
+                    thongtin.ItemsSource = sanPham_DAO.Getlist(query);
+                }
+                else if (sender == SpXeMay)
+                {
+                    string query = "select * from SanPham where DanhMucSP like N'%" + xe.Text + "%'";
+                    thongtin.ItemsSource = sanPham_DAO.Getlist(query);
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
            
-        }
-
-        private void SpDienThoai_Click(object sender, RoutedEventArgs e)
-        {
-            //string danhmuc = cbDanhMuc.SelectedItem.ToString();
-                string query = "select * from SanPham where DanhMucSP like N'%"+ "Điện thoại" + "%'";
-            // database.getAllData(query);
-            thongtin.ItemsSource = sanPham_DAO.Getlist(query);
-        }
-
-        private void SpDoDung_Click(object sender, RoutedEventArgs e)
-        {
-            string query = "select * from SanPham where DanhMucSP like N'%" + "Đồ dùng" + "%'";
-            // database.getAllData(query);
-            thongtin.ItemsSource = sanPham_DAO.Getlist(query);
         }
     }
 }

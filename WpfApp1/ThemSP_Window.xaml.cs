@@ -7,11 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
+using System.Data.SqlClient;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -27,7 +23,7 @@ namespace Do_an
         {
             InitializeComponent();
         }
-        List<string> DanhMuc = new List<string> { "Điện thọai", "Đồ gia dụng", "Xe cộ", "Đồ điện tử", "Đồ điện gia dụng", "Thời trang" };
+        List<string> DanhMuc = new List<string> { "Điện thọai", "Đồ gia dụng", "Xe cộ", "Đồ điện tử", "Thời trang","Thể thao" };
         private void btnThoat_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -35,61 +31,33 @@ namespace Do_an
 
         private void Image_Button(object sender, RoutedEventArgs e)
         {
-            //OpenFileDialog openFileDialog = new OpenFileDialog();
-            //openFileDialog.Filter = "Image files|*.jpg;*.png";
-            //openFileDialog.FilterIndex = 2;
-            //if (openFileDialog.ShowDialog() == true)
-            //{
-            //    imgDynamic.Source = new BitmapImage(new Uri(openFileDialog.FileName));
-            //}
             Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
             openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
             if (openFileDialog.ShowDialog() == true)
             {
-                // Lấy đường dẫn file ảnh
                 string filePath = openFileDialog.FileName;
-
-                // Lấy tên file và phần mở rộng
                 string fileName = System.IO.Path.GetFileName(filePath);
 
-                // Lấy thư mục chứa ảnh
-                string directoryName = System.IO.Path.GetDirectoryName(filePath);
+               
+                string directoryName = new System.IO.DirectoryInfo(filePath).Parent.Name;
 
-                // Tạo đường dẫn ngắn gồm thư mục gần nhất, tên file và phần mở rộng
-                string shortenedPath = "/" + System.IO.Path.Combine(System.IO.Path.GetFileName(directoryName), fileName);
-                // Hiển thị ảnh lên giao diện
-                //MessageBox.Show(shortenedPath);
-                imgHinhAnh.Source = new BitmapImage(new Uri(filePath));
+                string shortFile= directoryName + "/" + fileName;
+               // MessageBox.Show(shortFile);
 
-
-                // Lưu trữ ảnh dưới dạng mảng byte
-                //byte[] hinhThe = (byte[])anh.Source;
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(filePath, UriKind.RelativeOrAbsolute);
+                bitmap.EndInit();
+                imgHinhAnh.Source = bitmap;
             }
-        
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             cbDanhMuc.ItemsSource = DanhMuc;
-            cbDanhMuc.SelectionChanged += cbDanhMuc_SelectionChanged;
         }
 
-
-        void cbDanhMuc_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
-
-        private void txtMoTa_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void btnThem_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
+     
         private void btnThem_Click_1(object sender, RoutedEventArgs e)
         {
             SanPham sanPhamMoi = new SanPham();
@@ -104,10 +72,39 @@ namespace Do_an
             sanPhamMoi.MoTa = txtMoTa.Text;
             sanPhamMoi.HinhAnh = imgHinhAnh.Source.ToString();
             string query = "insert into SanPham values (@MaSP,@TenSP,@TenShop,@GiaGoc,@GiaHTai,@NgayMua,@TinhTrang,@MoTa,@HinhAnh,@DanhMucSP)";
-
             SanPham.them(sanPhamMoi, query);
-            MessageBox.Show("Thêm thành công");
-            
+
+            string query2 = "insert into SP_Ban values (@MaSP,@TaiKhoan)";
+            try
+            {
+                Database database = new Database();
+                SqlConnection sqlConnection = database.getConnection();
+                using (SqlConnection connection = new SqlConnection(database.conStr))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query2, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaSP", txtMaSP.Text);
+                        command.Parameters.AddWithValue("@TaiKhoan", PhanQuyen.taikhoan);
+                        command.ExecuteNonQuery();
+                    }
+                }   
+            }
+            catch (Exception Fail)
+            {
+                MessageBox.Show(Fail.Message);
+            }
+            MessageBox.Show("Thêm sản phẩm thành công");
+            Close();
+        }
+
+        private void btnChinhSua(object sender, RoutedEventArgs e)
+        {
+            SanPham_DAO sanPham_DAO = new SanPham_DAO();
+            string query = "update SanPham set TenSP=@TenSP, TenShop=@TenShop,GiaGoc=@GiaGoc,GiaHTai=@GiaHTai," +
+                "NgayMua=@NgayMua,TinhTrang=@TinhTrang,MoTa=@MoTa,HinhAnh=@HinhAnh, DanhMucSP=@DanhMucSP where MaSP=@MaSP";  
+            SanPham sanPham = new SanPham(txtMaSP.Text,txtTenSP.Text,txtTenShop.Text,float.Parse(txtGiaGoc.Text),float.Parse(txtGiaBan.Text),dtpNgayMua.Text,txtTinhTrang.Text,txtMoTa.Text,imgHinhAnh.Source.ToString(),cbDanhMuc.Text);
+            sanPham_DAO.sua(sanPham,query);
         }
     }
 }
