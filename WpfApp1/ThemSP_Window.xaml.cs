@@ -1,6 +1,7 @@
 ﻿using Do_an.Class;
 using Microsoft.Win32;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -102,7 +103,9 @@ namespace Do_an
             sanPhamMoi.NgayMua = dtpNgayMua.Text;
             sanPhamMoi.MoTa = txtMoTa.Text;
             sanPhamMoi.HinhAnh = imgHinhAnh.Source.ToString();
-            SanPham.them(sanPhamMoi);
+            string query = "insert into SanPham values (@MaSP,@TenSP,@TenShop,@GiaGoc,@GiaHTai,@NgayMua,@TinhTrang,@MoTa,@HinhAnh,@DanhMucSP)";
+
+            SanPham.them(sanPhamMoi, query);
             MessageBox.Show("Thêm thành công");
             
         }

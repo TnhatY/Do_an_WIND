@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Winform\Do_an_WIND-anh\WpfApp1\obj\Debug\net6.0-windows\
+C:\Winform\Do_An_Winform\Do_an_WIND\WpfApp1\obj\Debug\net6.0-windows\
 Do_an
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Winform\Do_an_WIND-anh\WpfApp1\App.xaml
-161841406786
+C:\Winform\Do_An_Winform\Do_an_WIND\WpfApp1\App.xaml
+181786291844
 
-231978294422
+25-847788613
 2251257459688
-F_Main.xaml;MainWindow.xaml;ThanhToan_Window.xaml;ThemSP_Window.xaml;ThongTin_Window.xaml;TopBan_Window.xaml;UC_BanHang.xaml;UC_CaiDat.xaml;UC_DaMua.xaml;UC_gioHang.xaml;UC_MuaSam.xaml;UC_SanPham.xaml;UC_SanPham2.xaml;UC_SpGioHang.xaml;UC_ThemSanPham.xaml;UC_ThongKe.xaml;
+DanhGiaSp_Window.xaml;F_Main.xaml;MainWindow.xaml;ThanhToan_Window.xaml;ThemSP_Window.xaml;ThongTin_Window.xaml;TopBan_Window.xaml;UC_BanHang.xaml;UC_CaiDat.xaml;UC_DaMua.xaml;UC_DanhGia.xaml;UC_DanhGiaSP.xaml;UC_gioHang.xaml;UC_MuaSam.xaml;UC_SanPham.xaml;UC_SpGioHang.xaml;UC_ThemSanPham.xaml;UC_ThongKe.xaml;
 
 False
 

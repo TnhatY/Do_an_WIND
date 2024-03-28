@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,13 +29,7 @@ namespace Do_an
         {
             Close();
         }
-        public class CustomTextBox : TextBox
-        {
-            public CustomTextBox()
-            {
-                this.Name = "tongthanhtoan";
-            }
-        }
+       
         
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -45,20 +40,24 @@ namespace Do_an
 
             float tongThanToan = giaBan + phiVanChuyen;
             tongthanhtoan.Text = tongthanhtoan1.Text = tongThanToan.ToString();
-            
-            diachi.Text = "34 đường 27-Linh Đông - Thủ Đức 34 đường 27-Linh Đông - Thủ Đức 34 đường 27-Linh Đông - Thủ Đức";
-           
+            Database database = new Database();
+            string sql = "select DiaChi From NguoiDung where TaiKhoan='theanh' ";
+            DataTable dt = database.getAllData(sql);
+            diachi.Text = dt.Rows[0]["DiaChi"].ToString();
         }
 
 
         private void btnDatHang_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Đơn hàng đã được đặt");
+            
         }
 
         private void btnMua_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            MessageBox.Show("Đơn hàng đã được đặt");
+            DanhGiaSp_Window danhGiaSp_Window =new DanhGiaSp_Window();
+            danhGiaSp_Window.ShowDialog();
+            this.Hide();
         }
     }
 }

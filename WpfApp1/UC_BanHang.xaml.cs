@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 
 
-namespace WpfApp1
+namespace Do_an
 {
     /// <summary>
     /// Interaction logic for UC_BanHang.xaml

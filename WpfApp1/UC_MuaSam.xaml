@@ -1,10 +1,10 @@
-﻿<UserControl x:Class="WpfApp1.UC_MuaSam"
+﻿<UserControl x:Class="Do_an.UC_MuaSam"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WpfApp1"
+             xmlns:local="clr-namespace:Do_an"
              mc:Ignorable="d" 
              d:DesignHeight="580" d:DesignWidth="980">
     <UserControl.Resources>
@@ -497,11 +497,11 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background5}"/>
+                                <Setter Property="Background" TargetName="border" Value="#40DE65"/>
                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border5}"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background5}"/>
+                                <Setter Property="Background" TargetName="border" Value="#30B04E"/>
                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border5}"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
@@ -514,20 +514,97 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="FocusVisual6">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background6" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border6" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background6" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border6" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background6" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border6" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background6" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border6" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground6" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle3" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual6}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background6}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border6}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background6}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border6}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background6}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border6}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background6}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border6}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground6}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
     <Border>
     <Grid>
            
         <Border 
                 Background="#FFE0CDED"
-                Height="100"
+                Height="50"
                 VerticalAlignment="Top" >
+                <Grid>
                 <Button x:Name="btnThemSP" Style="{DynamicResource ButtonStyle2}" Background="#FF29C417" Width="170" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,50,0" Click="btnThemSP_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/image/add2.png" Width="29" Margin="0,0,10,0"></Image>
                         <TextBlock Text="Thêm sản phẩm" VerticalAlignment="Center" FontSize="14" FontWeight="Bold"></TextBlock>
                     </StackPanel>
                 </Button>
+                    <Grid Margin="0,0,220,0">
+                        <Button Style="{DynamicResource ButtonStyle3}" x:Name="SpDienThoai" Height="20" Width="80" HorizontalAlignment="Left" Margin="20,0,0,0" Background="#FFAA38CF" Click="SpDienThoai_Click">
+                            <TextBlock Text="Điện thoại" FontWeight="Bold" Foreground="#FFFBFBFB"></TextBlock>
+                        </Button>
+                        <Button Style="{DynamicResource ButtonStyle3}" x:Name="SpDoDung" Height="20" Width="80" HorizontalAlignment="Left" Margin="110,0,0,0" Background="#FFAA38CF" Click="SpDienThoai_Click">
+                            <TextBlock Text="Đồ gia dụng" FontWeight="Bold" Foreground="#FFFBFBFB"/>
+                        </Button>
+                        <Button Style="{DynamicResource ButtonStyle3}" x:Name="SpXeMay" Height="20" Width="80" HorizontalAlignment="Left" Margin="200,0,0,0" Background="#FFAA38CF" Click="SpDienThoai_Click">
+                            <TextBlock Text="Xe cộ" FontWeight="Bold" Foreground="#FFFBFBFB"></TextBlock>
+                        </Button>
+                        <Button Style="{DynamicResource ButtonStyle3}" x:Name="SpOto" Height="20" Width="80" HorizontalAlignment="Left" Margin="290,0,0,0" Background="#FFAA38CF" Click="SpDienThoai_Click">
+                            <TextBlock Text="Thời trang" FontWeight="Bold" Foreground="#FFFBFBFB"></TextBlock>
+                        </Button>
+                        <Button Style="{DynamicResource ButtonStyle3}" x:Name="SpDoDienTu" Height="20" Width="80" HorizontalAlignment="Left" Margin="380,0,0,0" Background="#FFAA38CF" Click="SpDoDung_Click">
+                            <TextBlock Text="Đồ dùng" FontWeight="Bold" Foreground="#FFFBFBFB"></TextBlock>
+                        </Button>
+                        <Button Style="{DynamicResource ButtonStyle3}" x:Name="SpDoGiaDung" Height="20" Width="80" HorizontalAlignment="Left" Margin="470,0,0,0" Background="#FFAA38CF" Click="SpDienThoai_Click">
+                            <TextBlock Text="Điện thoại" FontWeight="Bold" Foreground="#FFFBFBFB"></TextBlock>
+                        </Button>
+                    </Grid>
+                </Grid>
             </Border>
 
             <Border Background="#FFE0CDED"

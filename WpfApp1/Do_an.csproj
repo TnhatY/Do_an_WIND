@@ -8,8 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="HinhAnhSP\ghevanphong.jpg" />
+    <None Remove="HinhAnhSP\ip11.jpg" />
     <None Remove="HinhAnhSP\iphone11.png" />
     <None Remove="HinhAnhSP\iphone5.jpg" />
+    <None Remove="HinhAnhSP\loa marshall.jpg" />
+    <None Remove="HinhAnhSP\RTX4090.png" />
     <None Remove="image\add.png" />
     <None Remove="image\add2.png" />
     <None Remove="image\banhang.png" />
@@ -18,6 +22,7 @@
     <None Remove="image\buy3.png" />
     <None Remove="image\buy4.png" />
     <None Remove="image\buy5.png" />
+    <None Remove="image\buy7.png" />
     <None Remove="image\caidat.png" />
     <None Remove="image\caidat2.png" />
     <None Remove="image\caidat3.png" />
@@ -80,12 +85,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="HinhAnhSP\ghevanphong.jpg" />
+    <Resource Include="HinhAnhSP\ip11.jpg" />
     <Resource Include="HinhAnhSP\iphone11.png" />
     <Resource Include="HinhAnhSP\iphone5.jpg" />
+    <Resource Include="HinhAnhSP\loa marshall.jpg" />
+    <Resource Include="HinhAnhSP\RTX4090.png" />
     <Resource Include="image\add.png" />
     <Resource Include="image\add2.png" />
     <Resource Include="image\banhang.png" />
     <Resource Include="image\buy2.png" />
+    <Resource Include="image\buy7.png" />
     <Resource Include="image\caidat.png" />
     <Resource Include="image\caidat2.png" />
     <Resource Include="image\caidat3.png" />
