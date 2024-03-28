@@ -11,5 +11,6 @@ namespace Do_an.Class
         public static string loaiTk = "";
         public static string taikhoan = "";
         public static string menu = "";
+        public static string ten = "";
     }
 }

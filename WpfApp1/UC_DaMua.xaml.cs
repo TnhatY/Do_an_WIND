@@ -97,11 +97,7 @@ namespace Do_an
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            var fadeInStoryboard = FindResource("FadeInStoryboard") as Storyboard;
-            if (fadeInStoryboard != null)
-            {
-                BeginStoryboard(fadeInStoryboard);
-            }
+           
             SanPham_DAO sanPham_DAO = new SanPham_DAO();
             if (PhanQuyen.menu == "BanHang")
             {
@@ -167,10 +163,13 @@ namespace Do_an
 
         private void spchoxacnhan_Click(object sender, RoutedEventArgs e)
         {
+            SanPham_DAO sanPham_DAO = new SanPham_DAO();
             spdamua.Visibility = Visibility.Collapsed;
             spchuaxacnhan.Visibility = Visibility.Collapsed;
             spdangban.BorderThickness = new Thickness(0, 0, 0, 0);
             spchoxacnhan.BorderThickness = new Thickness(0, 0, 0, 2);
+            listsp.ItemsSource = sanPham_DAO.listSPChoXacNhan();
+
         }
     }
 }

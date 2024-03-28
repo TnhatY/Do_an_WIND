@@ -12,9 +12,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace Do_an
 {
@@ -56,11 +54,43 @@ namespace Do_an
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            var fadeInStoryboard = FindResource("FadeInStoryboard") as Storyboard;
-            if (fadeInStoryboard != null)
+           
+        }
+
+        private void xacnhan_Click(object sender, RoutedEventArgs e)
+        {
+            txtxacnhan.Text = "Đã xác nhận!";
+            xacnhan.Visibility = Visibility.Collapsed;
+            try
             {
-                BeginStoryboard(fadeInStoryboard);
+                string taikhoan = PhanQuyen.taikhoan;
+                DateTime now = DateTime.Now;
+                Database database = new Database();
+                string xacNhan = "yes";
+                SqlConnection sqlConnection = database.getConnection();
+                string sql = "update SP_DaMua set XacNhan=@XacNhan where MaSP=@MaSP";
+                using (SqlConnection connection = new SqlConnection(database.conStr))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaSP", masp.Text);
+                       // command.Parameters.AddWithValue("@TaiKhoan", PhanQuyen.taikhoan);
+                        command.Parameters.AddWithValue("@XacNhan", xacNhan);
+                        command.ExecuteNonQuery();
+                    }
+                }
             }
+            catch (Exception Fail)
+            {
+                MessageBox.Show(Fail.Message);
+            }
+
+            //MessageBox.Show("Đơn hàng đã được đặt! Vui lòng kiểm tra trạng thái giao hàng!");
+            //DanhGiaSp_Window danhGiaSp_Window = new DanhGiaSp_Window();
+            //danhGiaSp_Window.masp.Text = masp.Text;
+            //danhGiaSp_Window.ShowDialog();
+            //this.Hide();
         }
     }
 }

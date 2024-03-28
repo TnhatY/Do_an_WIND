@@ -220,6 +220,7 @@ namespace Do_an.Class
                             // sp.giagoc.Text = reader["GiaGoc"].ToString();
                             sp.giaban.Text = reader["GiaHTai"].ToString();
                             sp.tinhtrang.Text = reader["TinhTrang"].ToString();
+                            sp.xacnhan.Visibility = Visibility.Collapsed;
                             //sp.dagiao.Text = "Sản phẩm đã giao thành công";
                             //sp..Text = reader["MoTa"].ToString();
                             BitmapImage bitmap = new BitmapImage();
@@ -312,6 +313,60 @@ namespace Do_an.Class
                     }
                     
                 }
+            }
+        }
+        public ObservableCollection<UC_SpBan> listSPChoXacNhan()
+        {
+            try
+            {
+                ObservableCollection<UC_SpBan> SanPhamList = new ObservableCollection<UC_SpBan>();
+                List<string> listsp = new List<string>();
+                Database database = new Database();
+                SqlConnection conn = database.getConnection();
+                {
+                    conn.Open();
+                    string taikhoan = PhanQuyen.taikhoan;
+                    using (SqlCommand command = new SqlCommand($"SELECT SP_Ban.MaSP FROM SP_Ban INNER JOIN SP_DaMua ON SP_Ban.MaSP = SP_DaMua.MaSP WHERE SP_Ban.TaiKhoan = '{taikhoan}' and SP_DaMua.XacNhan='no'", conn))
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            listsp.Add(reader["MaSP"].ToString());
+                        }
+                    }
+
+                    foreach (string masp in listsp)
+                    {
+                        using (SqlCommand command = new SqlCommand($"SELECT * FROM SanPham where MaSP='{masp}'", conn))
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                UC_SpBan sp = new UC_SpBan();
+                                sp.masp.Text = reader["MaSP"].ToString();
+                                sp.tensp.Text = reader["TenSP"].ToString();
+                                sp.mota.Text = reader["MoTa"].ToString();
+                                // sp.giagoc.Text = reader["GiaGoc"].ToString();
+                                sp.giaban.Text = reader["GiaHTai"].ToString();
+                                sp.tinhtrang.Text = reader["TinhTrang"].ToString();
+                                sp.edit.Visibility = sp.delete.Visibility = Visibility.Collapsed;
+                                //sp.dagiao.Text = "Sản phẩm đã giao thành công";
+                                //sp..Text = reader["MoTa"].ToString();
+                                BitmapImage bitmap = new BitmapImage();
+                                bitmap.BeginInit();
+                                bitmap.UriSource = new Uri(reader["HinhAnh"].ToString(), UriKind.RelativeOrAbsolute);
+                                bitmap.EndInit();
+                                sp.hinhanh.Source = bitmap;
+                                SanPhamList.Add(sp);
+                            }
+                        }
+                    }
+                }
+                return SanPhamList;
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
             }
         }
     }

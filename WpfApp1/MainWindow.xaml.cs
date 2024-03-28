@@ -64,6 +64,7 @@ namespace Do_an
                         check = true;
                         PhanQuyen.loaiTk = row["LoaiTK"].ToString();
                         PhanQuyen.taikhoan = row["TaiKhoan"].ToString();
+                        PhanQuyen.ten = row["HoTen"].ToString();
                     }
                 }
                 if (check)

@@ -295,7 +295,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Button Style="{DynamicResource ButtonStyle5}" Width="25" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent">
+        <Button x:Name="thoat" Style="{DynamicResource ButtonStyle5}" Width="25" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" Click="thoat_Click">
             <Image Source="/image/back.png" Width="20" ></Image>
         </Button>
         <TextBlock x:Name="masp" Width="0" Height="0" Margin="190,18,190,19"></TextBlock>

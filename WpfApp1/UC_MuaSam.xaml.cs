@@ -102,11 +102,7 @@ namespace Do_an
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            var fadeInStoryboard = FindResource("FadeInStoryboard") as Storyboard;
-            if (fadeInStoryboard != null)
-            {
-                BeginStoryboard(fadeInStoryboard);
-            }
+           
         }
     }
 }

@@ -86,6 +86,12 @@ namespace Do_an
             //danhGiaSp_Window.masp.Text = masp.Text;
             //danhGiaSp_Window.ShowDialog();
             //this.Hide();
+            Close();
+        }
+
+        private void thoat_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

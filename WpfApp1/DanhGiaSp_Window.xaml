@@ -190,7 +190,7 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Background="#FFF2EBFB" >
    
     <Button Style="{DynamicResource ButtonStyle1}" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,5,0,0" Click="Button_Click" BorderThickness="0,0,0,0" Background="{x:Null}">
         <Image Source="/image/back.png" Stretch="UniformToFill" />
@@ -200,33 +200,31 @@
         <TextBlock Text="Gửi" FontSize="11" />
     </Button>
     
-    <TextBlock Text="Đánh giá sản phẩm" HorizontalAlignment="Center" Margin="10" Height="20" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" />
+    <TextBlock Text="Đánh giá sản phẩm" HorizontalAlignment="Center" Margin="10" Height="25" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" />
     
     <StackPanel Orientation="Horizontal" Margin="20,60,20,10" Background="#FFF9F9F9">
-        <TextBlock Text="Chất lượng sản phẩm" Margin="10,5,10,0" />
+        <TextBlock Text="Chất lượng sản phẩm" Margin="10,12,10,0" FontSize="13" />
       
-        <ToggleButton x:Name="star1" Content="☆" Style="{StaticResource StarToggleButtonStyle}" Click="Star_Click"/>
-        <ToggleButton x:Name="star2" Content="☆" Style="{StaticResource StarToggleButtonStyle}" Click="Star_Click"/>
-        <ToggleButton x:Name="star3" Content="☆" Style="{StaticResource StarToggleButtonStyle}" Click="Star_Click"/>
-        <ToggleButton x:Name="star4" Content="☆" Style="{StaticResource StarToggleButtonStyle}" Click="Star_Click"/>
-        <ToggleButton x:Name="star5" Content="☆" Style="{StaticResource StarToggleButtonStyle}" Click="Star_Click"/>
+        <ToggleButton x:Name="star1" Content="☆" Style="{StaticResource StarToggleButtonStyle}" Click="Star_Click" Margin="0,7,0,0"/>
+            <ToggleButton x:Name="star2" Content="☆" Style="{StaticResource StarToggleButtonStyle}" Click="Star_Click" Margin="0,7,0,0"/>
+            <ToggleButton x:Name="star3" Content="☆" Style="{StaticResource StarToggleButtonStyle}" Click="Star_Click" Margin="0,7,0,0"/>
+            <ToggleButton x:Name="star4" Content="☆" Style="{StaticResource StarToggleButtonStyle}" Click="Star_Click" Margin="0,7,0,0"/>
+            <ToggleButton x:Name="star5" Content="☆" Style="{StaticResource StarToggleButtonStyle}" Click="Star_Click" Margin="0,7,0,0"/>
     </StackPanel>
    
-    <Grid Margin="0,40,0,0">
+    <Grid Margin="0,45,0,0">
 
-            <TextBlock Text="Tên: " Height="20" VerticalAlignment="Top" Margin="20,65,0,0" />
-            <TextBox x:Name="ten" Height="20"  VerticalAlignment="Top" Margin="55,62,20,0" BorderThickness="0,0,0,1" Background="{x:Null}"></TextBox>
-            <TextBlock Text="Nhận xét: " Height="20" VerticalAlignment="Top" Margin="20,90,0,0" />
+            <TextBlock Text="Nhận xét: " Height="20" VerticalAlignment="Top" Margin="30,70,0,0" FontSize="13" />
        
-        <TextBox x:Name="nhanxet" Height="150" VerticalAlignment="Top" Margin="20,120,20,0" />
+        <TextBox x:Name="nhanxet" Height="150" VerticalAlignment="Top" Margin="30,100,30,0" />
 
             <TextBlock x:Name="sosao" Height="0" Width="0" Text="Rating: " Margin="200"/>
             <TextBlock x:Name="masp" Width="0" Height="0"  Margin="200"/>
-            <TextBlock x:Name="ngayDg" Margin="50" Text="{Binding ngay, StringFormat='Today is {0:dd/MM/yyyy}'}" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
+            <TextBlock x:Name="ngayDg" Width="0" Height="0" Margin="50" Text="{Binding ngay, StringFormat='Today is {0:dd/MM/yyyy}'}" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
 
-            <Button Style="{DynamicResource ButtonStyle2}" x:Name="nx1" Margin="20,305,280,0" VerticalAlignment="Top" Width="100" Height="20" Content="Sản phẩm tốt" Click="nhanXet_Click" BorderThickness="1,0,0,1" />
-            <Button Style="{DynamicResource ButtonStyle2}" x:Name="nx2" VerticalAlignment="Top" Width="120" Height="20" Content="Chất lượng tuyệt vời"  Margin="20,280,260,0" Click="nhanXet_Click" BorderThickness="1,0,0,1" />
-            <Button Style="{DynamicResource ButtonStyle2}" x:Name="nx3" VerticalAlignment="Top" Width="90" Height="20" Content="Shop uy tín"  Margin="20,330,290,0" Click="nhanXet_Click" BorderThickness="1,0,0,1" />
+            <Button Style="{DynamicResource ButtonStyle2}" x:Name="nx1" Margin="20,285,280,0" VerticalAlignment="Top" Width="100" Height="20" Content="Sản phẩm tốt" Click="nhanXet_Click" BorderThickness="1,0,0,1" />
+            <Button Style="{DynamicResource ButtonStyle2}" x:Name="nx2" VerticalAlignment="Top" Width="120" Height="20" Content="Chất lượng tuyệt vời"  Margin="20,260,260,0" Click="nhanXet_Click" BorderThickness="1,0,0,1" />
+            <Button Style="{DynamicResource ButtonStyle2}" x:Name="nx3" VerticalAlignment="Top" Width="90" Height="20" Content="Shop uy tín"  Margin="20,310,290,0" Click="nhanXet_Click" BorderThickness="1,0,0,1" />
     
     </Grid>
 </Grid>
