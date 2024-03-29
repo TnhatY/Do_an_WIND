@@ -236,6 +236,59 @@ namespace Do_an.Class
             }
             return SanPhamList;
         }
+
+        public ObservableCollection<UC_SanPham> listSPBan2(string tenshop,string masp)
+        {
+            ObservableCollection<UC_SanPham> SanPhamList = new ObservableCollection<UC_SanPham>();
+            List<string> listsp = new List<string>();
+            Database database = new Database();
+            SqlConnection conn = database.getConnection();
+            {
+                conn.Open();
+                //string taikhoan = PhanQuyen.taikhoan;
+                //using (SqlCommand command = new SqlCommand($"SELECT MaSP FROM SanPham where TenShop='{tenshop}'", conn))
+                //using (SqlDataReader reader = command.ExecuteReader())
+                //{
+                //    while (reader.Read())
+                //    {
+                //        listsp.Add(reader["MaSP"].ToString());
+                //    }
+                //}
+               
+
+                //foreach (string masp in listsp)
+                //{
+                    //string sql = $"SELECT * FROM SanPham where MaSP='{masp}'";
+
+                    //Getlist(sql);
+                    using (SqlCommand command = new SqlCommand($"SELECT * FROM SanPham where TenShop='{tenshop}' and MaSP!='{masp}'", conn))
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            UC_SanPham sp = new UC_SanPham();
+                            sp.masp.Text = reader["MaSP"].ToString();
+                            sp.ten.Text = reader["TenSP"].ToString();
+                            sp.mota.Text = reader["MoTa"].ToString();
+                            sp.giagoc.Text = reader["GiaGoc"].ToString();
+                            sp.giaBan.Text = reader["GiaHTai"].ToString();
+                            sp.tinhtrang.Text = reader["TinhTrang"].ToString();
+                            //sp.xacnhan.Visibility = Visibility.Collapsed;
+                            //sp.dagiao.Text = "Sản phẩm đã giao thành công";
+                            // sp.txtxacnhan.Visibility = Visibility.Collapsed;
+                            //sp..Text = reader["MoTa"].ToString();
+                            BitmapImage bitmap = new BitmapImage();
+                            bitmap.BeginInit();
+                            bitmap.UriSource = new Uri(reader["HinhAnh"].ToString(), UriKind.RelativeOrAbsolute);
+                            bitmap.EndInit();
+                            sp.hinhanh.Source = bitmap;
+                            SanPhamList.Add(sp);
+                        }
+                    }
+                //}
+            }
+            return SanPhamList;
+        }
         public ObservableCollection<UC_SP_DaMua> listSPDamua(string xacNhan)
         {
             ObservableCollection<UC_SP_DaMua> SanPhamList = new ObservableCollection<UC_SP_DaMua>();
@@ -267,6 +320,7 @@ namespace Do_an.Class
                             sp.giagoc.Text = reader["GiaGoc"].ToString();
                             sp.giaban.Text = reader["GiaHTai"].ToString();
                             sp.tinhtrang.Text = reader["TinhTrang"].ToString();
+                            sp.tenshop.Text = reader["TenShop"].ToString();
                             if (xacNhan == "no")
                             {
                                 sp.giaohang.Text = "Đang chờ xác nhận từ người bán!";
@@ -299,7 +353,7 @@ namespace Do_an.Class
                     {
                         sp.txtMaSP.Text = reader["MaSP"].ToString();
                         sp.txtTenSP.Text = reader["TenSP"].ToString();
-                        sp.txtTenShop.Text = reader["TenShop"].ToString();
+                        //sp.txtTenShop.Text = reader["TenShop"].ToString();
                         sp.txtGiaGoc.Text = reader["GiaGoc"].ToString();
                         sp.txtGiaBan.Text = reader["GiaHTai"].ToString();
                         sp.txtTinhTrang.Text = reader["TinhTrang"].ToString();

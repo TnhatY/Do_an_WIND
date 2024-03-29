@@ -322,3 +322,5 @@ D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windo
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_SP_DaMua.baml
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_SpBan.g.cs
 D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\UC_SpBan.baml
+D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\XemDanhGia_Window.g.cs
+D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\XemDanhGia_Window.baml

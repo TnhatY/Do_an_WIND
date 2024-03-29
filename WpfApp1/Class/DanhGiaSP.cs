@@ -12,7 +12,7 @@ namespace Do_an.Class
         public string ngay { get; set; }
         public string danhgiasp { get; set; }
         public string sosao { get; set; }
-        public string masp { get; set; }
+        public string tenshop { get; set; }
         public DanhGiaSP(string _ten, string _ngay, string _danhgia, string sao)
         {
             ten = _ten;
@@ -20,9 +20,9 @@ namespace Do_an.Class
             danhgiasp = _danhgia;
             sosao = sao;
         }
-        public DanhGiaSP(string masp,string _ten, string _ngay, string _danhgia, string sao)
+        public DanhGiaSP(string tenshop, string _ten, string _ngay, string _danhgia, string sao)
         {
-            this.masp = masp;
+            this.tenshop = tenshop;
             ten = _ten;
             ngay = _ngay;
             danhgiasp = _danhgia;

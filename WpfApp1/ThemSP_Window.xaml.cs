@@ -55,6 +55,7 @@ namespace Do_an
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             cbDanhMuc.ItemsSource = DanhMuc;
+            //txtTenShop.Text=PhanQuyen.taikhoan.ToString();
         }
 
      
@@ -64,7 +65,7 @@ namespace Do_an
             sanPhamMoi.DanhMucSP = cbDanhMuc.Text;
             sanPhamMoi.MaSP = txtMaSP.Text;
             sanPhamMoi.TenSP = txtTenSP.Text;
-            sanPhamMoi.TenShop = txtTenShop.Text;
+            sanPhamMoi.TenShop = PhanQuyen.taikhoan;
             sanPhamMoi.TinhTrang = txtTinhTrang.Text;
             sanPhamMoi.GiaGoc = float.Parse(txtGiaGoc.Text);
             sanPhamMoi.GiaHTai = float.Parse(txtGiaBan.Text);
@@ -103,7 +104,7 @@ namespace Do_an
             SanPham_DAO sanPham_DAO = new SanPham_DAO();
             string query = "update SanPham set TenSP=@TenSP, TenShop=@TenShop,GiaGoc=@GiaGoc,GiaHTai=@GiaHTai," +
                 "NgayMua=@NgayMua,TinhTrang=@TinhTrang,MoTa=@MoTa,HinhAnh=@HinhAnh, DanhMucSP=@DanhMucSP where MaSP=@MaSP";  
-            SanPham sanPham = new SanPham(txtMaSP.Text,txtTenSP.Text,txtTenShop.Text,float.Parse(txtGiaGoc.Text),float.Parse(txtGiaBan.Text),dtpNgayMua.Text,txtTinhTrang.Text,txtMoTa.Text,imgHinhAnh.Source.ToString(),cbDanhMuc.Text);
+            SanPham sanPham = new SanPham(txtMaSP.Text,txtTenSP.Text,PhanQuyen.taikhoan,float.Parse(txtGiaGoc.Text),float.Parse(txtGiaBan.Text),dtpNgayMua.Text,txtTinhTrang.Text,txtMoTa.Text,imgHinhAnh.Source.ToString(),cbDanhMuc.Text);
             sanPham_DAO.sua(sanPham,query);
         }
     }

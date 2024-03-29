@@ -13,13 +13,13 @@ namespace Do_an
             {
                 Database database = new Database();
                 SqlConnection sqlConnection = database.getConnection();
-                string query = "insert into DanhGia_SP values (@MaSP,@TenNgDG,@NgayDG,@SoSao,@DanhGia)";
+                string query = "insert into DanhGia_SP values (@TenShop,@TenNgDG,@NgayDG,@SoSao,@DanhGia)";
                 using (SqlConnection connection = new SqlConnection(database.conStr))
                 {
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@MaSP", dg.masp);
+                        command.Parameters.AddWithValue("@TenShop", dg.tenshop);
                         command.Parameters.AddWithValue("@TenNgDG", dg.ten);
                         command.Parameters.AddWithValue("@SoSao",dg.sosao);
                         command.Parameters.AddWithValue("@DanhGia", dg.danhgiasp);

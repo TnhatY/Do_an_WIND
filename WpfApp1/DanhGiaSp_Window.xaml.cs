@@ -92,7 +92,7 @@ namespace Do_an
             try
             {
                 DanhGia_DAO danhGia_DAO = new DanhGia_DAO();
-                DanhGiaSP danhGiaSP = new DanhGiaSP(masp.Text,PhanQuyen.ten,ngayDg.Text,nhanxet.Text,sosao.Text);  
+                DanhGiaSP danhGiaSP = new DanhGiaSP(tenshop.Text,PhanQuyen.ten,ngayDg.Text,nhanxet.Text,sosao.Text);  
                 danhGia_DAO.themDG(danhGiaSP);
                 MessageBox.Show("Cảm ơn bạn đã đánh giá!");
                 Close();

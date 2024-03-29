@@ -34,7 +34,7 @@ namespace Do_an
         private void btndanhgia_Click(object sender, RoutedEventArgs e)
         {
             DanhGiaSp_Window danhGiaSp_Window = new DanhGiaSp_Window();
-            danhGiaSp_Window.masp.Text = masp.Text;
+            danhGiaSp_Window.tenshop.Text = tenshop.Text;
             danhGiaSp_Window.ShowDialog();
         }
     }

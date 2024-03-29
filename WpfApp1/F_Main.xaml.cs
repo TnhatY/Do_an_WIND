@@ -74,7 +74,7 @@ namespace Do_an
             Close();
         }
 
-        private void btnDaMua_Click(object sender, RoutedEventArgs e)
+        private void btnDaMua_Click(object sender, RoutedEventArgs e)  
         {
             UC_DaMua uC_DaMua= new UC_DaMua();
             user.Content = uC_DaMua;

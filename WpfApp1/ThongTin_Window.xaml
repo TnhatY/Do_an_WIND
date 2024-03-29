@@ -361,8 +361,12 @@
                                 <Run x:Name="TenShop"></Run>
                             </TextBlock>
                             <TextBlock Text="☆☆☆☆☆"  Margin="53,25,0,0" FontSize="16"/>
-                            <TextBlock Text="(12 đánh giá)" Margin="130,26,0,0" Foreground="#FF1E31B8" FontSize="14" FontWeight="Bold"></TextBlock>
-                            <Button Width="80" Height="25" Content="Xem trang" HorizontalAlignment="Right" Margin="0,0,10,0" Background="{x:Null}" BorderBrush="#FF141010"></Button>
+                            <TextBlock Text="(" Margin="130,26,0,0" Foreground="#FF1E31B8" FontSize="14" FontWeight="Bold">
+                                <Run x:Name="sodanhgia"></Run>
+                                <Run Text="đánh giá)"></Run>
+                            </TextBlock>
+
+                            <Button x:Name="xem" Width="90" Height="25" Content="Xem đánh giá" HorizontalAlignment="Right" Margin="0,0,10,0" Background="{x:Null}" BorderBrush="#FF6F1A7B" Click="xem_Click"></Button>
                         </Grid>
                         <Border Height="70" Margin="10,40,10,0" CornerRadius="5" Background="#FFF5E8F6">
                             <Grid >
@@ -385,30 +389,34 @@
                 <Border  VerticalAlignment="Top" Height="200" Background="White"  Margin="15,420,15,0">
                     <Grid Height="100">
                         <TextBlock Text="Mô tả sản phẩm" VerticalAlignment="Top" Margin="5,-45,0,0" FontSize="16" FontWeight="Bold"/>
-                        <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" FontSize="14" Margin="10,10,10,0" >
+                        <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" FontSize="14" Margin="10,10,50,0" >
                             <Run x:Name="MoTa"></Run>
                         </TextBlock>
                         <TextBlock Text="Tình Trạng: " FontSize="14" Margin="10,10,0,0" >
                             <Run x:Name="TinhTrang"></Run>
                         </TextBlock>
-                        <TextBlock Text="Giá mua mới: ₫" TextDecorations="Strikethrough" FontSize="14" Margin="10,-15,0,0" >
+                        <TextBlock Text="Giá mua mới: ₫" FontSize="14" Margin="10,-15,0,0" >
                             <Run x:Name="GiaGoc"></Run>
                         </TextBlock>
 
                     </Grid>
                 </Border>
                 <Border  VerticalAlignment="Top" Margin="15,650,15,0">
-                    <Grid Background="White" >
-                        <TextBlock Text=" Đánh Giá"  FontSize="14" FontWeight="Bold">
+                    <Grid Background="#FFF1F1F1" >
+                        <TextBlock Text=" Top sản phẩm nổi bật"  FontSize="14" FontWeight="Bold">
 
                         </TextBlock>
                         <TextBlock x:Name="chuDG" Margin="0,30,0,0"></TextBlock>
 
-                        <ItemsControl x:Name="thongtin" Margin="5,30,5,0">
-
+                        <ItemsControl x:Name="thongtin" Margin="5,30,5,0" Padding="0,0,10,10">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Orientation="Horizontal" />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate >
-                                    <local:UC_DanhGia Margin="15"/>
+                                    <local:UC_SanPham Margin="10"/>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>

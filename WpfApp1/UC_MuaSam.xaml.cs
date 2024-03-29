@@ -103,7 +103,7 @@ namespace Do_an
                 {
                     string sql = "Select * from SanPham";
                     thongtin.ItemsSource = sanPham_DAO.Getlist(sql);
-                }
+                 }
                 else
                 {
                     //MessageBox.Show(F_Main.texttimkiem);

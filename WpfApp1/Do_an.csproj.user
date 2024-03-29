@@ -55,6 +55,9 @@
     <Compile Update="UC_ThongKe.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="XemDanhGia_Window.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="DanhGiaSp_Window.xaml">
@@ -106,6 +109,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_ThongKe.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="XemDanhGia_Window.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
