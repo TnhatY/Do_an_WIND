@@ -115,6 +115,34 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="border" CornerRadius="3" Background="{TemplateBinding Background}" BorderThickness="2" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                            <Border.BorderBrush>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFFEDBDE"/>
+                                    <GradientStop Color="#FFEB6BFD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.BorderBrush>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="1.21"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF09F8"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF09F8"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Border BorderThickness="2,2,3,2">
         <Border.BorderBrush>
@@ -128,138 +156,97 @@
                 <SolidColorBrush Color="#FFF5E6FF" Opacity="0.35"/>
             </Grid.Background>
             <Grid>
-                    <Grid Margin="54,80,0,0" HorizontalAlignment="Left" Width="286" Height="275" VerticalAlignment="Top">
+                <Grid Margin="54,80,0,0" HorizontalAlignment="Left" Width="286" Height="275" VerticalAlignment="Top">
 
                     <Button Click="Image_Button" BorderThickness="1,1,1,1">
-                            <Button.BorderBrush>
-                                <SolidColorBrush Color="#FF00EDFF" Opacity="0.35"/>
-                            </Button.BorderBrush>
-                            <Button.Background>
-                                <ImageBrush  Opacity="0.5"/>
-                            </Button.Background>
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="#FF09F8" Opacity="0.35"/>
+                        </Button.BorderBrush>
+                        <Button.Background>
+                            <ImageBrush  Opacity="0.5"/>
+                        </Button.Background>
                         <Image x:Name="imgHinhAnh" Source="/image/uploadImage.png"/>
 
                     </Button>
-                        <TextBlock Text="Hình ảnh sản phẩm" FontSize="19" FontWeight="Bold" FontFamily="Tahoma" HorizontalAlignment="Center" Width="202" Height="74" VerticalAlignment="Top" Margin="0,-36,0,0"/>
-                    </Grid>
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 50 0 0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="97*"/>
-                            <ColumnDefinition Width="3*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="Danh mục sản phẩm" FontSize="14" Grid.ColumnSpan="2"></TextBlock>
-                        <ComboBox x:Name="cbDanhMuc" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2"  Grid.ColumnSpan="2" ItemsSource="{Binding MyDataSource}" BorderBrush="#FF060606">
-                            <ComboBox.Background>
-                                <LinearGradientBrush EndPoint="0,1">
-                                    <GradientStop Color="#FFF0F0F0"/>
-                                    <GradientStop Color="#FFE5D8EE" Offset="0.2"/>
-                                </LinearGradientBrush>
-                            </ComboBox.Background>
+                    <TextBlock Text="Hình ảnh sản phẩm" FontSize="20" FontWeight="Bold" Height="74" VerticalAlignment="Top" Margin="0,-36,0,0" HorizontalAlignment="Left" Width="202"/>
+                </Grid>
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 50,0,0">
+                    <TextBlock Text="Chi tiết sản phẩm" FontSize="20" Margin="0,-7,0,7" HorizontalAlignment="Left" Width="300" FontWeight="Bold"></TextBlock>
+                </Grid>
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 80 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="97*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Danh mục sản phẩm" FontSize="14" Grid.ColumnSpan="2" FontWeight="Bold"></TextBlock>
+                    <ComboBox x:Name="cbDanhMuc" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2"  Grid.ColumnSpan="2" ItemsSource="{Binding MyDataSource}" BorderBrush="#FF060606">
+                        <ComboBox.Background>
+                            <LinearGradientBrush EndPoint="0,1">
+                                <GradientStop Color="#FFF0F0F0"/>
+                                <GradientStop Color="#FFE5D8EE" Offset="0.2"/>
+                            </LinearGradientBrush>
+                        </ComboBox.Background>
+                    </ComboBox>
+                </Grid>
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 150,0,0">
+                    <TextBlock Text="Mã sản phẩm" FontSize="14" Margin="0,0,0,7" HorizontalAlignment="Left" Width="300" FontWeight="Bold"></TextBlock>
+                    <TextBox x:Name="txtMaSP" BorderThickness="1,1,1,2" Margin="0,20,0,0" Background="White" FontSize="13">
+                    </TextBox>
+                </Grid>
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 220,0,0">
+                    <TextBlock Text="Tên sản phẩm" FontSize="14" Margin="0,0,0,5" HorizontalAlignment="Left" Width="300" FontWeight="Bold"></TextBlock>
+                    <TextBox x:Name="txtTenSP" BorderThickness="1,1,1,2" Margin="0,20,0,0" FontSize="13">
+                    </TextBox>
+                </Grid>
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 290,0,0">
+                    <TextBlock Text="Tên Shop" FontSize="14" FontWeight="Bold"></TextBlock>
+                    <TextBox x:Name="txtTenShop" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2" FontSize="13">
+                    </TextBox>
+                </Grid>
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 360 0 0">
+                    <TextBlock Text="Tình trạng" FontSize="14" FontWeight="Bold"></TextBlock>
+                    <TextBox x:Name="txtTinhTrang" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2" FontSize="13">
+                    </TextBox>
+                </Grid>
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 430 0 0">
+                    <TextBlock Text="Giá gốc" FontSize="14" FontWeight="Bold"></TextBlock>
+                    <TextBox x:Name="txtGiaGoc" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2" FontSize="13">
+                    </TextBox>
+                </Grid>
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 500 0 0">
+                    <TextBlock Text="Giá bán" FontSize="14" FontWeight="Bold"></TextBlock>
+                    <TextBox x:Name="txtGiaBan" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2" FontSize="13" />
+                </Grid>
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 570 0 0">
+                    <TextBlock Text="Ngày mua" FontSize="14" FontWeight="Bold"></TextBlock>
+                    <DatePicker x:Name="dtpNgayMua" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2">
+                        <DatePicker.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFFEDBDE"/>
+                                <GradientStop Color="#FFEA67FF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </DatePicker.BorderBrush>
+                    </DatePicker>
+                </Grid>
 
-                        </ComboBox>
-                    </Grid>
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 120,0,0">
-                        <TextBlock Text="Mã sản phẩm" FontSize="14" Margin="0,0,0,7" HorizontalAlignment="Left" Width="300"></TextBlock>
-                        <TextBox x:Name="txtMaSP" BorderThickness="1,1,1,2" Margin="0,20,0,0" Background="White">
-                            <TextBox.BorderBrush>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Pad">
-                                    <GradientStop Color="#FFFEDBDE"/>
-                                    <GradientStop Color="#FFEA67FF" Offset="1"/>
-                                </LinearGradientBrush>
-                            </TextBox.BorderBrush>
-                        </TextBox>
-                    </Grid>
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 190,0,0">
-                        <TextBlock Text="Tên sản phẩm" FontSize="14" Margin="0,0,0,5" HorizontalAlignment="Left" Width="300"></TextBlock>
-                        <TextBox x:Name="txtTenSP" BorderThickness="1,1,1,2" Margin="0,20,0,0">
-                            <TextBox.BorderBrush>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Pad">
-                                    <GradientStop Color="#FFFEDBDE"/>
-                                    <GradientStop Color="#FFEA67FF" Offset="1"/>
-                                </LinearGradientBrush>
-                            </TextBox.BorderBrush>
-                        </TextBox>
-                    </Grid>
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 260,0,0">
-                        <TextBlock Text="Tên Shop" FontSize="14"></TextBlock>
-                        <TextBox x:Name="txtTenShop" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2">
-                            <TextBox.BorderBrush>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Pad">
-                                    <GradientStop Color="#FFFEDBDE"/>
-                                    <GradientStop Color="#FFEA67FF" Offset="1"/>
-                                </LinearGradientBrush>
-                            </TextBox.BorderBrush>
-                        </TextBox>
-                    </Grid>
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 330 0 0">
-                        <TextBlock Text="Tình trạng" FontSize="14"></TextBlock>
-                        <TextBox x:Name="txtTinhTrang" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2">
-                            <TextBox.BorderBrush>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Pad">
-                                    <GradientStop Color="#FFFEDBDE"/>
-                                    <GradientStop Color="#FFEA67FF" Offset="1"/>
-                                </LinearGradientBrush>
-                            </TextBox.BorderBrush>
-                        </TextBox>
-                    </Grid>
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 400 0 0">
-                        <TextBlock Text="Giá gốc" FontSize="14"></TextBlock>
-                        <TextBox x:Name="txtGiaGoc" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2">
-                            <TextBox.BorderBrush>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Pad">
-                                    <GradientStop Color="#FFFEDBDE"/>
-                                    <GradientStop Color="#FFEA67FF" Offset="1"/>
-                                </LinearGradientBrush>
-                            </TextBox.BorderBrush>
-                        </TextBox>
-                    </Grid>
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 470 0 0">
-                        <TextBlock Text="Giá bán" FontSize="14"></TextBlock>
-                        <TextBox x:Name="txtGiaBan" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2" >
-                            <TextBox.BorderBrush>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Pad">
-                                    <GradientStop Color="#FFFEDBDE"/>
-                                    <GradientStop Color="#FFEA67FF" Offset="1"/>
-                                </LinearGradientBrush>
-                            </TextBox.BorderBrush>
-                        </TextBox>
-                    </Grid>
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 550 0 0">
-                        <TextBlock Text="Ngày mua" FontSize="14"></TextBlock>
-                        <DatePicker x:Name="dtpNgayMua" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2">
-                            <DatePicker.BorderBrush>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                    <GradientStop Color="#FFFEDBDE"/>
-                                    <GradientStop Color="#FFEA67FF" Offset="1"/>
-                                </LinearGradientBrush>
-                            </DatePicker.BorderBrush>
-                        </DatePicker>
-                    </Grid>
-
-                    <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 640 0 0">
-                        <TextBlock Text="Mô tả chi tiết tình trạng sản phẩm" FontSize="14" Margin="0,0,0,0"></TextBlock>
-                        <TextBox x:Name="txtMoTa" BorderThickness="1,1,1,2" Margin="0,25,0,-5" >
-                            <TextBox.BorderBrush>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Pad">
-                                    <GradientStop Color="#FFFEDBDE"/>
-                                    <GradientStop Color="#FFEA67FF" Offset="1"/>
-                                </LinearGradientBrush>
-                            </TextBox.BorderBrush>
-                        </TextBox>
-                    </Grid>
-                    <Button x:Name="btnThem" Style="{DynamicResource ButtonStyle2}" Margin="430,730,0,0" Background="#FFFCFCFC" HorizontalAlignment="Left" Width="250" Height="40" VerticalAlignment="Top" Click="btnThem_Click_1" BorderBrush="DeepSkyBlue">
-                        <TextBlock Text="Thêm" FontWeight="Bold" FontSize="14" Foreground="#FF0058FF"></TextBlock>
-                    </Button>
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 640 0 0">
+                    <TextBlock Text="Mô tả chi tiết tình trạng sản phẩm" FontSize="14" Margin="0,0,0,0" FontWeight="Bold"></TextBlock>
+                    <TextBox x:Name="txtMoTa" BorderThickness="1,1,1,2" Margin="0,25,0,-5" FontSize="13" >
+                    </TextBox>
+                </Grid>
+                <Button x:Name="btnThem" Style="{DynamicResource ButtonStyle2}" Margin="430,730,0,0" Background="#FFFCFCFC" HorizontalAlignment="Left" Width="250" Height="40" VerticalAlignment="Top" Click="btnThem_Click_1" BorderBrush="DeepSkyBlue">
+                    <TextBlock Text="Thêm" FontWeight="Bold" FontSize="14" Foreground="#FF0058FF"></TextBlock>
+                </Button>
                 <Button x:Name="chinhsua" Style="{DynamicResource ButtonStyle2}" Margin="430,730,0,0" Background="#FFFCFCFC" HorizontalAlignment="Left" Width="250" Height="40" VerticalAlignment="Top" Click="btnChinhSua" BorderBrush="DeepSkyBlue">
                     <TextBlock Text="Lưu" FontWeight="Bold" FontSize="14" Foreground="#FF0058FF"></TextBlock>
                 </Button>
                 <Button x:Name="btnThoat" Style="{DynamicResource ButtonStyle1}" Margin="0,10,10,0" Click="btnThoat_Click" HorizontalAlignment="Right" Width="35" Height="35" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="Black" >
-                        <Button.Background>
-                            <ImageBrush ImageSource="/image/x.png"/>
-                        </Button.Background>
-                        <Image Source="/image/x.png" Width="15"></Image>
-                    </Button>
-                </Grid>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/image/x.png"/>
+                    </Button.Background>
+                    <Image Source="/image/x.png" Width="15"></Image>
+                </Button>
+            </Grid>
         </Grid>
     </Border>
 </Window>

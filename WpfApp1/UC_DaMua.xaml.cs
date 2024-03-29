@@ -39,13 +39,13 @@ namespace Do_an
         {
             listsp.ItemsSource = null;
             SanPham_DAO sp = new SanPham_DAO();
-            listsp.ItemsSource = sp.listSPBan();
+            listsp.ItemsSource = sp.listGioHang();
         }
         public void ReloadDataSPBan()
         {
             listsp.ItemsSource = null;
             SanPham_DAO sp = new SanPham_DAO();
-            listsp.ItemsSource = sp.listGioHang();
+            listsp.ItemsSource = sp.listSPBan();
         }
 
         private void xoa_Click(object sender, RoutedEventArgs e)
@@ -79,7 +79,6 @@ namespace Do_an
                         }
                     }
                     ReloadDataGioHang();
-                    
                 }
                 else
                 {
@@ -129,7 +128,7 @@ namespace Do_an
             SanPham_DAO sanPham_DAO = new SanPham_DAO();
            // tittle.Text = null;
             string xacNhan = "yes";
-            spdamua.BorderThickness = new Thickness(0, 0, 0, 2);
+            spdamua.BorderThickness = new Thickness(0, 0, 0, 3);
             spchuaxacnhan.BorderThickness = new Thickness(0, 0, 0, 0);
             xoa.Visibility = Visibility.Hidden;
             listsp.ItemsSource = sanPham_DAO.listSPDamua(xacNhan);
@@ -144,7 +143,7 @@ namespace Do_an
             SanPham_DAO sanPham_DAO = new SanPham_DAO();
             string xacNhan = "no";
             spdamua.BorderThickness = new Thickness(0, 0, 0, 0);
-            spchuaxacnhan.BorderThickness = new Thickness(0, 0, 0, 2);
+            spchuaxacnhan.BorderThickness = new Thickness(0, 0, 0, 3);
             tittle.Text = null;
             xoa.Visibility = Visibility.Hidden;
             listsp.ItemsSource = sanPham_DAO.listSPDamua(xacNhan);
@@ -153,7 +152,7 @@ namespace Do_an
         private void spdangban_Click(object sender, RoutedEventArgs e)
         {
             spchoxacnhan.BorderThickness = new Thickness(0, 0, 0, 0);
-            spdangban.BorderThickness = new Thickness(0, 0, 0, 2);
+            spdangban.BorderThickness = new Thickness(0, 0, 0, 3);
             SanPham_DAO sanPham_DAO= new SanPham_DAO();
             spdamua.Visibility = Visibility.Collapsed;
             spchuaxacnhan.Visibility = Visibility.Collapsed;
@@ -167,9 +166,8 @@ namespace Do_an
             spdamua.Visibility = Visibility.Collapsed;
             spchuaxacnhan.Visibility = Visibility.Collapsed;
             spdangban.BorderThickness = new Thickness(0, 0, 0, 0);
-            spchoxacnhan.BorderThickness = new Thickness(0, 0, 0, 2);
+            spchoxacnhan.BorderThickness = new Thickness(0, 0, 0, 3);
             listsp.ItemsSource = sanPham_DAO.listSPChoXacNhan();
-
         }
     }
 }

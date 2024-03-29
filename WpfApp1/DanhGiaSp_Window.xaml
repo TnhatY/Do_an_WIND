@@ -202,7 +202,7 @@
     
     <TextBlock Text="Đánh giá sản phẩm" HorizontalAlignment="Center" Margin="10" Height="25" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" />
     
-    <StackPanel Orientation="Horizontal" Margin="20,60,20,10" Background="#FFF9F9F9">
+    <StackPanel Orientation="Horizontal" Margin="20,60,20,20" Background="#FFF9F9F9">
         <TextBlock Text="Chất lượng sản phẩm" Margin="10,12,10,0" FontSize="13" />
       
         <ToggleButton x:Name="star1" Content="☆" Style="{StaticResource StarToggleButtonStyle}" Click="Star_Click" Margin="0,7,0,0"/>

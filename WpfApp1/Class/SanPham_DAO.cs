@@ -222,6 +222,7 @@ namespace Do_an.Class
                             sp.tinhtrang.Text = reader["TinhTrang"].ToString();
                             sp.xacnhan.Visibility = Visibility.Collapsed;
                             //sp.dagiao.Text = "Sản phẩm đã giao thành công";
+                            sp.txtxacnhan.Visibility= Visibility.Collapsed;
                             //sp..Text = reader["MoTa"].ToString();
                             BitmapImage bitmap = new BitmapImage();
                             bitmap.BeginInit();

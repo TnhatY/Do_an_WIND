@@ -174,5 +174,14 @@ namespace Do_an
            // btnThongKe.Background = null;
 
         }
+        public static string texttimkiem = "";
+        private void timkiem_Click(object sender, RoutedEventArgs e)
+        {
+            timkiem1.Text = null;
+            texttimkiem = txttimkiem.Text;
+            UC_MuaSam  uc= new UC_MuaSam();
+            user.Content = uc;
+            //btnTrangChu.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+        }
     }
 }
