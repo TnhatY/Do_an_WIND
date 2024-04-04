@@ -4,6 +4,7 @@ using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,9 +53,8 @@ namespace Do_an
             imageTittle.Source = bitmap;
             UC_MuaSam uC_MuaSam = new UC_MuaSam();
             user.Content = uC_MuaSam;
-            btnCaiDat.Background = null;
+			btnCaiDat.Background = null;
             btnCaiDat.BorderThickness = new Thickness(0);
-
         }
 
 
@@ -174,14 +174,86 @@ namespace Do_an
            // btnThongKe.Background = null;
 
         }
-        public static string texttimkiem = "";
+
+		public void hienUCSpTopTimKiem()
+		{
+			UC_SpTopTimKiem uc_sptop = new UC_SpTopTimKiem();
+			user.Content = uc_sptop;
+		}
+
+		public static string texttimkiem = "";
         private void timkiem_Click(object sender, RoutedEventArgs e)
         {
             timkiem1.Text = null;
             texttimkiem = txttimkiem.Text;
-            UC_MuaSam  uc= new UC_MuaSam();
+
+			UpdateSearchCount(texttimkiem);
+
+			UC_MuaSam  uc = new UC_MuaSam();
             user.Content = uc;
             //btnTrangChu.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
         }
-    }
+
+        private void UpdateSearchCount(string tenSP)
+        {
+            try
+            {
+                // Kết nối đến cơ sở dữ liệu
+                Database database = new Database();
+                using (SqlConnection conn = database.getConnection())
+                {
+                    conn.Open();
+
+					// Lấy mã sản phẩm dựa trên tên sản phẩm
+					string getMaSPQuery = $"SELECT MaSP FROM SanPham WHERE TenSP = @TenSP";
+					SqlCommand getMaSPCommand = new SqlCommand(getMaSPQuery, conn);
+					getMaSPCommand.Parameters.AddWithValue("@TenSP", tenSP);
+					string maSP = getMaSPCommand.ExecuteScalar()?.ToString();
+					if (!string.IsNullOrEmpty(maSP))
+                    {
+						string updateQuery = $"UPDATE SanPham SET SoLanTimKiem = SoLanTimKiem + 1 WHERE MaSP = @MaSP";
+						SqlCommand updateCommand = new SqlCommand(updateQuery, conn);
+						updateCommand.Parameters.AddWithValue("@MaSP", maSP);
+						updateCommand.ExecuteNonQuery();
+
+						// Lấy danh mục sản phẩm của sản phẩm
+						string getCategoryQuery = $"SELECT DanhMucSP FROM SanPham WHERE MaSP = @MaSP";
+                        SqlCommand getCategoryCommand = new SqlCommand(getCategoryQuery, conn);
+                        getCategoryCommand.Parameters.AddWithValue("@MaSP", maSP);
+                        string category = getCategoryCommand.ExecuteScalar()?.ToString();
+
+                        if (!string.IsNullOrEmpty(category))
+                        {
+							string checkCategoryQuery = $"SELECT COUNT(*) FROM TopDanhMuc WHERE DanhMucSP = @Category";
+							SqlCommand checkCategoryCommand = new SqlCommand(checkCategoryQuery, conn);
+							checkCategoryCommand.Parameters.AddWithValue("@Category", category);							
+							int categoryCount = (int)checkCategoryCommand.ExecuteScalar();
+
+                            if(categoryCount == 0)
+                            {
+								// Nếu danh mục sản phẩm chưa được đếm trong tài khoản của người dùng, thêm mới vào bảng TopDanhMuc
+								string insertCategoryQuery = $"INSERT INTO TopDanhMuc (DanhMucSP, LuotTimKiem, MaSP) VALUES (@Category, 1, @MaSP)";
+								SqlCommand insertCategoryCommand = new SqlCommand(insertCategoryQuery, conn);
+								insertCategoryCommand.Parameters.AddWithValue("@Category", category);
+								insertCategoryCommand.Parameters.AddWithValue("@MaSP", maSP);
+								insertCategoryCommand.ExecuteNonQuery();
+							}
+							else
+							{
+								// Nếu danh mục sản phẩm đã được đếm trong tài khoản của người dùng, cập nhật số lần tìm kiếm
+								string updateCategoryQuery = $"UPDATE TopDanhMuc SET LuotTimKiem = LuotTimKiem + 1 WHERE DanhMucSP = @Category";
+								SqlCommand updateCategoryCommand = new SqlCommand(updateCategoryQuery, conn);
+								updateCategoryCommand.Parameters.AddWithValue("@Category", category);
+								updateCategoryCommand.ExecuteNonQuery();
+							}							
+						}
+                    }
+				}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating search count: " + ex.Message);
+            }
+        }
+	}
 }

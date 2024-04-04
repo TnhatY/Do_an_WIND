@@ -8,18 +8,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="HinhAnhSP\camera.jpg" />
+    <None Remove="HinhAnhSP\dabanh01.jpg" />
     <None Remove="HinhAnhSP\edifice.jpg" />
+    <None Remove="HinhAnhSP\futal.jpg" />
+    <None Remove="HinhAnhSP\futer.jpg" />
     <None Remove="HinhAnhSP\ghevanphong.jpg" />
+    <None Remove="HinhAnhSP\giayspertar.jpg" />
     <None Remove="HinhAnhSP\ip11.jpg" />
     <None Remove="HinhAnhSP\ip14.jpg" />
     <None Remove="HinhAnhSP\iphone11.png" />
     <None Remove="HinhAnhSP\iphone5.jpg" />
+    <None Remove="HinhAnhSP\ipx.jpg" />
     <None Remove="HinhAnhSP\loa marshall.jpg" />
+    <None Remove="HinhAnhSP\mac1.jpg" />
+    <None Remove="HinhAnhSP\mac2.jpg" />
+    <None Remove="HinhAnhSP\mac3.jpg" />
+    <None Remove="HinhAnhSP\mayep.jpg" />
     <None Remove="HinhAnhSP\mec.jpg" />
     <None Remove="HinhAnhSP\mecc.jpg" />
     <None Remove="HinhAnhSP\PC_ADC.jpg" />
+    <None Remove="HinhAnhSP\rolex.jpg" />
     <None Remove="HinhAnhSP\RTX4090.png" />
+    <None Remove="HinhAnhSP\tivi1.jpg" />
     <None Remove="HinhAnhSP\vot.jpg" />
+    <None Remove="HinhAnhSP\xedap.jpg" />
     <None Remove="image\add.png" />
     <None Remove="image\add2.png" />
     <None Remove="image\back.png" />
@@ -29,6 +42,7 @@
     <None Remove="image\buy3.png" />
     <None Remove="image\buy4.png" />
     <None Remove="image\buy5.png" />
+    <None Remove="image\buy7.png" />
     <None Remove="image\caidat.png" />
     <None Remove="image\caidat2.png" />
     <None Remove="image\caidat3.png" />
@@ -75,6 +89,7 @@
     <None Remove="image\themgiohang.png" />
     <None Remove="image\thongke.png" />
     <None Remove="image\title.png" />
+    <None Remove="image\top.png" />
     <None Remove="image\trangchu.png" />
     <None Remove="image\trangchu1.png" />
     <None Remove="image\trash.png" />
@@ -87,6 +102,7 @@
     <None Remove="image\xanh.PNG" />
     <None Remove="image\xuatfile.png" />
     <None Remove="image\xuatfile2.png" />
+    <None Remove="image\đỏ.PNG" />
   </ItemGroup>
 
   <ItemGroup>
@@ -96,22 +112,36 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="HinhAnhSP\camera.jpg" />
+    <Resource Include="HinhAnhSP\dabanh01.jpg" />
     <Resource Include="HinhAnhSP\edifice.jpg" />
+    <Resource Include="HinhAnhSP\futal.jpg" />
+    <Resource Include="HinhAnhSP\futer.jpg" />
     <Resource Include="HinhAnhSP\ghevanphong.jpg" />
+    <Resource Include="HinhAnhSP\giayspertar.jpg" />
     <Resource Include="HinhAnhSP\ip11.jpg" />
     <Resource Include="HinhAnhSP\ip14.jpg" />
     <Resource Include="HinhAnhSP\iphone11.png" />
     <Resource Include="HinhAnhSP\iphone5.jpg" />
+    <Resource Include="HinhAnhSP\ipx.jpg" />
     <Resource Include="HinhAnhSP\loa marshall.jpg" />
+    <Resource Include="HinhAnhSP\mac1.jpg" />
+    <Resource Include="HinhAnhSP\mac2.jpg" />
+    <Resource Include="HinhAnhSP\mac3.jpg" />
+    <Resource Include="HinhAnhSP\mayep.jpg" />
     <Resource Include="HinhAnhSP\mecc.jpg" />
     <Resource Include="HinhAnhSP\PC_ADC.jpg" />
+    <Resource Include="HinhAnhSP\rolex.jpg" />
     <Resource Include="HinhAnhSP\RTX4090.png" />
+    <Resource Include="HinhAnhSP\tivi1.jpg" />
     <Resource Include="HinhAnhSP\vot.jpg" />
+    <Resource Include="HinhAnhSP\xedap.jpg" />
     <Resource Include="image\add.png" />
     <Resource Include="image\add2.png" />
     <Resource Include="image\back.png" />
     <Resource Include="image\banhang.png" />
     <Resource Include="image\buy2.png" />
+    <Resource Include="image\buy7.png" />
     <Resource Include="image\caidat.png" />
     <Resource Include="image\caidat2.png" />
     <Resource Include="image\caidat3.png" />
@@ -147,6 +177,7 @@
     <Resource Include="image\th.jpg" />
     <Resource Include="image\themgiohang.png" />
     <Resource Include="image\thongke.png" />
+    <Resource Include="image\top.png" />
     <Resource Include="image\trangchu.png" />
     <Resource Include="image\trash.png" />
     <Resource Include="image\uneye.png" />
@@ -161,6 +192,7 @@
     <Resource Include="image\xanh.PNG" />
     <Resource Include="image\xuatfile.png" />
     <Resource Include="image\xuatfile2.png" />
+    <Resource Include="image\đỏ.PNG" />
   </ItemGroup>
 
   <ItemGroup>

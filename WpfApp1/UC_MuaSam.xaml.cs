@@ -33,16 +33,13 @@ namespace Do_an
     {
         
         Database data = new Database();
-        SanPham_DAO sanPham_DAO = new SanPham_DAO();
-        
+        SanPham_DAO sanPham_DAO = new SanPham_DAO();        
 
         public UC_MuaSam()
         {
             InitializeComponent();
             DataContext = this;
-            
-                
-        }
+		}
 
         private void btnThemSP_Click(object sender, RoutedEventArgs e)
         {
@@ -51,9 +48,6 @@ namespace Do_an
             themSP_Window.Show();
         }
 
-       
-
-     
         private void DanhMuc_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -95,33 +89,35 @@ namespace Do_an
             
         }
 
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                if (F_Main.texttimkiem == "")
-                {
-                    string sql = "Select * from SanPham";
-                    thongtin.ItemsSource = sanPham_DAO.Getlist(sql);
-                 }
-                else
-                {
-                    //MessageBox.Show(F_Main.texttimkiem);
-                    string timkiem = F_Main.texttimkiem;
-                    string sql = "select * from SanPham where TenSP like N'%" + timkiem + "%'";
-                    thongtin.ItemsSource = sanPham_DAO.Getlist(sql);
+		private void UserControl_Loaded(object sender, RoutedEventArgs e)
+		{
+			try
+			{				
+				// Kiểm tra F_Main.texttimkiem và lấy dữ liệu cho thongtin
+				if (F_Main.texttimkiem == "")
+				{
+					string sql = "Select * from SanPham";
+                    string sql2 = "Select * from TopDanhMuc where LuotTimKiem > 0";
 
-                }
-            }catch (Exception ex)
-            {
-                MessageBox.Show("Không có sản phẩm này!","Thông báo");
-            }
-           
+					thongtin.ItemsSource = sanPham_DAO.Getlist(sql);
+					toptimkiem.ItemsSource = sanPham_DAO.topDanhMucTimKiem(sql2);
+				}
+				else
+				{
+					string timkiem = F_Main.texttimkiem;
+					string sql = "select * from SanPham where TenSP like N'%" + timkiem + "%'";
+					thongtin.ItemsSource = sanPham_DAO.Getlist(sql);
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Không có sản phẩm này!", "Thông báo");
+			}
 
-            if (PhanQuyen.loaiTk == "nguoimua")
-            {
-                btnThemSP.Visibility = Visibility.Collapsed;
-            }
-        }
-    }
+			if (PhanQuyen.loaiTk == "nguoimua")
+			{
+				btnThemSP.Visibility = Visibility.Collapsed;
+			}
+		}
+	}
 }

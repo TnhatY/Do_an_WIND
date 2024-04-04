@@ -27,9 +27,8 @@ namespace Do_an
             InitializeComponent();
         }
         //public event EventHandler<DataEventArgs> DataRequested;
-
-      
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+ 
+        private void btnHienThiThongTin(object sender, RoutedEventArgs e)
         {
             ThongTin_Window thongTin = new ThongTin_Window();
             thongTin.TenSP.Text = ten.Text;

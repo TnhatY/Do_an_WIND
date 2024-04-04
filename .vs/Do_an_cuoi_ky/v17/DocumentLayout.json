@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Hypocrite\\Downloads\\hoang editting\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2C028170-F81D-4A8E-8762-080C0F9F1811}|WpfApp1\\Do_an.csproj|c:\\users\\hypocrite\\downloads\\hoang editting\\wpfapp1\\topsanpham_window.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2C028170-F81D-4A8E-8762-080C0F9F1811}|WpfApp1\\Do_an.csproj|solutionrelative:wpfapp1\\topsanpham_window.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C028170-F81D-4A8E-8762-080C0F9F1811}|WpfApp1\\Do_an.csproj|c:\\users\\hypocrite\\downloads\\hoang editting\\wpfapp1\\topsanpham_window.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{2C028170-F81D-4A8E-8762-080C0F9F1811}|WpfApp1\\Do_an.csproj|solutionrelative:wpfapp1\\topsanpham_window.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C028170-F81D-4A8E-8762-080C0F9F1811}|WpfApp1\\Do_an.csproj|c:\\users\\hypocrite\\downloads\\hoang editting\\wpfapp1\\uc_topdanhmuc.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{2C028170-F81D-4A8E-8762-080C0F9F1811}|WpfApp1\\Do_an.csproj|solutionrelative:wpfapp1\\uc_topdanhmuc.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C028170-F81D-4A8E-8762-080C0F9F1811}|WpfApp1\\Do_an.csproj|c:\\users\\hypocrite\\downloads\\hoang editting\\wpfapp1\\class\\sanpham_dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C028170-F81D-4A8E-8762-080C0F9F1811}|WpfApp1\\Do_an.csproj|solutionrelative:wpfapp1\\class\\sanpham_dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C028170-F81D-4A8E-8762-080C0F9F1811}|WpfApp1\\Do_an.csproj|c:\\users\\hypocrite\\downloads\\hoang editting\\wpfapp1\\f_main.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{2C028170-F81D-4A8E-8762-080C0F9F1811}|WpfApp1\\Do_an.csproj|solutionrelative:wpfapp1\\f_main.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 267,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TopSanPham_Window.xaml",
+              "DocumentMoniker": "C:\\Users\\Hypocrite\\Downloads\\hoang editting\\WpfApp1\\TopSanPham_Window.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\TopSanPham_Window.xaml",
+              "ToolTip": "C:\\Users\\Hypocrite\\Downloads\\hoang editting\\WpfApp1\\TopSanPham_Window.xaml",
+              "RelativeToolTip": "WpfApp1\\TopSanPham_Window.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-03T23:32:41.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TopSanPham_Window.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Hypocrite\\Downloads\\hoang editting\\WpfApp1\\TopSanPham_Window.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\TopSanPham_Window.xaml.cs",
+              "ToolTip": "C:\\Users\\Hypocrite\\Downloads\\hoang editting\\WpfApp1\\TopSanPham_Window.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\TopSanPham_Window.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T23:36:31.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UC_TopDanhMuc.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Hypocrite\\Downloads\\hoang editting\\WpfApp1\\UC_TopDanhMuc.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\UC_TopDanhMuc.xaml.cs",
+              "ToolTip": "C:\\Users\\Hypocrite\\Downloads\\hoang editting\\WpfApp1\\UC_TopDanhMuc.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\UC_TopDanhMuc.xaml.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T22:06:27.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SanPham_DAO.cs",
+              "DocumentMoniker": "C:\\Users\\Hypocrite\\Downloads\\hoang editting\\WpfApp1\\Class\\SanPham_DAO.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Class\\SanPham_DAO.cs",
+              "ToolTip": "C:\\Users\\Hypocrite\\Downloads\\hoang editting\\WpfApp1\\Class\\SanPham_DAO.cs",
+              "RelativeToolTip": "WpfApp1\\Class\\SanPham_DAO.cs",
+              "ViewState": "AQIAAAQCAAAAAAAAAAAgwBgCAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:29:49.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "F_Main.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Hypocrite\\Downloads\\hoang editting\\WpfApp1\\F_Main.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\F_Main.xaml.cs",
+              "ToolTip": "C:\\Users\\Hypocrite\\Downloads\\hoang editting\\WpfApp1\\F_Main.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\F_Main.xaml.cs",
+              "ViewState": "AQIAAMUAAAAAAAAAAADwv+kAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T22:27:54.582Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

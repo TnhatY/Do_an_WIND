@@ -13,6 +13,9 @@
     <Compile Update="F_Main.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="test.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ThanhToan_Window.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -23,6 +26,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="TopBan_Window.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="TopSanPham_Window.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UC_CaiDat.xaml.cs">
@@ -49,10 +55,16 @@
     <Compile Update="UC_SpGioHang.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UC_SpTopTimKiem.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UC_SP_DaMua.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UC_ThongKe.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC_TopDanhMuc.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="XemDanhGia_Window.xaml.cs">
@@ -69,6 +81,9 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="test.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ThanhToan_Window.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -79,6 +94,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="TopBan_Window.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TopSanPham_Window.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_CaiDat.xaml">
@@ -105,10 +123,16 @@
     <Page Update="UC_SpGioHang.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="UC_SpTopTimKiem.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UC_SP_DaMua.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_ThongKe.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_TopDanhMuc.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="XemDanhGia_Window.xaml">

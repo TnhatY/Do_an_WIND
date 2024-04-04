@@ -570,20 +570,19 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Border>
-    <Grid>
-           
-        <Border 
+    <Border Background="#FFE0CDED">
+        <Grid>
+            <Border 
                 Background="#FFE0CDED"
-                Height="50"
-                VerticalAlignment="Top" >
+                Height="79"
+                VerticalAlignment="Top" Margin="0,-29,0,0" >
                 <Grid>
-                <Button x:Name="btnThemSP" Style="{DynamicResource ButtonStyle2}" Background="#FFEE3CD2" Width="170" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,50,0" Click="btnThemSP_Click" BorderThickness="1,0,0,1">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/image/add2.png" Width="29" Margin="0,0,10,0"></Image>
-                        <TextBlock Text="Thêm sản phẩm" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White"></TextBlock>
-                    </StackPanel>
-                </Button>
+                    <Button x:Name="btnThemSP" Style="{DynamicResource ButtonStyle2}" Background="#FFEE3CD2" Width="170" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,17,50,0" Click="btnThemSP_Click" BorderThickness="1,0,0,2">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/image/add2.png" Width="29" Margin="0,0,10,0"></Image>
+                            <TextBlock Text="Thêm sản phẩm" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White"></TextBlock>
+                        </StackPanel>
+                    </Button>
                     <Grid Margin="0,0,220,0">
                         <Button Style="{DynamicResource ButtonStyle3}" x:Name="SpDienThoai" Height="20" Width="80" HorizontalAlignment="Left" Margin="20,0,0,0" Background="#FFEE3CD2" Click="DanhMuc_Click" BorderThickness="0,0,0,1">
                             <TextBlock x:Name="dienthoai" Text="Điện thoại" FontWeight="Bold" Foreground="#FFFBFBFB"></TextBlock>
@@ -607,10 +606,31 @@
                 </Grid>
             </Border>
 
-            <Border Background="#FFE0CDED"
-                Margin="0,50,0,0"
-                 BorderThickness="0,2,0,0" BorderBrush="#FF974CC1">
-                <ScrollViewer >
+            <Border Background="#FFE0CDED" BorderThickness="0,2,0,2" BorderBrush="#FF974CC1" Margin="0,33,0,408">
+                <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled" Margin="0,-2,0,-2">
+                    <ItemsControl x:Name="toptimkiem" Width="970">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Rows="1" Margin="-20,0,-20,0"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <local:UC_TopDanhMuc/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Border>
+
+            <TextBlock HorizontalAlignment="Left" Margin="10,21,0,0" TextWrapping="Wrap" Text="Top Tìm Kiếm" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Width="106" TextAlignment="Center" Foreground="#FFE03E00">
+                <TextBlock.Background>
+                    <SolidColorBrush Color="#FFE0CDED" Opacity="0.85"/>
+                </TextBlock.Background>
+            </TextBlock>
+
+            <Border Background="#FFE0CDED" BorderThickness="0,2,0,0" BorderBrush="#FF974CC1" Margin="0,228,0,0">
+                <ScrollViewer>
                     <ScrollViewer.Resources>
                         <Style TargetType="{x:Type ScrollBar}">
                             <Setter Property="Background" Value="Transparent"/>
@@ -635,7 +655,7 @@
                             </Setter>
                         </Style>
                     </ScrollViewer.Resources>
-                    <ItemsControl x:Name="thongtin">
+                    <ItemsControl x:Name="thongtin" Width="980">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel Orientation="Horizontal" />
@@ -643,13 +663,13 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate >
-                                <local:UC_SanPham Margin="10"/>
+                                <local:UC_SanPham Margin="11"/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
-                </ItemsControl>
+                    </ItemsControl>
                 </ScrollViewer>
-                
             </Border>
+
         </Grid>
     </Border>
 </UserControl>

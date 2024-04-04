@@ -23,7 +23,7 @@ namespace Do_an
         {
             InitializeComponent();
         }
-        List<string> DanhMuc = new List<string> { "Điện thọai", "Đồ gia dụng", "Xe cộ", "Đồ điện tử", "Thời trang","Thể thao" };
+        List<string> DanhMuc = new List<string> { "Điện thọai", "Đồ gia dụng", "Xe cộ", "Đồ điện tử", "Thời trang", "Thể thao" };
         private void btnThoat_Click(object sender, RoutedEventArgs e)
         {
             Close();

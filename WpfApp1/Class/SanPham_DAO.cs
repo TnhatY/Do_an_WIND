@@ -35,7 +35,7 @@ namespace Do_an.Class
                 string danhMucSP = row["DanhMucSP"].ToString();
                 sanPhams.Add(new SanPham(maSP,tenSP,tenShop,giaGoc,giaHTai,ngayMua,tinhTrang,moTa,hinhAnh,danhMucSP));
             }
-            return sanPhams; 
+            return sanPhams;
         }
         public void them(SanPham sp,string query)
         {
@@ -142,6 +142,7 @@ namespace Do_an.Class
                 MessageBox.Show(Fail.Message);
             }
         }
+
         public ObservableCollection<UC_SpGioHang> listGioHang()
         {
             ObservableCollection<UC_SpGioHang> listSP = new ObservableCollection<UC_SpGioHang> ();
@@ -188,6 +189,7 @@ namespace Do_an.Class
                 return listSP;
             }
         }
+
         public ObservableCollection<UC_SpBan> listSPBan()
         {
             ObservableCollection<UC_SpBan> SanPhamList = new ObservableCollection<UC_SpBan>();
@@ -424,5 +426,162 @@ namespace Do_an.Class
                 return null;
             }
         }
-    }
+
+		public ObservableCollection<UC_TopDanhMuc> topDanhMucTimKiem(string sql)
+		{
+			ObservableCollection<UC_TopDanhMuc> categoriesList = new ObservableCollection<UC_TopDanhMuc>();
+			Database database = new Database();
+
+			DataTable dt = database.getAllData(sql);
+			foreach (DataRow row in dt.Rows)
+            {
+				UC_TopDanhMuc uc_topdanhmuc = new UC_TopDanhMuc();
+				uc_topdanhmuc.soluong.Text = row["LuotTimKiem"].ToString();
+				uc_topdanhmuc.danhmuc.Text = row["DanhMucSP"].ToString();
+				BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(row["HinhAnh"].ToString(), UriKind.RelativeOrAbsolute);
+                bitmap.EndInit();
+                uc_topdanhmuc.hinhanh.Source = bitmap;
+				categoriesList.Add(uc_topdanhmuc);
+			}
+            return categoriesList;
+		}
+
+		//public ObservableCollection<UC_TopDanhMuc> topDanhMucTimKiem()
+		//{
+		//	ObservableCollection<UC_TopDanhMuc> categoriesList = new ObservableCollection<UC_TopDanhMuc>();
+
+		//	try
+		//	{
+		//		Database database = new Database();
+		//		using (SqlConnection conn = database.getConnection())
+		//		{
+		//			conn.Open();
+		//                  string query = "SELECT * FROM TopDanhMuc";
+		//			using (SqlCommand command = new SqlCommand(query, conn))
+		//			using (SqlDataReader reader = command.ExecuteReader())
+		//			{
+		//				while (reader.Read())
+		//				{
+		//					UC_TopDanhMuc uc_topdanhmuc= new UC_TopDanhMuc();
+		//					uc_topdanhmuc.soluong.Text = reader["LuotTimKiem"].ToString();
+		//                          uc_topdanhmuc.danhmuc.Text = reader["DanhMucSP"].ToString();
+		//					BitmapImage bitmap = new BitmapImage();
+		//					bitmap.BeginInit();
+		//					bitmap.UriSource = new Uri(reader["HinhAnh"].ToString(), UriKind.RelativeOrAbsolute);
+		//					bitmap.EndInit();
+		//					uc_topdanhmuc.hinhanh.Source = bitmap;
+		//					categoriesList.Add(uc_topdanhmuc);
+		//				}
+		//			}
+		//		}
+		//	}
+		//	catch (SqlException ex)
+		//	{
+		//		MessageBox.Show("SQL Error: " + ex.Message);
+		//	}
+		//	catch (Exception ex)
+		//	{
+		//		MessageBox.Show("Error: " + ex.Message);
+		//	}
+
+		//	return categoriesList;
+		//}
+
+
+		public ObservableCollection<UC_SanPham> topSpTimKiemTheoDanhMuc(string category)
+		{
+			ObservableCollection<UC_SanPham> productList = new ObservableCollection<UC_SanPham>();
+
+			try
+			{
+				Database database = new Database();
+				using (SqlConnection conn = database.getConnection())
+				{
+					conn.Open();
+					string query = $"SELECT * FROM TopDanhMuc WHERE DanhMucSP = '{category}'";
+					using (SqlCommand command = new SqlCommand(query, conn))
+					using (SqlDataReader reader = command.ExecuteReader())
+					{
+						while (reader.Read())
+						{
+							UC_SanPham sp = new UC_SanPham();
+							sp.masp.Text = reader["MaSP"].ToString();
+							sp.ten.Text = reader["TenSP"].ToString();
+							sp.tenshop.Text = reader["TenShop"].ToString();
+							sp.giagoc.Text = reader["GiaGoc"].ToString();
+							sp.giaBan.Text = reader["GiaHTai"].ToString();
+							sp.tinhtrang.Text = reader["TinhTrang"].ToString();
+							sp.mota.Text = reader["MoTa"].ToString();
+                            sp.danhmuc.Text = reader["DanhMucSP"].ToString();
+                            sp.solantimkiem.Text = reader["SoLanTimKiem"].ToString();
+							BitmapImage bitmap = new BitmapImage();
+							bitmap.BeginInit();
+							bitmap.UriSource = new Uri(reader["HinhAnh"].ToString(), UriKind.RelativeOrAbsolute);
+							bitmap.EndInit();
+							sp.hinhanh.Source = bitmap;
+							productList.Add(sp);
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error: " + ex.Message);
+			}
+
+			return productList;
+		}
+
+		public ObservableCollection<UC_SanPham> listSPDanhMucTop(string danhmuc)
+		{
+			ObservableCollection<UC_SanPham> listSP = new ObservableCollection<UC_SanPham>();
+			Database database = new Database();
+			List<string> listmasp = new List<string>();
+			SqlConnection conn = database.getConnection();
+			{
+				conn.Open();
+
+				using (SqlCommand command = new SqlCommand($"SELECT MaSP FROM TopDanhMuc where DanhMucSP='{danhmuc}'", conn))
+				using (SqlDataReader reader = command.ExecuteReader())
+				{
+					while (reader.Read())
+					{
+						listmasp.Add(reader["MaSP"].ToString());
+					}
+				}
+				foreach (string msp in listmasp)
+				{
+					using (SqlCommand command = new SqlCommand($"SELECT * FROM SanPham where MaSP='{msp}'", conn))
+					using (SqlDataReader reader = command.ExecuteReader())
+					{
+						while (reader.Read())
+						{
+							UC_SanPham sp = new UC_SanPham();
+							sp.masp.Text = reader["MaSP"].ToString();
+							sp.ten.Text = reader["TenSP"].ToString();
+							sp.tenshop.Text = reader["TenShop"].ToString();
+							sp.giagoc.Text = reader["GiaGoc"].ToString();
+							sp.giaBan.Text = reader["GiaHTai"].ToString();
+							sp.tinhtrang.Text = reader["TinhTrang"].ToString();
+							sp.mota.Text = reader["MoTa"].ToString();
+                            sp.danhmuc.Text = reader["DanhMucSP"].ToString();
+                            sp.solantimkiem.Text = reader["SoLanTimKiem"].ToString();
+							BitmapImage bitmap = new BitmapImage();
+							bitmap.BeginInit();
+							bitmap.UriSource = new Uri(reader["HinhAnh"].ToString(), UriKind.RelativeOrAbsolute);
+							bitmap.EndInit();
+							sp.hinhanh.Source = bitmap;
+							listSP.Add(sp);
+						}
+					}
+				}
+				conn.Close();
+				return listSP;
+			}
+		}
+
+
+	}
 }
