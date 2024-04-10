@@ -27,7 +27,7 @@ namespace Do_an
         }
 
        
-        private void btnHienThiThonTin_Click(object sender, RoutedEventArgs e)
+        private void btnHienThiThongTin_Click(object sender, RoutedEventArgs e)
         {
             ThongTin_Window thongTin_Window = new ThongTin_Window();
             thongTin_Window.TenSP.Text = lblTenSP.Text;

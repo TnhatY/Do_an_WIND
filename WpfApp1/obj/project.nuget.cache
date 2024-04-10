@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jx6YHXNpJ4sVsgjt4EZlHST/ufYJqOPQlNpwa4v4ukolvS26UFHB9V+wUNUk6gGec00XIOSWm/E9dnoCOVajQg==",
+  "dgSpecHash": "uALiuYtzdCXMVKcRsWeuTtsqnUK816XQTX/RtClG2bTTExY5WSXF7XVAe8CGUGmol1UV4Av0Bul64vmK9tqdtQ==",
   "success": true,
-  "projectFilePath": "C:\\Winform\\Do_An_Winform\\Do_an_WIND\\WpfApp1\\Do_an.csproj",
+  "projectFilePath": "C:\\Winform\\Do_an_WIND-anh\\WpfApp1\\Do_an.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\huanc\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\huanc\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

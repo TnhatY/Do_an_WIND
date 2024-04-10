@@ -74,7 +74,7 @@ namespace Do_an
             Close();
         }
 
-        private void btnDaMua_Click(object sender, RoutedEventArgs e)
+        private void btnDaMua_Click(object sender, RoutedEventArgs e)  
         {
             UC_DaMua uC_DaMua= new UC_DaMua();
             user.Content = uC_DaMua;
@@ -173,6 +173,15 @@ namespace Do_an
             btnCaiDat.Background=new SolidColorBrush(Color.FromRgb(136, 0, 204));
            // btnThongKe.Background = null;
 
+        }
+        public static string texttimkiem = "";
+        private void timkiem_Click(object sender, RoutedEventArgs e)
+        {
+            timkiem1.Text = null;
+            texttimkiem = txttimkiem.Text;
+            UC_MuaSam  uc= new UC_MuaSam();
+            user.Content = uc;
+            //btnTrangChu.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
         }
     }
 }

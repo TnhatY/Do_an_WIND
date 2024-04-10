@@ -40,12 +40,7 @@ namespace Do_an
         {
             InitializeComponent();
             DataContext = this;
-            string sql = "Select * from SanPham";
-            thongtin.ItemsSource = sanPham_DAO.Getlist(sql);
-            if (PhanQuyen.loaiTk == "nguoimua")
-            {
-                btnThemSP.Visibility = Visibility.Hidden;
-            }
+            
                 
         }
 
@@ -102,7 +97,31 @@ namespace Do_an
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                if (F_Main.texttimkiem == "")
+                {
+                    string sql = "Select * from SanPham";
+                    thongtin.ItemsSource = sanPham_DAO.Getlist(sql);
+                 }
+                else
+                {
+                    //MessageBox.Show(F_Main.texttimkiem);
+                    string timkiem = F_Main.texttimkiem;
+                    string sql = "select * from SanPham where TenSP like N'%" + timkiem + "%'";
+                    thongtin.ItemsSource = sanPham_DAO.Getlist(sql);
+
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Không có sản phẩm này!","Thông báo");
+            }
            
+
+            if (PhanQuyen.loaiTk == "nguoimua")
+            {
+                btnThemSP.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

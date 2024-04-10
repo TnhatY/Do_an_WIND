@@ -33,7 +33,10 @@ namespace Do_an.Class
                 string moTa = row["MoTa"].ToString();
                 string hinhAnh = row["HinhAnh"].ToString();
                 string danhMucSP = row["DanhMucSP"].ToString();
-                sanPhams.Add(new SanPham(maSP,tenSP,tenShop,giaGoc,giaHTai,ngayMua,tinhTrang,moTa,hinhAnh,danhMucSP));
+                string hinhAnh2 = row["HinhAnh2"].ToString();
+                string hinhAnh3 = row["HinhAnh3"].ToString();
+                string hinhAnh4 = row["HinhAnh4"].ToString();
+                sanPhams.Add(new SanPham(maSP,tenSP,tenShop,giaGoc,giaHTai,ngayMua,tinhTrang,moTa,hinhAnh,danhMucSP, hinhAnh2, hinhAnh3, hinhAnh4));
             }
             return sanPhams; 
         }
@@ -57,6 +60,9 @@ namespace Do_an.Class
                         command.Parameters.AddWithValue("@MoTa", sp.MoTa);
                         command.Parameters.AddWithValue("@HinhAnh", sp.HinhAnh);
                         command.Parameters.AddWithValue("@DanhMucSP", sp.DanhMucSP);
+                        command.Parameters.AddWithValue("@HinhAnh2", sp.HinhAnh2);
+                        command.Parameters.AddWithValue("@HinhAnh3", sp.HinhAnh3);
+                        command.Parameters.AddWithValue("@HinhAnh4", sp.HinhAnh4);
                         command.ExecuteNonQuery();
                     }
                 }
@@ -87,6 +93,9 @@ namespace Do_an.Class
                         command.Parameters.AddWithValue("@MoTa", sp.MoTa);
                         command.Parameters.AddWithValue("@HinhAnh", sp.HinhAnh);
                         command.Parameters.AddWithValue("@DanhMucSP", sp.DanhMucSP);
+                        command.Parameters.AddWithValue("@HinhAnh2", sp.HinhAnh2);
+                        command.Parameters.AddWithValue("@HinhAnh3", sp.HinhAnh3);
+                        command.Parameters.AddWithValue("@HinhAnh4", sp.HinhAnh4);
                         command.ExecuteNonQuery();
                     }
                 }
@@ -222,6 +231,7 @@ namespace Do_an.Class
                             sp.tinhtrang.Text = reader["TinhTrang"].ToString();
                             sp.xacnhan.Visibility = Visibility.Collapsed;
                             //sp.dagiao.Text = "Sản phẩm đã giao thành công";
+                            sp.txtxacnhan.Visibility= Visibility.Collapsed;
                             //sp..Text = reader["MoTa"].ToString();
                             BitmapImage bitmap = new BitmapImage();
                             bitmap.BeginInit();
@@ -232,6 +242,59 @@ namespace Do_an.Class
                         }
                     }
                 }
+            }
+            return SanPhamList;
+        }
+
+        public ObservableCollection<UC_SanPham> listSPBan2(string tenshop,string masp)
+        {
+            ObservableCollection<UC_SanPham> SanPhamList = new ObservableCollection<UC_SanPham>();
+            List<string> listsp = new List<string>();
+            Database database = new Database();
+            SqlConnection conn = database.getConnection();
+            {
+                conn.Open();
+                //string taikhoan = PhanQuyen.taikhoan;
+                //using (SqlCommand command = new SqlCommand($"SELECT MaSP FROM SanPham where TenShop='{tenshop}'", conn))
+                //using (SqlDataReader reader = command.ExecuteReader())
+                //{
+                //    while (reader.Read())
+                //    {
+                //        listsp.Add(reader["MaSP"].ToString());
+                //    }
+                //}
+               
+
+                //foreach (string masp in listsp)
+                //{
+                    //string sql = $"SELECT * FROM SanPham where MaSP='{masp}'";
+
+                    //Getlist(sql);
+                    using (SqlCommand command = new SqlCommand($"SELECT * FROM SanPham where TenShop='{tenshop}' and MaSP!='{masp}'", conn))
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            UC_SanPham sp = new UC_SanPham();
+                            sp.masp.Text = reader["MaSP"].ToString();
+                            sp.ten.Text = reader["TenSP"].ToString();
+                            sp.mota.Text = reader["MoTa"].ToString();
+                            sp.giagoc.Text = reader["GiaGoc"].ToString();
+                            sp.giaBan.Text = reader["GiaHTai"].ToString();
+                            sp.tinhtrang.Text = reader["TinhTrang"].ToString();
+                            //sp.xacnhan.Visibility = Visibility.Collapsed;
+                            //sp.dagiao.Text = "Sản phẩm đã giao thành công";
+                            // sp.txtxacnhan.Visibility = Visibility.Collapsed;
+                            //sp..Text = reader["MoTa"].ToString();
+                            BitmapImage bitmap = new BitmapImage();
+                            bitmap.BeginInit();
+                            bitmap.UriSource = new Uri(reader["HinhAnh"].ToString(), UriKind.RelativeOrAbsolute);
+                            bitmap.EndInit();
+                            sp.hinhanh.Source = bitmap;
+                            SanPhamList.Add(sp);
+                        }
+                    }
+                //}
             }
             return SanPhamList;
         }
@@ -266,6 +329,7 @@ namespace Do_an.Class
                             sp.giagoc.Text = reader["GiaGoc"].ToString();
                             sp.giaban.Text = reader["GiaHTai"].ToString();
                             sp.tinhtrang.Text = reader["TinhTrang"].ToString();
+                            sp.tenshop.Text = reader["TenShop"].ToString();
                             if (xacNhan == "no")
                             {
                                 sp.giaohang.Text = "Đang chờ xác nhận từ người bán!";
@@ -298,7 +362,7 @@ namespace Do_an.Class
                     {
                         sp.txtMaSP.Text = reader["MaSP"].ToString();
                         sp.txtTenSP.Text = reader["TenSP"].ToString();
-                        sp.txtTenShop.Text = reader["TenShop"].ToString();
+                        //sp.txtTenShop.Text = reader["TenShop"].ToString();
                         sp.txtGiaGoc.Text = reader["GiaGoc"].ToString();
                         sp.txtGiaBan.Text = reader["GiaHTai"].ToString();
                         sp.txtTinhTrang.Text = reader["TinhTrang"].ToString();

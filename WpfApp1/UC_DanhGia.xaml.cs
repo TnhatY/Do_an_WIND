@@ -42,7 +42,7 @@ namespace Do_an
             {
                 TextBlock saoTextBlock = new TextBlock();
                 saoTextBlock.Text = "☆";
-                starPanel.Children.Add(saoTextBlock);
+                starPanel.Children.Add(saoTextBlock); 
             }
         }
 

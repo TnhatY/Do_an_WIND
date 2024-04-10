@@ -52,9 +52,79 @@ namespace Do_an
             }
         }
 
+        private void Image_Button2(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string filePath = openFileDialog.FileName;
+                string fileName = System.IO.Path.GetFileName(filePath);
+
+
+                string directoryName = new System.IO.DirectoryInfo(filePath).Parent.Name;
+
+                string shortFile = directoryName + "/" + fileName;
+                // MessageBox.Show(shortFile);
+
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(filePath, UriKind.RelativeOrAbsolute);
+                bitmap.EndInit();
+                imgHinhAnh2.Source = bitmap;
+            }
+        }
+
+        private void Image_Button3(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string filePath = openFileDialog.FileName;
+                string fileName = System.IO.Path.GetFileName(filePath);
+
+
+                string directoryName = new System.IO.DirectoryInfo(filePath).Parent.Name;
+
+                string shortFile = directoryName + "/" + fileName;
+                // MessageBox.Show(shortFile);
+
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(filePath, UriKind.RelativeOrAbsolute);
+                bitmap.EndInit();
+                imgHinhAnh3.Source = bitmap;
+            }
+        }
+
+        private void Image_Button4(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string filePath = openFileDialog.FileName;
+                string fileName = System.IO.Path.GetFileName(filePath);
+
+
+                string directoryName = new System.IO.DirectoryInfo(filePath).Parent.Name;
+
+                string shortFile = directoryName + "/" + fileName;
+                // MessageBox.Show(shortFile);
+
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(filePath, UriKind.RelativeOrAbsolute);
+                bitmap.EndInit();
+                imgHinhAnh4.Source = bitmap;
+            }
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             cbDanhMuc.ItemsSource = DanhMuc;
+            //txtTenShop.Text=PhanQuyen.taikhoan.ToString();
         }
 
      
@@ -64,14 +134,17 @@ namespace Do_an
             sanPhamMoi.DanhMucSP = cbDanhMuc.Text;
             sanPhamMoi.MaSP = txtMaSP.Text;
             sanPhamMoi.TenSP = txtTenSP.Text;
-            sanPhamMoi.TenShop = txtTenShop.Text;
+            sanPhamMoi.TenShop = PhanQuyen.taikhoan;
             sanPhamMoi.TinhTrang = txtTinhTrang.Text;
             sanPhamMoi.GiaGoc = float.Parse(txtGiaGoc.Text);
             sanPhamMoi.GiaHTai = float.Parse(txtGiaBan.Text);
             sanPhamMoi.NgayMua = dtpNgayMua.Text;
             sanPhamMoi.MoTa = txtMoTa.Text;
             sanPhamMoi.HinhAnh = imgHinhAnh.Source.ToString();
-            string query = "insert into SanPham values (@MaSP,@TenSP,@TenShop,@GiaGoc,@GiaHTai,@NgayMua,@TinhTrang,@MoTa,@HinhAnh,@DanhMucSP)";
+            sanPhamMoi.HinhAnh2 = imgHinhAnh2.Source.ToString();
+            sanPhamMoi.HinhAnh3 = imgHinhAnh3.Source.ToString();
+            sanPhamMoi.HinhAnh4 = imgHinhAnh4.Source.ToString();
+            string query = "insert into SanPham values (@MaSP,@TenSP,@TenShop,@GiaGoc,@GiaHTai,@NgayMua,@TinhTrang,@MoTa,@HinhAnh,@DanhMucSP,@HinhAnh2,@HinhAnh3,@HinhAnh4)";
             SanPham.them(sanPhamMoi, query);
 
             string query2 = "insert into SP_Ban values (@MaSP,@TaiKhoan)";
@@ -102,8 +175,8 @@ namespace Do_an
         {
             SanPham_DAO sanPham_DAO = new SanPham_DAO();
             string query = "update SanPham set TenSP=@TenSP, TenShop=@TenShop,GiaGoc=@GiaGoc,GiaHTai=@GiaHTai," +
-                "NgayMua=@NgayMua,TinhTrang=@TinhTrang,MoTa=@MoTa,HinhAnh=@HinhAnh, DanhMucSP=@DanhMucSP where MaSP=@MaSP";  
-            SanPham sanPham = new SanPham(txtMaSP.Text,txtTenSP.Text,txtTenShop.Text,float.Parse(txtGiaGoc.Text),float.Parse(txtGiaBan.Text),dtpNgayMua.Text,txtTinhTrang.Text,txtMoTa.Text,imgHinhAnh.Source.ToString(),cbDanhMuc.Text);
+                "NgayMua=@NgayMua,TinhTrang=@TinhTrang,MoTa=@MoTa,HinhAnh=@HinhAnh, DanhMucSP=@DanhMucSP,HinhAnh2=@HinhAnh2,HinhAnh3=@HinhAnh3,HinhAnh4=@HinhAnh4, where MaSP=@MaSP";  
+            SanPham sanPham = new SanPham(txtMaSP.Text,txtTenSP.Text,PhanQuyen.taikhoan,float.Parse(txtGiaGoc.Text),float.Parse(txtGiaBan.Text),dtpNgayMua.Text,txtTinhTrang.Text,txtMoTa.Text,imgHinhAnh.Source.ToString(), cbDanhMuc.Text, imgHinhAnh2.Source.ToString(), imgHinhAnh3.Source.ToString(), imgHinhAnh4.Source.ToString());
             sanPham_DAO.sua(sanPham,query);
         }
     }

@@ -36,7 +36,7 @@
                 </StackPanel>
             </Button>
             <TextBlock x:Name="txtxacnhan" Width="170" Height="20" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold" Foreground="#FFF80B0B"></TextBlock>
-            <Button x:Name="xacnhan" Width="100" Height="40" HorizontalAlignment="Right" Margin="0,40,70,40" Background="Transparent" BorderBrush="#FF8320A4" Click="xacnhan_Click" >
+            <Button x:Name="xacnhan" Width="100" Height="30" HorizontalAlignment="Right" Margin="0,40,70,40" Background="Transparent" BorderBrush="#FF8320A4" Click="xacnhan_Click" >
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Xác nhận" VerticalAlignment="Center" FontSize="13"></TextBlock>
                 </StackPanel>
