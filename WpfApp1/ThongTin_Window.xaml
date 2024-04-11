@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Do_an"
         mc:Ignorable="d"
-        Title="ThongTin_Window" Height="750" Width="900" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded">
+        Title="ThongTin_Window" Height="750" Width="920" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -321,11 +321,11 @@
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
                                 <Setter Property="Background" TargetName="border" Value="#FFF9BEBE"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border5}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FA3249"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
                                 <Setter Property="Background" TargetName="border" Value="#FA3249"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border5}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FA3249"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background5}"/>
@@ -340,11 +340,11 @@
     </Window.Resources>
     <Grid Margin="10" Background="#FFF5E8F6">
         <Button Style="{DynamicResource ButtonStyle5}" x:Name="btnThoat" Width="25" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnThoat_Click_1" Margin="0,0,0,0" BorderThickness="0,0,0,0" Background="{x:Null}">
-            <Image Source="/image/back.png" Width="22"></Image>
+            <Image Source="/image/xx.png" Width="26" Height="26" Stretch="Fill"></Image>
         </Button>
 
         <TextBlock x:Name="TenSP" FontSize="24" Height="30" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="Top" Grid.RowSpan="2" />
-        <ScrollViewer Margin="0,50,0,0">
+        <ScrollViewer Margin="0,50,0,0" VerticalScrollBarVisibility="Auto">
             <Grid Margin="25,0,25,0">
 
 
@@ -383,30 +383,39 @@
                         </TextBlock>
                         <Button Style="{DynamicResource ButtonStyle4}" x:Name="btnMua" Content="Mua ngay" HorizontalAlignment="Stretch" Background="Red"  Foreground="White" Padding="5" Margin="40,20,40,0" Click="btnMua_Click" FontSize="14" FontWeight="Bold" />
                         <Button Style="{DynamicResource ButtonStyle6}" x:Name="btnThemGioHang" Content="Thêm giỏ hàng" HorizontalAlignment="Stretch" Padding="5" Margin="40,10,40,0" Click="btnThemGioHang_Click" Background="#FFF3ABAB" FontSize="13" FontWeight="Bold" Foreground="#FFF11E1E" BorderBrush="#FFF81111" />
+
+                        <Button Style="{DynamicResource ButtonStyle6}" x:Name="yeuthich" Width="80" Height="25" Margin="10,20,0,0" HorizontalAlignment="Left" BorderBrush="#FFDF0808" Background="#FFFCFCFC" Click="yeuthich_Click">
+                            <Grid>
+                                <TextBlock Text="Lưu tin" HorizontalAlignment="Left" Margin="0,0,25,0" VerticalAlignment="Center"></TextBlock>
+                                <Image Source="/image/datim.png" HorizontalAlignment="Right"></Image>
+                            </Grid>
+                        </Button>
                     </StackPanel>
                 </Grid>
 
                 <Border  VerticalAlignment="Top" Height="200" Background="White"  Margin="15,420,15,0">
                     <Grid Height="100">
                         <TextBlock Text="Mô tả sản phẩm" VerticalAlignment="Top" Margin="5,-45,0,0" FontSize="16" FontWeight="Bold"/>
-                        <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" FontSize="14" Margin="10,10,50,0" >
+                        <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" FontSize="14" Margin="40,10,50,0" >
                             <Run x:Name="MoTa"></Run>
                         </TextBlock>
-                        <TextBlock Text="Tình Trạng: " FontSize="14" Margin="10,10,0,0" >
+                        <Image Source="/image/condition_ad.png" VerticalAlignment="Top" HorizontalAlignment="Left" Width="20" Margin="10,10,0,0" ></Image>
+                        <TextBlock Text="Tình Trạng: " FontSize="14" Margin="40,10,0,0" >
                             <Run x:Name="TinhTrang"></Run>
                         </TextBlock>
-                        <TextBlock Text="Giá mua mới: ₫" FontSize="14" Margin="10,-15,0,0" >
+                        <Image Source="/image/price.png" Width="22" Margin="10,-15,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                        <TextBlock Text="Giá mua mới: ₫" FontSize="14" Margin="40,-15,0,0" >
                             <Run x:Name="GiaGoc"></Run>
                         </TextBlock>
 
                     </Grid>
                 </Border>
-                <Border  VerticalAlignment="Top" Margin="15,650,15,0">
-                    <Grid Background="#FFF1F1F1" >
+                <Border  VerticalAlignment="Top" Margin="15,650,15,10">
+                    <Grid Background="White" >
                         <TextBlock Text=" Top sản phẩm nổi bật"  FontSize="14" FontWeight="Bold">
 
                         </TextBlock>
-                        <TextBlock x:Name="chuDG" Margin="0,30,0,0"></TextBlock>
+                        <TextBlock x:Name="chuDG" Margin="30,30,0,20"></TextBlock>
 
                         <ItemsControl x:Name="thongtin" Margin="5,30,5,0" Padding="0,0,10,10">
                             <ItemsControl.ItemsPanel>
@@ -416,7 +425,7 @@
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate >
-                                    <local:UC_SanPham Margin="10"/>
+                                    <local:UC_SanPham Margin="2.5"/>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>

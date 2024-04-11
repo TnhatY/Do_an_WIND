@@ -24,6 +24,7 @@ namespace Do_an
             InitializeComponent();
         }
         List<string> DanhMuc = new List<string> { "Điện thọai", "Đồ gia dụng", "Xe cộ", "Đồ điện tử", "Thời trang","Thể thao" };
+        List<string> TheLoai = new List<string> { "Iphone", "Bàn ghế", "Ô tô", "Xe máy", "Xe đạp","MacBook", "Máy tính", "Tivi", "Giày đá banh","Vợt cầu lông", "Đồ nội trợ", "Điện tử", "Máy tính bàn", "Laptop" };
         private void btnThoat_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -55,6 +56,7 @@ namespace Do_an
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             cbDanhMuc.ItemsSource = DanhMuc;
+            cbTheLoai.ItemsSource= TheLoai;
             //txtTenShop.Text=PhanQuyen.taikhoan.ToString();
         }
 
@@ -73,7 +75,7 @@ namespace Do_an
             sanPhamMoi.MoTa = txtMoTa.Text;
             sanPhamMoi.HinhAnh = imgHinhAnh.Source.ToString();
             string query = "insert into SanPham values (@MaSP,@TenSP,@TenShop,@GiaGoc,@GiaHTai,@NgayMua,@TinhTrang,@MoTa,@HinhAnh,@DanhMucSP)";
-            SanPham.them(sanPhamMoi, query);
+            SanPham.Them_Sua(sanPhamMoi, query);
 
             string query2 = "insert into SP_Ban values (@MaSP,@TaiKhoan)";
             try
@@ -101,11 +103,13 @@ namespace Do_an
 
         private void btnChinhSua(object sender, RoutedEventArgs e)
         {
-            SanPham_DAO sanPham_DAO = new SanPham_DAO();
-            string query = "update SanPham set TenSP=@TenSP, TenShop=@TenShop,GiaGoc=@GiaGoc,GiaHTai=@GiaHTai," +
-                "NgayMua=@NgayMua,TinhTrang=@TinhTrang,MoTa=@MoTa,HinhAnh=@HinhAnh, DanhMucSP=@DanhMucSP where MaSP=@MaSP";  
-            SanPham sanPham = new SanPham(txtMaSP.Text,txtTenSP.Text,PhanQuyen.taikhoan,float.Parse(txtGiaGoc.Text),float.Parse(txtGiaBan.Text),dtpNgayMua.Text,txtTinhTrang.Text,txtMoTa.Text,imgHinhAnh.Source.ToString(),cbDanhMuc.Text);
-            sanPham_DAO.sua(sanPham,query);
+            //SanPham_DAO sanPham_DAO = new SanPham_DAO();
+            //string query = "update SanPham set TenSP=@TenSP, TenShop=@TenShop,GiaGoc=@GiaGoc,GiaHTai=@GiaHTai," +
+            //    "NgayMua=@NgayMua,TinhTrang=@TinhTrang,MoTa=@MoTa,HinhAnh=@HinhAnh, DanhMucSP=@DanhMucSP TheLoai=@TheLoai where MaSP=@MaSP";  
+            //SanPham sanPham = new SanPham(txtMaSP.Text,txtTenSP.Text,PhanQuyen.taikhoan,float.Parse(txtGiaGoc.Text),float.Parse(txtGiaBan.Text),dtpNgayMua.Text,txtTinhTrang.Text,txtMoTa.Text,imgHinhAnh.Source.ToString(),cbDanhMuc.Text,txtDanh);
+            //sanPham_DAO.sua(sanPham,query);
+            //MessageBox.Show("Sản phẩm đã được chỉnh sửa");
+
         }
     }
 }

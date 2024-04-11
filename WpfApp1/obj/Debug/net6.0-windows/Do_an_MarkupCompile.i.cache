@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\
+D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy - Copy\WpfApp1\obj\Debug\net6.0-windows\
 Do_an
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy\WpfApp1\App.xaml
-18308319067
+D:\Deadline\LTWINDOWS\Do_an_cuoi_ky - Copy - Copy - Copy\WpfApp1\App.xaml
+20-48316803
 
-30130997323
+32-113442234
 225138244540
-DanhGiaSp_Window.xaml;F_Main.xaml;MainWindow.xaml;ThanhToan_Window.xaml;ThemSP_Window.xaml;ThongTin_Window.xaml;TopBan_Window.xaml;UC_CaiDat.xaml;UC_DaMua.xaml;UC_DanhGia.xaml;UC_gioHang.xaml;UC_MuaSam.xaml;UC_SanPham.xaml;UC_SpBan.xaml;UC_SpGioHang.xaml;UC_SP_DaMua.xaml;UC_ThongKe.xaml;XemDanhGia_Window.xaml;
+DanhGiaSp_Window.xaml;F_Main.xaml;MainWindow.xaml;ThanhToan_Window.xaml;ThemSP_Window.xaml;ThongTin_Window.xaml;TopBan_Window.xaml;TopSanPham_Window.xaml;UC_CaiDat.xaml;UC_DaMua.xaml;UC_DanhGia.xaml;UC_gioHang.xaml;UC_MuaSam.xaml;UC_SanPham.xaml;UC_SpBan.xaml;UC_SpGioHang.xaml;UC_SP_DaMua.xaml;UC_ThongKe.xaml;UC_TopTimKiem.xaml;XemDanhGia_Window.xaml;
 
-True
+False
 

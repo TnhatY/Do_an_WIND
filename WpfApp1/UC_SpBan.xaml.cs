@@ -40,16 +40,16 @@ namespace Do_an
 
         private void delete_Click(object sender, RoutedEventArgs e)
         {
-            //checkxoa = true;
-            //
-            //SanPham_DAO sanPham_DAO = new SanPham_DAO();
-            //string query = "delete from SanPham where MaSP=@MaSP";
-            //string query2 = "delete from SP_Ban where MaSP=@MaSP";
-            //sanPham_DAO.xoa(masp.Text, query);
-            //sanPham_DAO.xoa(masp.Text, query2);
-            //MessageBox.Show("Xoá thành cong");
-            //UC_DaMua uC_DaMua = new UC_DaMua();
-            //uC_DaMua.ReloadDataSPBan();
+            checkxoa = true;
+
+            SanPham_DAO sanPham_DAO = new SanPham_DAO();
+            string query = "delete from SanPham where MaSP=@MaSP";
+            string query2 = "delete from SP_Ban where MaSP=@MaSP";
+            sanPham_DAO.xoa(masp.Text, query);
+            sanPham_DAO.xoa(masp.Text, query2);
+            MessageBox.Show("Xoá thành cong");
+            UC_DaMua uC_DaMua = new UC_DaMua();
+            uC_DaMua.ReloadDataSPBan();
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -86,11 +86,6 @@ namespace Do_an
                 MessageBox.Show(Fail.Message);
             }
 
-            //MessageBox.Show("Đơn hàng đã được đặt! Vui lòng kiểm tra trạng thái giao hàng!");
-            //DanhGiaSp_Window danhGiaSp_Window = new DanhGiaSp_Window();
-            //danhGiaSp_Window.masp.Text = masp.Text;
-            //danhGiaSp_Window.ShowDialog();
-            //this.Hide();
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Deadline\\LTWINDOWS\\Do_an_cuoi_ky - Copy - Copy\\WpfApp1\\Do_an.csproj": {}
+    "D:\\Deadline\\LTWINDOWS\\Do_an_cuoi_ky - Copy - Copy - Copy\\WpfApp1\\Do_an.csproj": {}
   },
   "projects": {
-    "D:\\Deadline\\LTWINDOWS\\Do_an_cuoi_ky - Copy - Copy\\WpfApp1\\Do_an.csproj": {
+    "D:\\Deadline\\LTWINDOWS\\Do_an_cuoi_ky - Copy - Copy - Copy\\WpfApp1\\Do_an.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Deadline\\LTWINDOWS\\Do_an_cuoi_ky - Copy - Copy\\WpfApp1\\Do_an.csproj",
+        "projectUniqueName": "D:\\Deadline\\LTWINDOWS\\Do_an_cuoi_ky - Copy - Copy - Copy\\WpfApp1\\Do_an.csproj",
         "projectName": "Do_an",
-        "projectPath": "D:\\Deadline\\LTWINDOWS\\Do_an_cuoi_ky - Copy - Copy\\WpfApp1\\Do_an.csproj",
+        "projectPath": "D:\\Deadline\\LTWINDOWS\\Do_an_cuoi_ky - Copy - Copy - Copy\\WpfApp1\\Do_an.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Deadline\\LTWINDOWS\\Do_an_cuoi_ky - Copy - Copy\\WpfApp1\\obj\\",
+        "outputPath": "D:\\Deadline\\LTWINDOWS\\Do_an_cuoi_ky - Copy - Copy - Copy\\WpfApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -48,7 +48,17 @@ namespace Do_an
         {
             string tenshop = TenShop.Text;
             SanPham_DAO sanPham_DAO = new SanPham_DAO();
-            thongtin.ItemsSource = sanPham_DAO.listSPBan2(tenshop,MaSP.Text);
+
+
+            //sanPham_DAO.HienThiThongTin(MaSP.Text);
+
+            
+            string sql1 = $"SELECT * FROM SanPham where TenShop='{tenshop}' and MaSP!='{MaSP.Text}'";
+            if (sanPham_DAO.Getlist(sql1) == null)
+            {
+                chuDG.Text = "Không có sản phẩm nào";
+            }else
+                thongtin.ItemsSource = sanPham_DAO.Getlist(sql1);
 
             Database database = new Database();
             try {
@@ -92,7 +102,12 @@ namespace Do_an
         private void btnThemGioHang_Click(object sender, RoutedEventArgs e)
         {
             SanPham_DAO sanPham_DAO = new SanPham_DAO();
-            sanPham_DAO.themGioHang(MaSP.Text,PhanQuyen.taikhoan);
+            string query = "insert into GioHang values (@MaSP,@TaiKhoan)";
+
+            if (sanPham_DAO.themGioHang(MaSP.Text, PhanQuyen.taikhoan, query))
+            {
+                MessageBox.Show("Đã thêm sản phẩm vào giỏ hàng");
+            };
             Close();
         }
 
@@ -101,6 +116,17 @@ namespace Do_an
             XemDanhGia_Window xemDanhGia_Window =new XemDanhGia_Window();
             xemDanhGia_Window.tenshop.Text = TenShop.Text;
             xemDanhGia_Window.ShowDialog();
+        }
+
+        private void yeuthich_Click(object sender, RoutedEventArgs e)
+        {
+            SanPham_DAO sanPham_DAO = new SanPham_DAO();
+            string sql = "Insert into SP_YeuThich values (@MaSP,@TaiKhoan)";
+            if (sanPham_DAO.themGioHang(MaSP.Text, PhanQuyen.taikhoan, sql))
+            {
+                MessageBox.Show("Đã thêm sản phẩm vào mục yêu thich","Thông Báo");
+
+            }
         }
     }
 }

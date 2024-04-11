@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Do_an"
-             mc:Ignorable="d" Width="1011" Height="120" Margin="0,20,0,0" Loaded="UserControl_Loaded">
+             mc:Ignorable="d" Width="1000" Height="120" Margin="0,20,0,0" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -121,10 +121,10 @@
         
                 <Grid x:Name="gvSpGioHang" >
                
-                <ToggleButton Style="{DynamicResource ToggleButtonStyle1}" x:Name="Thoat" BorderThickness="0,0,0,0" Background="White" Width="30" Height="30" Margin="0,0,0,0" HorizontalAlignment="Right" Checked="Thoat_Checked" Unchecked="Thoat_Unchecked" >
+                <ToggleButton Style="{DynamicResource ToggleButtonStyle1}" x:Name="Thoat" BorderThickness="1" BorderBrush="Black" Background="White" Width="30" Height="30" Margin="0,0,0,0" HorizontalAlignment="Right" Checked="Thoat_Checked" Unchecked="Thoat_Unchecked" >
                     <Image x:Name="imagecheck"></Image>
                 </ToggleButton>
-            <Button Style="{DynamicResource ButtonStyle1}" x:Name="btnHienThiThonTin" Background="White" Margin="0,0,40,0" BorderThickness="0,0,0,0" Click="btnHienThiThonTin_Click">
+            <Button Style="{DynamicResource ButtonStyle1}" x:Name="btnHienThiThonTin" Background="White" Margin="0,0,50,0" BorderThickness="0,0,0,0" Click="btnHienThiThonTin_Click">
                 <Grid>
                     <Image x:Name="hinhanh" Source="{Binding HinhAnh}" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Height="100" Width="120" Stretch="UniformToFill"/>
                     <TextBlock x:Name="masp" VerticalAlignment="Top" Width="0" Height="0"></TextBlock>

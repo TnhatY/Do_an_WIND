@@ -25,6 +25,9 @@
     <Compile Update="TopBan_Window.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="TopSanPham_Window.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UC_CaiDat.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +58,9 @@
     <Compile Update="UC_ThongKe.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UC_TopTimKiem.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="XemDanhGia_Window.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -79,6 +85,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="TopBan_Window.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TopSanPham_Window.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_CaiDat.xaml">
@@ -109,6 +118,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_ThongKe.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_TopTimKiem.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="XemDanhGia_Window.xaml">

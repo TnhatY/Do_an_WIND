@@ -44,16 +44,7 @@ namespace Do_an
                 
         }
 
-        private void btnThemSP_Click(object sender, RoutedEventArgs e)
-        {
-            ThemSP_Window themSP_Window = new ThemSP_Window();
-            themSP_Window.chinhsua.Visibility = Visibility.Collapsed;
-            themSP_Window.Show();
-        }
-
        
-
-     
         private void DanhMuc_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -97,16 +88,18 @@ namespace Do_an
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            string sql1 = $"select MaSP from SP_YeuThich where TaiKhoan='{PhanQuyen.taikhoan}'";
+            string sql2 = "Select * from TopDanhMuc where LuotTimKiem > 0 ORDER BY LuotTimKiem DESC";
+            spTopTimKiem.ItemsSource = sanPham_DAO.topDanhMucTimKiem(sql2);
             try
             {
-                if (F_Main.texttimkiem == "")
+                if (string.IsNullOrWhiteSpace(F_Main.texttimkiem))
                 {
                     string sql = "Select * from SanPham";
                     thongtin.ItemsSource = sanPham_DAO.Getlist(sql);
-                 }
+                }
                 else
                 {
-                    //MessageBox.Show(F_Main.texttimkiem);
                     string timkiem = F_Main.texttimkiem;
                     string sql = "select * from SanPham where TenSP like N'%" + timkiem + "%'";
                     thongtin.ItemsSource = sanPham_DAO.Getlist(sql);
@@ -117,11 +110,6 @@ namespace Do_an
                 MessageBox.Show("Không có sản phẩm này!","Thông báo");
             }
            
-
-            if (PhanQuyen.loaiTk == "nguoimua")
-            {
-                btnThemSP.Visibility = Visibility.Collapsed;
-            }
         }
     }
 }

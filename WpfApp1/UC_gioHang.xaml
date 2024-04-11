@@ -269,23 +269,21 @@
                 Margin="0,10,0,0"
                 CornerRadius="20,20,20,20" BorderThickness="0,2,0,0">
                 <Grid>
-                    <Button Style="{DynamicResource ButtonStyle1}" x:Name="xoa" Width="70" Height="28" VerticalAlignment="Top" Margin="0,7,50,0" HorizontalAlignment="Right" Click="xoa_Click" Background="{x:Null}" BorderBrush="#FF160808">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/image/trash.png"></Image>
-
-                            <TextBlock Text="Xoá" VerticalAlignment="Center" Margin="5,0,0,0"></TextBlock>
-                        </StackPanel>
-                    </Button>
-                <TextBlock Text="Các sản phẩm đã thêm vào giỏ" Margin="5" Width="400" HorizontalAlignment="Left" FontSize="20" FontFamily="Yu Gothic UI Semibold"></TextBlock>
+                    <TextBlock Text="Sản phẩm yêu thích" Margin="5" Width="400" HorizontalAlignment="Left" FontSize="20" FontFamily="Yu Gothic UI Semibold"></TextBlock>
                     <Border Height="2" Background="#FFBC8AE5" Margin="10,40,20,0" VerticalAlignment="Top"></Border>
                   
                 </Grid>
             </Border>
-            <ScrollViewer Margin="0,56,0,20">
+            <ScrollViewer Margin="0,56,0,20" VerticalScrollBarVisibility="Auto">
                 <ItemsControl x:Name="SP_GioHang" ItemsSource="{Binding SP_DaThem}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate >
-                            <local:UC_SpGioHang Margin="10"/>
+                            <local:UC_SanPham Margin="10"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>

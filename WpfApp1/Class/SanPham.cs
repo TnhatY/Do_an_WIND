@@ -19,8 +19,9 @@ namespace Do_an.Class
         public string TinhTrang { get; set; }
         public string MoTa { get; set; }
         public string HinhAnh { get; set; }
+        public string TheLoai { get; set; }
         public SanPham() { }
-        public SanPham(string maSP, string tenSP, string tenShop, float giaGoc, float giaHTai, string ngayMua, string tinhTrang, string moTa, string hinhAnh, string danhMucSP)
+        public SanPham(string maSP, string tenSP, string tenShop, float giaGoc, float giaHTai, string ngayMua, string tinhTrang, string moTa, string hinhAnh, string danhMucSP, string theLoai)
         {
             DanhMucSP = danhMucSP;
             MaSP = maSP;
@@ -32,6 +33,7 @@ namespace Do_an.Class
             TinhTrang = tinhTrang;
             MoTa = moTa;
             HinhAnh = hinhAnh;
+            TheLoai = theLoai;
         }
     }
 }

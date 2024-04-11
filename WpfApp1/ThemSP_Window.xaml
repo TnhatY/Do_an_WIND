@@ -173,47 +173,59 @@
                 <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 50,0,0">
                     <TextBlock Text="Chi tiết sản phẩm" FontSize="20" Margin="0,-7,0,7" HorizontalAlignment="Left" Width="300" FontWeight="Bold"></TextBlock>
                 </Grid>
+                <StackPanel>
                 <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 80 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="97*"/>
-                        <ColumnDefinition Width="3*"/>
-                    </Grid.ColumnDefinitions>
+                    
                     <TextBlock Text="Danh mục sản phẩm" FontSize="14" Grid.ColumnSpan="2" FontWeight="Bold"></TextBlock>
-                    <ComboBox x:Name="cbDanhMuc" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2"  Grid.ColumnSpan="2" ItemsSource="{Binding MyDataSource}" BorderBrush="#FF060606">
-                        <ComboBox.Background>
-                            <LinearGradientBrush EndPoint="0,1">
-                                <GradientStop Color="#FFF0F0F0"/>
-                                <GradientStop Color="#FFE5D8EE" Offset="0.2"/>
-                            </LinearGradientBrush>
-                        </ComboBox.Background>
-                    </ComboBox>
-                </Grid>
-                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 150,0,0">
+                        <ComboBox x:Name="cbDanhMuc" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2"  Grid.ColumnSpan="2" BorderBrush="#FF060606">
+                            <ComboBox.Background>
+                                <LinearGradientBrush EndPoint="0,1">
+                                    <GradientStop Color="#FFF0F0F0"/>
+                                    <GradientStop Color="White" Offset="1"/>
+                                </LinearGradientBrush>
+                            </ComboBox.Background>
+
+                        </ComboBox>
+
+                    </Grid>
+                    <Grid  Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 10,0,0">
+                        <TextBlock Text="Thể loại" Height="20" FontSize="14" FontWeight="Bold" Margin="0,0,0,0" VerticalAlignment="Top"></TextBlock>
+                        <ComboBox x:Name="cbTheLoai" Height="30" Margin="0,20,0,0" VerticalAlignment="Bottom" BorderThickness="1,1,1,2"  BorderBrush="#FF060606">
+                            <ComboBox.Background>
+                                <LinearGradientBrush EndPoint="0,1">
+                                    <GradientStop Color="#FFF0F0F0"/>
+                                    <GradientStop Color="White" Offset="1"/>
+                                </LinearGradientBrush>
+                            </ComboBox.Background>
+
+                        </ComboBox>
+                    </Grid>
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 10,0,0">
                     <TextBlock Text="Mã sản phẩm" FontSize="14" Margin="0,0,0,7" HorizontalAlignment="Left" Width="300" FontWeight="Bold"></TextBlock>
                     <TextBox x:Name="txtMaSP" BorderThickness="1,1,1,2" Margin="0,20,0,0" Background="White" FontSize="13">
                     </TextBox>
                 </Grid>
-                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 220,0,0">
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310, 10,0,0">
                     <TextBlock Text="Tên sản phẩm" FontSize="14" Margin="0,0,0,5" HorizontalAlignment="Left" Width="300" FontWeight="Bold"></TextBlock>
                     <TextBox x:Name="txtTenSP" BorderThickness="1,1,1,2" Margin="0,20,0,0" FontSize="13">
                     </TextBox>
                 </Grid>
                
-                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 290 0 0">
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 10 0 0">
                     <TextBlock Text="Tình trạng" FontSize="14" FontWeight="Bold"></TextBlock>
                     <TextBox x:Name="txtTinhTrang" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2" FontSize="13">
                     </TextBox>
                 </Grid>
-                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 360 0 0">
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 10 0 0">
                     <TextBlock Text="Giá gốc" FontSize="14" FontWeight="Bold"></TextBlock>
                     <TextBox x:Name="txtGiaGoc" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2" FontSize="13">
                     </TextBox>
                 </Grid>
-                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 430 0 0">
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 10 0 0">
                     <TextBlock Text="Giá bán" FontSize="14" FontWeight="Bold"></TextBlock>
                     <TextBox x:Name="txtGiaBan" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2" FontSize="13" />
                 </Grid>
-                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 500 0 0">
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 10 0 0">
                     <TextBlock Text="Ngày mua" FontSize="14" FontWeight="Bold"></TextBlock>
                     <DatePicker x:Name="dtpNgayMua" Height="30" VerticalAlignment="Bottom" BorderThickness="1,1,1,2">
                         <DatePicker.BorderBrush>
@@ -225,17 +237,18 @@
                     </DatePicker>
                 </Grid>
 
-                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 570 0 0">
+                <Grid Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="310 10 0 0">
                     <TextBlock Text="Mô tả chi tiết tình trạng sản phẩm" FontSize="14" Margin="0,0,0,0" FontWeight="Bold"></TextBlock>
                     <TextBox x:Name="txtMoTa" BorderThickness="1,1,1,2" Margin="0,25,0,-5" FontSize="13" >
                     </TextBox>
                 </Grid>
-                <Button x:Name="btnThem" Style="{DynamicResource ButtonStyle2}" Margin="430,670,0,0" Background="#FFFCFCFC" HorizontalAlignment="Left" Width="250" Height="40" VerticalAlignment="Top" Click="btnThem_Click_1" BorderBrush="DeepSkyBlue">
+                <Button x:Name="btnThem" Style="{DynamicResource ButtonStyle2}" Margin="430,40,0,0" Background="#FFFCFCFC" HorizontalAlignment="Left" Width="250" Height="40" VerticalAlignment="Top" Click="btnThem_Click_1" BorderBrush="DeepSkyBlue">
                     <TextBlock Text="Thêm" FontWeight="Bold" FontSize="14" Foreground="#FF0058FF"></TextBlock>
                 </Button>
-                <Button x:Name="chinhsua" Style="{DynamicResource ButtonStyle2}" Margin="430,670,0,0" Background="#FFFCFCFC" HorizontalAlignment="Left" Width="250" Height="40" VerticalAlignment="Top" Click="btnChinhSua" BorderBrush="DeepSkyBlue">
+                <Button x:Name="chinhsua" Style="{DynamicResource ButtonStyle2}" Margin="430,-40,0,0" Background="#FFFCFCFC" HorizontalAlignment="Left" Width="250" Height="40" VerticalAlignment="Top" Click="btnChinhSua" BorderBrush="DeepSkyBlue">
                     <TextBlock Text="Lưu" FontWeight="Bold" FontSize="14" Foreground="#FF0058FF"></TextBlock>
                 </Button>
+                </StackPanel>
                 <Button x:Name="btnThoat" Style="{DynamicResource ButtonStyle1}" Margin="0,10,10,0" Click="btnThoat_Click" HorizontalAlignment="Right" Width="35" Height="35" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="Black" >
                     <Button.Background>
                         <ImageBrush ImageSource="/image/x.png"/>

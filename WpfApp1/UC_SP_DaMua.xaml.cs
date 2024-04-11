@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Do_an.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,10 @@ namespace Do_an
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            if (PhanQuyen.menu == "YeuThich")
+            {
+
+            }
         }
 
         private void btndanhgia_Click(object sender, RoutedEventArgs e)

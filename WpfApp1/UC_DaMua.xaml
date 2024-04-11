@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Do_an"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
+             d:DesignHeight="450" d:DesignWidth="800" MaxWidth="1050" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
         <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
@@ -67,10 +67,10 @@
                         <TextBlock Text="Xoá" VerticalAlignment="Center" Margin="5,0,0,0"></TextBlock>
                     </StackPanel>
                 </Button>
-                <Button x:Name="spdamua" Width="300" Height="30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="-300,0,0,6" Content="Sản phẩm đã mua" Click="spdamua_Click" Background="{x:Null}" BorderBrush="#FFCA2929" BorderThickness="0,0,0,0" FontSize="14" FontWeight="Bold"></Button>
-                <Button x:Name="spdangban" Width="300" Height="30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="-300,0,0,6" Content="Sản phẩm đang bán"  Background="{x:Null}" BorderBrush="#FFCA2929" BorderThickness="0,0,0,0" FontSize="14" FontWeight="Bold" Click="spdangban_Click"></Button>
-                <Button x:Name="spchoxacnhan" Width="300" Height="30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="300,0,0,6"  Content="Đơn hàng chờ xác nhận"  Background="{x:Null}" BorderBrush="#FFCA2929" BorderThickness="0,0,0,0" FontSize="14" FontWeight="Bold" Click="spchoxacnhan_Click"></Button>
-                <Button x:Name="spchuaxacnhan" Width="300" Height="30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="300,0,0,6"  Content="Đang chờ xác nhận" Click="spchuaxacnhan_Click" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="#FFDC3B3B" FontSize="14" FontWeight="Bold"/>
+                <Button x:Name="spdamua" Width="300" Height="30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="-300,0,0,15" Content="Sản phẩm đã mua" Click="spdamua_Click" Background="{x:Null}" BorderBrush="#FFCA2929" BorderThickness="0,0,0,0" FontSize="14" FontWeight="Bold"></Button>
+                <Button x:Name="spdangban" Width="300" Height="30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="-300,0,0,15" Content="Sản phẩm đang bán"  Background="{x:Null}" BorderBrush="#FFCA2929" BorderThickness="0,0,0,0" FontSize="14" FontWeight="Bold" Click="spdangban_Click"></Button>
+                <Button x:Name="spchoxacnhan" Width="300" Height="30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="300,0,0,15"  Content="Đơn hàng chờ xác nhận"  Background="{x:Null}" BorderBrush="#FFCA2929" BorderThickness="0,0,0,0" FontSize="14" FontWeight="Bold" Click="spchoxacnhan_Click"></Button>
+                <Button x:Name="spchuaxacnhan" Width="300" Height="30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="300,0,0,15"  Content="Đang chờ xác nhận" Click="spchuaxacnhan_Click" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="#FFDC3B3B" FontSize="14" FontWeight="Bold"/>
             </Grid>
 
             <Border Margin="0,50,0,0"
@@ -78,9 +78,10 @@
              BorderBrush="#FFC911B3" BorderThickness="0,2,0,0">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <ItemsControl x:Name="listsp" ItemsSource="{Binding List}">
+                        
                         <ItemsControl.ItemTemplate>
                             <DataTemplate >
-                                <local:UC_SpGioHang Margin="5"/>
+                                <local:UC_SanPham Margin="5"/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>

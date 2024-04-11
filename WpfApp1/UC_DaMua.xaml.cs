@@ -33,8 +33,9 @@ namespace Do_an
             UC_SpBan uc =new UC_SpBan();
             uc.delete.Click += xoa2_Click;
         }
+        //string sqlgioHang = $"Select * from GioHang inner join SanPham on GioHang.MaSP=SanPham.MaSP where GioHang.TaiKhoan='{PhanQuyen.taikhoan}'";
 
-       
+
         public void ReloadDataGioHang()
         {
             listsp.ItemsSource = null;
@@ -45,12 +46,11 @@ namespace Do_an
         {
             listsp.ItemsSource = null;
             SanPham_DAO sp = new SanPham_DAO();
-            listsp.ItemsSource = sp.listSPBan();
+            listsp.ItemsSource = sp.listSPDangBan(sql1,false);
         }
 
         private void xoa_Click(object sender, RoutedEventArgs e)
         {
-            // Database database = new Database();
             try
             {
                 if (UC_SpGioHang.check)
@@ -115,7 +115,19 @@ namespace Do_an
                 spdangban.Visibility = spchoxacnhan.Visibility = Visibility.Collapsed;
                 spdamua.Visibility = Visibility.Collapsed;
                 spchuaxacnhan.Visibility = Visibility.Collapsed;
+                //string sql1 = $"Select MaSP From GioHang where TaiKhoan='{PhanQuyen.taikhoan}'";
+               // string sql2=$"select * from SanPham where MaSP="
                 listsp.ItemsSource = sanPham_DAO.listGioHang();
+
+            }else if(PhanQuyen.menu== "YeuThich")
+            {
+                spdangban.Visibility = spchoxacnhan.Visibility = Visibility.Collapsed;
+                spdamua.Visibility = Visibility.Collapsed;
+                spchuaxacnhan.Visibility = Visibility.Collapsed;
+                tittle.Text = "Sản phẩm yêu thích";
+                xoa.Visibility = Visibility.Collapsed;
+                string sql = $"select MaSP from SP_YeuThich where TaiKhoan='{PhanQuyen.taikhoan}'";
+                listsp.ItemsSource = sanPham_DAO.listYeuThich(sql);
             }
         }
         private void xoa2_Click(object sender, RoutedEventArgs e)
@@ -157,8 +169,13 @@ namespace Do_an
             spdamua.Visibility = Visibility.Collapsed;
             spchuaxacnhan.Visibility = Visibility.Collapsed;
             xoa.Visibility = Visibility.Collapsed;
-            listsp.ItemsSource = sanPham_DAO.listSPBan();
+            //listsp.ItemsSource = sanPham_DAO.listSPBan();
+
+            string sql = $"SELECT * FROM SP_Ban inner join SanPham on SP_Ban.MaSP=SanPham.MaSP where SP_Ban.TaiKhoan='{PhanQuyen.taikhoan}'";
+
+            listsp.ItemsSource = sanPham_DAO.listSPDangBan(sql, false);
         }
+        string sql1 = $"SELECT * FROM SP_Ban INNER JOIN SP_DaMua ON SP_Ban.MaSP = SP_DaMua.MaSP inner join SanPham on SanPham.MaSP=SP_Ban.MaSP WHERE SP_Ban.TaiKhoan = '{PhanQuyen.taikhoan}' and SP_DaMua.XacNhan='no'";
 
         private void spchoxacnhan_Click(object sender, RoutedEventArgs e)
         {
@@ -167,7 +184,7 @@ namespace Do_an
             spchuaxacnhan.Visibility = Visibility.Collapsed;
             spdangban.BorderThickness = new Thickness(0, 0, 0, 0);
             spchoxacnhan.BorderThickness = new Thickness(0, 0, 0, 3);
-            listsp.ItemsSource = sanPham_DAO.listSPChoXacNhan();
+            listsp.ItemsSource = sanPham_DAO.listSPDangBan(sql1,true);
         }
     }
 }

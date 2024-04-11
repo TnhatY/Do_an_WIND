@@ -41,19 +41,20 @@ namespace Do_an
         {
 
         }
+        string sql = $"select * from SP_YeuThich inner join SanPham on SanPham.MaSP=SP_YeuThich.MaSP where SP_YeuThich.TaiKhoan='{PhanQuyen.taikhoan}'";
+       // SELECT* FROM SanPham where MaSP='{msp}'"
 
 
         private void UC_gioHang_Loaded(object sender, RoutedEventArgs e)
         {
             SanPham_DAO sanPham_DAO =new SanPham_DAO();
-            SP_GioHang.ItemsSource= sanPham_DAO.listGioHang();
+            SP_GioHang.ItemsSource= sanPham_DAO.listYeuThich(sql);
         }
         public void ReloadData()
         {
             SanPhamList.Clear();
             SanPham_DAO sp = new SanPham_DAO();
-            sp.listGioHang();
-            SP_GioHang.ItemsSource= sp.listGioHang();
+            SP_GioHang.ItemsSource= sp.listYeuThich(sql);
         }
 
         private void xoa_Click(object sender, RoutedEventArgs e)
